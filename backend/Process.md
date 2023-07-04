@@ -19,9 +19,11 @@ You can install all this packages using single command
 
 4) Add a .gitignore file in your root directory and include node_modules, .env, [ALL PRIVATE STUFF THAT YOU DONT WANNA PUSH]
 
+5) Mongo DB cloud set up <a href="https://www.mongodb.com/products/platform/cloud">Mongo DB</a>
 
+6) Setup .env file with API Key and Port
 
-
+7) Your backend connection prerequisites are ready.
 
 
 
