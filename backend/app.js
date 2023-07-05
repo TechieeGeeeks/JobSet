@@ -10,6 +10,7 @@ const errorHandler = require('./middleware/error');
 
 // Import Routes
 const authRoutes = require('./routes/authRoutes');
+const userRoutes = require('./routes/userRoutes')
 
 const app = express();
 
@@ -24,6 +25,7 @@ app.use(cors());
 
 //Routes MiddleWare
 app.use('/api',authRoutes);
+app.use('/api',userRoutes);
 
 // Custom Error Middleware
 app.use(errorHandler);
