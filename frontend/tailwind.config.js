@@ -45,7 +45,6 @@ module.exports = {
         "2xl": "1536px",
       },
       colors: {
-        lightModeHeadingheadingColor: "#000000",
         lightModeTextColor: "#000000",
         lighttextGray: "#929292",
         lightPrimary: "#0D1BCF",
