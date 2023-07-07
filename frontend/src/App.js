@@ -1,11 +1,12 @@
-import './App.css';
+import React from 'react'
+import { Header } from './components'
 
-const App=()=> {
+const App = () => {
   return (
-    <>
-    <h1> Job Portal App</h1>
-    </>
-  );
+    <div className='w-screen h-auto flex flex-col'>
+      <Header />
+    </div>
+  )
 }
 
-export default App;
+export default App
