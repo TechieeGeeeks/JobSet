@@ -25,13 +25,13 @@ const Header = () => {
             {/* desktop & tablet */}
             <div className="hidden md:flex w-full h-full items-center justify-between">
                 <div to={"/"} className="flex items-center gap-2">
-                    <p className="text-lightModeHeadingheadingColor text-2xl "><span className="font-semibold">Job</span>Set</p>
+                    <p className="text-lightModeTextColor text-2xl "><span className="font-semibold">Job</span>Set</p>
                 </div>
 
                 <div className="flex items-center gap-8">
                     <ul className="flex items-center gap-10">
                         <li
-                            className={`text-lg text-lightModeHeadingheadingColor hover:text-lightPrimary cursor-pointer ${selectedItem === 0 ? ' text-lightPrimary' : ''
+                            className={`text-lg text-lightModeTextColor hover:text-lightPrimary cursor-pointer ${selectedItem === 0 ? ' text-lightPrimary' : ''
                                 }`}
                             onClick={() => handleItemClick(0)}
                         >
@@ -43,7 +43,7 @@ const Header = () => {
                             </span>
                         </li>
                         <li
-                            className={`relative text-lg text-lightModeHeadingheadingColor hover:text-lightPrimary cursor-pointer ${selectedItem === 1 ? ' text-lightPrimary' : ''
+                            className={`relative text-lg text-lightModeTextColor hover:text-lightPrimary cursor-pointer ${selectedItem === 1 ? ' text-lightPrimary' : ''
                                 }`}
                             onClick={() => handleItemClick(1)}
                         >
@@ -56,7 +56,7 @@ const Header = () => {
                         </li>
                         {isLoggedIn ? (
                             <>
-                                <li className="flex gap-3 text-sm text-lightModeHeadingheadingColor hover:text-lightPrimary cursor-pointer" onClick={dropDownHandle}>
+                                <li className="flex gap-3 text-sm text-lightModeTextColor hover:text-lightPrimary cursor-pointer" onClick={dropDownHandle}>
                                     <img src={ProfileImage} className="w-12 min-w-[40px] h-12 min-h-[40px] cursor-pointer rounded-full" alt="profile_picture" />
                                     <div className="flex flex-col justify-center">
                                         <div>vwakesahu</div>
@@ -67,10 +67,10 @@ const Header = () => {
                             </>
                         ) : (
                             <>
-                                <li className="text-lg text-lightModeHeadingheadingColor hover:text-lightPrimary duration-100 transition-all ease-in-out cursor-pointer">
+                                <li className="text-lg text-lightModeTextColor hover:text-lightPrimary duration-100 transition-all ease-in-out cursor-pointer">
                                     Login
                                 </li>
-                                <li className="rounded-full border border-lightPrimary py-3 px-9 text-lg text-lightModeHeadingheadingColor hover:shadow-lg duration-100 transition-all ease-in-out cursor-pointer">
+                                <li className="rounded-full border border-lightPrimary py-3 px-9 text-lg text-lightModeTextColor hover:shadow-lg duration-100 transition-all ease-in-out cursor-pointer">
                                     Register Now
                                 </li>
                             </>
@@ -82,7 +82,7 @@ const Header = () => {
                             <div
                                 className="w-[200px] bg-lightCard drop-shadow-lg rounded-lg flex flex-col absolute top-8 right-7 py-2"
                             >
-                                <div className="flex px-4 py-2 cursor-pointer hover:bg-slate-100 transition-all duration-100 ease-in-out text-lightModeHeadingheadingColor">
+                                <div className="flex px-4 py-2 cursor-pointer hover:bg-slate-100 transition-all duration-100 ease-in-out text-lightModeTextColor">
                                     <img src={EditProfileIcon} className="pl-1" alt="logout_icon" />
                                     <p
                                         className="w-full flex items-center justify-center gap-3"
@@ -91,7 +91,7 @@ const Header = () => {
                                     </p>
                                 </div>
 
-                                <div className="flex px-4 py-2 cursor-pointer hover:bg-slate-100 transition-all duration-100 ease-in-out text-lightModeHeadingheadingColor">
+                                <div className="flex px-4 py-2 cursor-pointer hover:bg-slate-100 transition-all duration-100 ease-in-out text-lightModeTextColor">
                                     <img src={SettingsIcon} className="pl-1" alt="logout_icon" />
                                     <p
                                         className="w-full flex items-center justify-center gap-3"
@@ -100,7 +100,7 @@ const Header = () => {
                                     </p>
                                 </div>
 
-                                <div className="flex px-4 py-2 cursor-pointer hover:bg-slate-100 transition-all duration-100 ease-in-out text-lightModeHeadingheadingColor">
+                                <div className="flex px-4 py-2 cursor-pointer hover:bg-slate-100 transition-all duration-100 ease-in-out text-lightModeTextColor">
                                     <img src={LogOutIcon} className="pl-1" alt="logout_icon" />
                                     <p
                                         className="w-full flex items-center justify-center gap-3 text-red-600"
@@ -121,7 +121,7 @@ const Header = () => {
             <div className="md:hidden flex items-center justify-between w-full h-full ">
 
                 <div to={"/"} className="flex items-center w-full justify-center">
-                    <p className="text-lightModeHeadingheadingColor text-xl "><span className="font-semibold">Job</span>Set</p>
+                    <p className="text-lightModeTextColor text-xl "><span className="font-semibold">Job</span>Set</p>
                 </div>
 
                 <div className="relative">
@@ -155,25 +155,25 @@ const Header = () => {
 
                             <ul className="flex flex-col ">
                                 <li
-                                    className="text-base text-lightModeHeadingheadingColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-slate-100 px-4 py-2"
+                                    className="text-base text-lightModeTextColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-slate-100 px-4 py-2"
                                     onClick={() => setIsMenu(false)}
                                 >
                                     Home
                                 </li>
                                 <li
-                                    className="text-base text-lightModeHeadingheadingColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-slate-100 px-4 py-2"
+                                    className="text-base text-lightModeTextColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-slate-100 px-4 py-2"
                                     onClick={() => setIsMenu(false)}
                                 >
                                     Find Job
                                 </li>
                                 {isLoggedIn ? (<div><li
-                                    className="text-base text-lightModeHeadingheadingColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-slate-100 px-4 py-2"
+                                    className="text-base text-lightModeTextColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-slate-100 px-4 py-2"
                                     onClick={() => setIsMenu(false)}
                                 >
                                     Edit Profile
                                 </li>
                                     <li
-                                        className="text-base text-lightModeHeadingheadingColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-slate-100 px-4 py-2"
+                                        className="text-base text-lightModeTextColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-slate-100 px-4 py-2"
                                         onClick={() => setIsMenu(false)}
                                     >
                                         Settings
