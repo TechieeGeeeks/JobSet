@@ -8,7 +8,7 @@ import MenuIcon from "../img/menu_icon.svg"
 
 const Header = () => {
     const [isMenu, setIsMenu] = useState(false);
-    const isLoggedIn = true;
+    const isLoggedIn = false;
     const [selectedItem, setSelectedItem] = useState(null);
 
     const handleItemClick = (index) => {
