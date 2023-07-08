@@ -2,7 +2,7 @@ import React from 'react'
 
 const NotFound = () => {
   return (
-    <div>URL Does Not Exist</div>
+    <h2>URL Does Not Exist</h2>
   )
 }
 
