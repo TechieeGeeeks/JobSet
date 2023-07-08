@@ -1,8 +1,13 @@
 import React from 'react'
-import  Header  from '../components/Header.jsx'
+import  Header  from '../components/Header'
+import NavBar from '../components/NavBar'
 const Home = () => {
   return (
-    <Header className='w-screen h-auto flex flex-col' />
+    <div >
+      <NavBar className='w-screen h-auto flex flex-col' />
+      <Header/>
+      <h2>Home Page</h2>
+    </div>
   )
 }
 
