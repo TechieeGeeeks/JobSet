@@ -1,8 +1,8 @@
 import React from 'react'
-
+import  Header  from '../components/Header.jsx'
 const Home = () => {
   return (
-    <h1>Home</h1>
+    <Header className='w-screen h-auto flex flex-col' />
   )
 }
 
