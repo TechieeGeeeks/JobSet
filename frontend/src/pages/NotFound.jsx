@@ -11,7 +11,6 @@ const NotFound = () => {
                     The page you are looking for might have been removed had it's name changed or temporarily unavailable
                 </div>
                 <div>
-
                 </div>
             </div>
 
