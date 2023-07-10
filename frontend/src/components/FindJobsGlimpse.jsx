@@ -1,0 +1,47 @@
+import React from 'react'
+import WalkingGirl from '../img/walking_girl.png'
+
+const FindJobsGlimpse = () => {
+    return (
+
+        <section
+            className="md:p-16 grid grid-cols-1 md:grid-cols-2 gap-2 w-full sm:m12"
+            id="home"
+        >
+            <div className="mb-auto mt-16 flex-1 flex flex-col items-start justify-center gap-11 md:gap-24 p-8 md:p-0">
+
+
+                <p className="text-[1.8rem] text-lightPrimary font-semibold"> Why Wait Start Now!</p>
+
+
+                <div className='flex flex-col gap-4'>
+                    <p className="text-lightModeTextColor text-center font-semibold md:text-justify md:w-[85%] flex-wrap text-xl">
+                        Make Your Dreams Work: Find Your Dream Job
+                    </p>
+                    <p className="text-lightModeTextColor text-center text-sm md:text-justify md:w-[85%] flex-wrap">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
+                    </p>
+                </div>
+
+                <button className='min-w-210 bg-lightPrimary w-300 p-4 rounded-full text-lightCard cursor-pointer hover:shadow-xl'>
+                    Find Jobs
+                </button>
+
+
+            </div>
+            <div className="image-container py-2 flex-1 flex items-center relative">
+                <img
+                    src={WalkingGirl}
+                    className=" ml-auto h-420 w-full lg:w-auto lg:h-650"
+                    alt="hero-bg"
+                />
+            </div>
+
+
+
+        </section>
+       
+    )
+}
+
+export default FindJobsGlimpse

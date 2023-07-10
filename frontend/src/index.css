@@ -42,3 +42,11 @@ body {
   background-color: lightPrimary;
   animation: borderAnimation 0.25s ease-in-out forwards;
 }
+
+.image-container {
+  display: none;
+
+  @media (min-width: 768px) {
+    display: block;
+  }
+}
