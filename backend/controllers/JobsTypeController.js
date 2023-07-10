@@ -9,9 +9,6 @@ exports.createJobType =async(req,res,next)=>{
             jobTypeName: req.body.jobTypeName,
             user: req.user.id,
             requirements: req.body.requirements,
-            company: req.body.company,
-            contact: req.body.contact,
-            website:req.body.website
         });
         res.status(201).json({
             success:true,

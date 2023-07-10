@@ -28,6 +28,24 @@ const jobSchema = new mongoose.Schema({
         type: Boolean,
         default: true
     },
+    company: {
+        type: String,
+        trim: true,
+        required: [true,'Company name is Required'],
+        maxlength: 40
+    },
+    contact: {
+        type: Number,
+        trim: true,
+        required: [true,'Contact is Required'],
+        maxlength:10
+    },
+    website:{
+        type: String,
+        trim: true,
+        required: [true,'Website is Required'],
+        maxlength:30
+    },
     user:{
         type: ObjectId,
         ref: "User",

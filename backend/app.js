@@ -12,6 +12,7 @@ const errorHandler = require('./middleware/error');
 const authRoutes = require('./routes/authRoutes');
 const userRoutes = require('./routes/userRoutes');
 const jobsTypeRoutes = require('./routes/jobsTypeRoutes');
+const jobRoutes = require('./routes/jobRoutes');
 
 const app = express();
 
@@ -28,6 +29,7 @@ app.use(cors());
 app.use('/api',authRoutes);
 app.use('/api',userRoutes);
 app.use('/api',jobsTypeRoutes);
+app.use('/api', jobRoutes);
 
 // Custom Error Middleware
 app.use(errorHandler);
