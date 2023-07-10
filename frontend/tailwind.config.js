@@ -34,21 +34,28 @@ module.exports = {
       },
       minWidth: {
         210: "210px",
+        260: "260px",
         350: "350px",
         620: "620px",
       },
       screens: {
+        xsm: "365px",
         sm: "640px",
         md: "768px",
         lg: "1024px",
         xl: "1280px",
         "2xl": "1536px",
       },
+      lineHeight: {
+        tight: '1.2', // Adjust the value as needed
+      },
       colors: {
+        lightModeHeadingheadingColor: "#000000",
         lightModeTextColor: "#000000",
         lighttextGray: "#929292",
         lightPrimary: "#0D1BCF",
         lightCard: "#FFFFFF",
+        lightBgBlue: 'rgba(13, 27, 207, 0.05)',
       },
     },
   },

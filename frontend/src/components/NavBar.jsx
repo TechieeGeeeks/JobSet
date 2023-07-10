@@ -5,6 +5,9 @@ import EditProfileIcon from "../img/edit_profile_icon.svg"
 import LogOutIcon from "../img/logout_icon.svg"
 import SettingsIcon from "../img/settings_icon.svg"
 import MenuIcon from "../img/menu_icon.svg"
+import UserDashboard from "../img/user_dashboard.png"
+import AdminDashboard from "../img/admin_dashboard.png"
+
 
 const NavBar = () => {
     const [isMenu, setIsMenu] = useState(false);
@@ -15,7 +18,7 @@ const NavBar = () => {
         setSelectedItem(index);
     };
 
-    const [isAdmin,setIsAdmin] = useState(false);
+    const [isAdmin, setIsAdmin] = useState(false);
     const dropDownHandle = () => {
         setIsMenu(!isMenu);
     }
@@ -42,9 +45,17 @@ const NavBar = () => {
                                     <span className="border-b-2 ease-in-out border-lightPrimary animate-border-animation"></span>
                                 )}
                             </span>
+
+                        </li>
+
+                        <li
+                            className={`text-lg text-lightModeTextColor hover:text-lightPrimary cursor-pointer ${selectedItem === 0 ? ' text-lightPrimary' : ''
+                                }`}
+                            onClick={() => handleItemClick(1)}
+                        >
                             <span className="relative">
                                 Resources
-                                {selectedItem === 2 && (
+                                {selectedItem === 1 && (
                                     <span className="border-b-2 ease-in-out border-lightPrimary animate-border-animation"></span>
                                 )}
                             </span>
@@ -52,11 +63,11 @@ const NavBar = () => {
                         <li
                             className={`relative text-lg text-lightModeTextColor hover:text-lightPrimary cursor-pointer ${selectedItem === 1 ? ' text-lightPrimary' : ''
                                 }`}
-                            onClick={() => handleItemClick(1)}
+                            onClick={() => handleItemClick(2)}
                         >
                             <span className="relative">
                                 Find Job
-                                {selectedItem === 1 && (
+                                {selectedItem === 2 && (
                                     <span className="border-b-2 ease-in-out border-lightPrimary animate-border-animation"></span>
                                 )}
                             </span>
@@ -99,7 +110,7 @@ const NavBar = () => {
                                 </div>
 
                                 {isAdmin && <div className="flex px-4 py-2 cursor-pointer hover:bg-slate-100 transition-all duration-100 ease-in-out text-lightModeTextColor">
-                                    <img src={/*Todo Add Admin Icon for dashboard*/EditProfileIcon} className="pl-1" alt="logout_icon" />
+                                    <img src={AdminDashboard} className="pl-1" alt="logout_icon" />
                                     <p
                                         className="w-full flex items-center justify-center gap-3"
                                     >
@@ -108,11 +119,11 @@ const NavBar = () => {
                                 </div>}
 
                                 {!isAdmin && <div className="flex px-4 py-2 cursor-pointer hover:bg-slate-100 transition-all duration-100 ease-in-out text-lightModeTextColor">
-                                    <img src={/*Todo Add User Icon for dashboard*/EditProfileIcon} className="pl-1" alt="logout_icon" />
+                                    <img src={UserDashboard} className="pl-1" alt="logout_icon" />
                                     <p
                                         className="w-full flex items-center justify-center gap-3"
                                     >
-                                        User DashBoard
+                                        DashBoard
                                     </p>
                                 </div>}
 
@@ -189,20 +200,49 @@ const NavBar = () => {
                                     className="text-base text-lightModeTextColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-slate-100 px-4 py-2"
                                     onClick={() => setIsMenu(false)}
                                 >
-                                    Find Job
+                                    Resources
                                 </li>
-                                {isLoggedIn ? (<div><li
+                                <li
                                     className="text-base text-lightModeTextColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-slate-100 px-4 py-2"
                                     onClick={() => setIsMenu(false)}
                                 >
-                                    Edit Profile
+                                    Find Job
                                 </li>
+
+
+                                {isAdmin &&
                                     <li
                                         className="text-base text-lightModeTextColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-slate-100 px-4 py-2"
                                         onClick={() => setIsMenu(false)}
                                     >
-                                        Settings
-                                    </li></div>) : ('')}
+                                        Admin Dashboard
+                                    </li>
+                                }
+
+                                {!isAdmin &&
+                                    <li
+                                        className="text-base text-lightModeTextColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-slate-100 px-4 py-2"
+                                        onClick={() => setIsMenu(false)}
+                                    >
+                                        Dashboard
+                                    </li>
+                                }
+
+                                {isLoggedIn ? (
+                                    <div>
+                                        <li
+                                            className="text-base text-lightModeTextColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-slate-100 px-4 py-2"
+                                            onClick={() => setIsMenu(false)}
+                                        >
+                                            Edit Profile
+                                        </li>
+                                        <li
+                                            className="text-base text-lightModeTextColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-slate-100 px-4 py-2"
+                                            onClick={() => setIsMenu(false)}
+                                        >
+                                            Settings
+                                        </li>
+                                    </div>) : ('')}
 
                             </ul>
 
