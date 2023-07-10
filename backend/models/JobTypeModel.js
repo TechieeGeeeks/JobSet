@@ -22,7 +22,7 @@ const jobTypeSchema = new mongoose.Schema({
     company: {
         type: String,
         trim: true,
-        required: [true,'Company is Required'],
+        required: [true,'Company name is Required'],
         maxlength: 40
     },
     contact: {
