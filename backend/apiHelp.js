@@ -73,7 +73,9 @@ const allApis = {
         createjobtype: "POST" + "http://localhost:8000/api/type/create/",
         getalljobtypes: "GET" + "http://localhost:8000/api/type/jobs/",
         createjob: "POST" + "http://localhost:8000/api/job/create",
-        getalljobs: "GET" + "http://localhost:8000/api/jobs"
+        getalljobs: "GET" + "http://localhost:8000/api/jobs",
+        singleJob: "GET" + "http://localhost:8000/api/job/64ac68db2457e11d186b0903",
+        updateJob: "PUT" + "http://localhost:8000/api/job/update/64ac68db2457e11d186b0903"
     }
 
 
