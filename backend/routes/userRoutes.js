@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const {allUsers, singleUser, editUser, deleteUser} = require('../controllers/userController');
+const {allUsers, singleUser, editUser, deleteUser, allAdmins} = require('../controllers/userController');
 const { isAuthenticated, isAdmin } = require('../middleware/auth');
 
 //User Routes
@@ -16,5 +16,8 @@ router.put('/user/edit/:id',isAuthenticated, editUser);
 
 //auth route for deleting User =>   {/api/user/delete/:id}
 router.delete('/user/delete/:id',isAuthenticated, isAdmin, deleteUser);
+
+//auth route for admin to get all Users Info =>   {/api/allusers}
+router.get('/alladmins',isAuthenticated,isAdmin, allAdmins);
 
 module.exports = router;

@@ -66,7 +66,7 @@ const allApis = {
     ADMIN:{
         allusers: "GET" + "http://localhost:8000/api/allusers",
         deleteuser: "DELETE" + "http://localhost:8000/api/user/delete/64a541915434422cc4ab111e",
-        alladmins: "GET"+ "http://localhost:8000/api/alladmins" /* Working On It*/
+        alladmins: "GET"+ "http://localhost:8000/api/alladmins" 
     },
     HR:"Not Even Decided What to include and what not to",
     JOBOPS:{
@@ -78,5 +78,5 @@ const allApis = {
 
 
 }
-// GET ALL ADMINS
-// USER CAN DELETE HIS OWN PROFILE  
+
+// USER CAN DELETE HIS OWN PROFILE {Do We Really Need THis?} 
