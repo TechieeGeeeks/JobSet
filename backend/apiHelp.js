@@ -73,7 +73,9 @@ const allApis = {
         createjobtype: "POST" + "http://localhost:8000/api/type/create/",
         getalljobtypes: "GET" + "http://localhost:8000/api/type/jobs/",
         createjob: "POST" + "http://localhost:8000/api/job/create",
-        getalljobs: "GET" + "http://localhost:8000/api/jobs"
+        getalljobs: "GET" + "http://localhost:8000/api/jobs" + "http://localhost:8000/api/jobs?pageNumber=1" + "http://localhost:8000/api/jobs?pageNumber=1&keyword=product" + "http://localhost:8000/api/jobs?pageNumber=1&keyword=web2&cat=64add11fae5db20780753d80",
+        singleJob: "GET" + "http://localhost:8000/api/job/64ac68db2457e11d186b0903",
+        updateJob: "PUT" + "http://localhost:8000/api/job/update/64ac68db2457e11d186b0903"
     }
 
 
