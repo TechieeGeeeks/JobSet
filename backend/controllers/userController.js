@@ -69,3 +69,18 @@ exports.deleteUser = async(req,res,next)=>{
     return next(error);
   }
 }
+
+// export all admins
+exports.allAdmins = async(req,res,next)=>{
+  try{
+    const admins = await User.find({role:1})
+    .select("-password")
+    res.status(200).json({
+      success: true,
+      admins,
+    });
+    next();
+  }catch (error) {
+    return next(error);
+  }
+}
