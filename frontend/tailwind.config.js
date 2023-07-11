@@ -55,6 +55,7 @@ module.exports = {
         lighttextGray: "#929292",
         lightPrimary: "#0D1BCF",
         lightCard: "#FFFFFF",
+        footerSubtitle: 'rgba(255, 255, 255, 0.55)',
         lightBgBlue: 'rgba(13, 27, 207, 0.05)',
       },
     },
