@@ -28,7 +28,7 @@ const NavBar = () => {
         <header className="fixed z-50 w-screen p-3 px-4 md:p-6 md:px-16 bg-lightCard">
             {/* desktop & tablet */}
             <div className="hidden md:flex w-full h-full items-center justify-between">
-                <div to={"/"} className="flex items-center gap-2">
+                <div className="flex items-center gap-2">
                     <p className="text-lightModeTextColor text-2xl "><span className="font-semibold">Job</span>Set</p>
                 </div>
 
