@@ -5,10 +5,10 @@ const FindJobsGlimpse = () => {
     return (
 
         <section
-            className="md:p-16 grid grid-cols-1 md:grid-cols-2 gap-2 w-full sm:m12"
+            className="md:px-16 grid grid-cols-1 md:grid-cols-2 gap-2 w-full"
             id="home"
         >
-            <div className="mb-auto mt-16 flex-1 flex flex-col items-start justify-center gap-11 md:gap-24 p-8 md:p-0">
+            <div className="mb-auto flex-1 flex flex-col items-start justify-center gap-11 md:gap-24 px-8 pb-8 md:p-0">
 
 
                 <p className="text-[1.8rem] text-lightPrimary font-semibold"> Why Wait Start Now!</p>
@@ -23,16 +23,24 @@ const FindJobsGlimpse = () => {
                     </p>
                 </div>
 
-                <button className='min-w-210 bg-lightPrimary w-300 p-4 rounded-full text-lightCard cursor-pointer hover:shadow-xl'>
-                    Find Jobs
-                </button>
+                <div className='w-full flex justify-center md:hidden'>
+                    <button className='min-w-210 bg-lightPrimary w-300 p-4 rounded-full text-lightCard cursor-pointer hover:shadow-xl'>
+                        Find Jobs
+                    </button>
+                </div>
+
+                <div className='hidden md:flex '>
+                    <button className='min-w-210 bg-lightPrimary w-300 p-4 rounded-full text-lightCard cursor-pointer hover:shadow-xl'>
+                        Find Jobs
+                    </button>
+                </div>
 
 
             </div>
             <div className="image-container py-2 flex-1 flex items-center relative">
                 <img
                     src={WalkingGirl}
-                    className=" ml-auto h-420 w-full lg:w-auto lg:h-650"
+                    className=" ml-auto h-420 w-full lg:w-auto lg:h-650 pb-16"
                     alt="hero-bg"
                 />
             </div>
@@ -40,7 +48,7 @@ const FindJobsGlimpse = () => {
 
 
         </section>
-       
+
     )
 }
 

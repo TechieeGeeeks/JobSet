@@ -5,6 +5,7 @@ import HomeCards from '../components/HomeCards'
 import HeroSection from '../components/HeroSection'
 import FindJobsGlimpse from '../components/FindJobsGlimpse'
 import Footer from '../components/Footer'
+import Testimonials from '../components/Testimonials'
 const Home = () => {
   return (
 
@@ -16,6 +17,7 @@ const Home = () => {
       <NavBar />
       <HeroSection />
       <HomeCards />
+      <Testimonials />
       <FindJobsGlimpse />
       <Footer />
     </div>
