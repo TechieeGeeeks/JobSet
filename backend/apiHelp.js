@@ -71,11 +71,14 @@ const allApis = {
     HR:"Not Even Decided What to include and what not to",
     JOBOPS:{
         createjobtype: "POST" + "http://localhost:8000/api/type/create/",
+        updateJobtype: "PUT" + "http://localhost:8000/api/type/update/64ac54feda23f13808f3606b",
         getalljobtypes: "GET" + "http://localhost:8000/api/type/jobs/",
+        deleteJobType: "DELETE" + "http://localhost:8000/api/type/delete/64add11fae5db20780753d80",
         createjob: "POST" + "http://localhost:8000/api/job/create",
-        getalljobs: "GET" + "http://localhost:8000/api/jobs" + "http://localhost:8000/api/jobs?pageNumber=1" + "http://localhost:8000/api/jobs?pageNumber=1&keyword=product" + "http://localhost:8000/api/jobs?pageNumber=1&keyword=web2&cat=64add11fae5db20780753d80",
-        singleJob: "GET" + "http://localhost:8000/api/job/64ac68db2457e11d186b0903",
-        updateJob: "PUT" + "http://localhost:8000/api/job/update/64ac68db2457e11d186b0903"
+        getalljobs: "GET" + "http://localhost:8000/api/jobs?pageNumber=1&keyword=web2&cat=64add11fae5db20780753d80",
+        singleJob: "GET" + "http://localhost:8000/api/jobs?pageNumber=1&keyword=&cat=&location=",
+        updateJob: "PUT" + "http://localhost:8000/api/job/update/64ac68db2457e11d186b0903",
+        deleteJob: "DELETE" + "http://localhost:8000/api/job/delete/64adb47210aaa507d4d54a6b"
     }
 
 
