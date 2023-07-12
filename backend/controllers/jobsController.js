@@ -30,6 +30,7 @@ exports.createJob = async (req, res, next) => {
 // all jobs category
 exports.allJobs = async (req, res, next) => {
   try {
+
     // Filter by category ids
     let ids = [];
     const jobTypeCategory = await JobType.find({}, { _id: 1 });
@@ -40,6 +41,17 @@ exports.allJobs = async (req, res, next) => {
     let cat = req.query.cat;
     let categ = cat !== '' ? cat : ids;
 
+    // filter jobs by location 
+    let locations = [];
+    const jobByLocation = await Job.find({},{location:1})
+    jobByLocation.forEach(value=>{
+      locations.push(value.location);
+    });
+    let setUniqueLocation = [...new Set(locations)];
+    let location = req.query.location;
+    let locationFilter = location !== '' ? location : setUniqueLocation;
+
+
     const keyword = req.query.keyword
       ? {
           title: {
@@ -47,13 +59,13 @@ exports.allJobs = async (req, res, next) => {
             $options: "i",
           },
         }
-      : {};
+      :{};
     const pageSize = 5;
     const page = Number(req.query.pageNumber) || 1;
     //const count = await Job.find({}).estimatedDocumentCount();
-    const count = await Job.find({ ...keyword, jobType: categ }).countDocuments();
+    const count = await Job.find({ ...keyword, jobType: categ, location: locationFilter }).countDocuments();
 
-    const jobs = await Job.find({ ...keyword, jobType: categ})
+    const jobs = await Job.find({ ...keyword, jobType: categ, location: locationFilter})
       .skip(pageSize * (page - 1))
       .limit(pageSize);
 
@@ -63,7 +75,7 @@ exports.allJobs = async (req, res, next) => {
       pages: Math.ceil(count / pageSize),
       page,
       count,
-      pageSize,
+      pageSize
     });
   } catch (error) {
     next(error);
@@ -94,6 +106,19 @@ exports.updateJob = async (req, res, next) => {
     res.status(200).json({
       success: true,
       job,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+// Delete Job
+exports.deleteJob = async (req, res, next) => {
+  try {
+    const job = await Job.findByIdAndRemove(req.params.job_id)
+    res.status(200).json({
+      success: true,
+      message:"Job Has Been Deleted",
     });
   } catch (error) {
     next(error);
