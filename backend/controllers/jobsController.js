@@ -30,28 +30,6 @@ exports.createJob = async (req, res, next) => {
 // all jobs category
 exports.allJobs = async (req, res, next) => {
   try {
-
-    // Filter by category ids
-    let ids = [];
-    const jobTypeCategory = await JobType.find({}, { _id: 1 });
-    jobTypeCategory.forEach(element => {
-      ids.push(element._id);
-    });
-
-    let cat = req.query.cat;
-    let categ = cat !== '' ? cat : ids;
-
-    // filter jobs by location 
-    let locations = [];
-    const jobByLocation = await Job.find({},{location:1})
-    jobByLocation.forEach(value=>{
-      locations.push(value.location);
-    });
-    let setUniqueLocation = [...new Set(locations)];
-    let location = req.query.location;
-    let locationFilter = location !== '' ? location : setUniqueLocation;
-
-
     const keyword = req.query.keyword
       ? {
           title: {
@@ -59,13 +37,27 @@ exports.allJobs = async (req, res, next) => {
             $options: "i",
           },
         }
-      :{};
+      : {};
+
+    const cat = req.query.cat || null;
+    const location = req.query.location || null;
+
+    const jobTypeFilter = cat ? { jobType: cat } : {};
+    const locationFilter = location ? { location: location } : {};
+
+    let filter = { ...keyword, ...jobTypeFilter, ...locationFilter };
+
+    if (!cat && !location) {
+      filter = {}; // Retrieve all jobs if cat and location are not provided
+    }
+
     const pageSize = 5;
     const page = Number(req.query.pageNumber) || 1;
-    //const count = await Job.find({}).estimatedDocumentCount();
-    const count = await Job.find({ ...keyword, jobType: categ, location: locationFilter }).countDocuments();
 
-    const jobs = await Job.find({ ...keyword, jobType: categ, location: locationFilter})
+    const count = await Job.countDocuments(filter);
+
+    const jobs = await Job.find(filter)
+      .sort({createdAt:-1})
       .skip(pageSize * (page - 1))
       .limit(pageSize);
 
@@ -75,7 +67,7 @@ exports.allJobs = async (req, res, next) => {
       pages: Math.ceil(count / pageSize),
       page,
       count,
-      pageSize
+      pageSize,
     });
   } catch (error) {
     next(error);

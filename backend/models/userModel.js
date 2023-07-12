@@ -2,6 +2,53 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const jwtSecret = process.env.JWT;
+const {ObjectId} = mongoose.Schema;
+
+
+const jobsHistorySchema = new mongoose.Schema({
+    title: {
+        type: String,
+        trim: true,
+    },
+    description: {
+        type: String,
+        trim: true,
+    },
+    salary: {
+        type: String,
+        trim: true,
+    },
+    location: {
+        type: String,
+        trim: true
+    },
+    interviewDate: {
+        type: Date,
+        trim: true
+    },
+    company: {
+        type: String,
+        trim: true,
+    },
+    contact: {
+        type: Number,
+        trim: true,
+    },
+    website:{
+        type: String,
+        trim: true,
+    },
+    applicationStatus:{
+        type: String,
+        enum: ['pending', 'accepetd', 'rejected'],
+        default:'pending'
+    },
+    user:{
+        type: ObjectId,
+        ref: "User",
+        required:true
+    }
+}, {timestamp:true});
 
 const userSchema = new mongoose.Schema({
     firstName: {
@@ -64,7 +111,8 @@ const userSchema = new mongoose.Schema({
         required: true,
         unique: true,
         maxlength:10
-    }
+    },
+    jobsHistory: [jobsHistorySchema],
 }, {timestamp:true});
 
 // If user changes the password then Encrypting the password before storing it on DB

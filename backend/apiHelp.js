@@ -62,6 +62,7 @@ const allApis = {
         getuserprofile: "GET" + "http://localhost:8000/api/me",
         getsingleuser: "GET" + "http://localhost:8000/api/user/64a493828c10123518441735",
         edituser: "PUT" + "http://localhost:8000/api/user/edit/64a493828c10123518441735",
+        jobHistory: "POST" + "http://localhost:8000/api/user/jobhistory"
     },
     ADMIN:{
         allusers: "GET" + "http://localhost:8000/api/allusers",
@@ -75,7 +76,7 @@ const allApis = {
         getalljobtypes: "GET" + "http://localhost:8000/api/type/jobs/",
         deleteJobType: "DELETE" + "http://localhost:8000/api/type/delete/64add11fae5db20780753d80",
         createjob: "POST" + "http://localhost:8000/api/job/create",
-        getalljobs: "GET" + "http://localhost:8000/api/jobs?pageNumber=1&keyword=web2&cat=64add11fae5db20780753d80",
+        getalljobs: "GET" + "http://localhost:8000/api/jobs/show?pageNumber=1&keyword=&cat=&location=",
         singleJob: "GET" + "http://localhost:8000/api/jobs?pageNumber=1&keyword=&cat=&location=",
         updateJob: "PUT" + "http://localhost:8000/api/job/update/64ac68db2457e11d186b0903",
         deleteJob: "DELETE" + "http://localhost:8000/api/job/delete/64adb47210aaa507d4d54a6b"
