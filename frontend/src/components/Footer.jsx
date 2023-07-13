@@ -49,7 +49,7 @@ const Footer = () => {
               <img src={GPSIcon} alt="mail_icon" className='w-7' />
               <div>Find Us</div>
               <div className='text-sm font-thin'>
-                Kopar Khairane, Navi Mumbai
+                Thane(west)
               </div>
             </div>
           </div>
