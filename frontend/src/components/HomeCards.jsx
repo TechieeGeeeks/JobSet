@@ -102,9 +102,9 @@ const HomeCards = () => {
                 <p className="text-[0.7rem] text-lighttextGray">
                   <span className="text-xl font-bold text-lightModeTextColor">{post.salary}</span>/month
                 </p>
-                <div className="md:text-[0.9rem] text-[0.7rem] rounded-lg bg-lightBgBlue py-2 px-5 text-lightPrimary font-medium hover:shadow-lg duration-100 transition-all ease-in-out cursor-pointer">
+                <button className="md:text-[0.9rem] text-[0.7rem] rounded-lg bg-lightBgBlue py-2 px-5 text-lightPrimary font-medium hover:shadow-lg duration-100 transition-all ease-in-out cursor-pointer">
                   Apply
-                </div>
+                </button>
               </div>
             </div>
           ))}
