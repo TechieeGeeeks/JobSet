@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import React from 'react';
 
+
 import AWSImg from '../img/aws_img.png'
 //import FreeImg from '../img/free_img.png'
 import IBMImg from '../img/ibm_img.png'
@@ -13,6 +14,7 @@ import MicrosoftImg from '../img/ms_img.png'
 const posts = [
   {
     id: 1,
+
     company: 'Amazon Web Services',
     location: 'Earn a learning Badge',
     jobTitle: 'Cloud Essential Learning Plan',
@@ -20,6 +22,7 @@ const posts = [
     description: 'Learn AWS Cloud technology,foundational AWS Cloud concepts, AWS services, security,architecture, pricing, and support.',
     salary: 'FREE',
     image: AWSImg
+
   },
 
   {
@@ -81,6 +84,7 @@ const posts = [
 
 const HomeCards = () => {
   const isMediumScreen = window.innerWidth >= 768; 
+
   const navigate = useNavigate();
 
   const handleEnrollClick = (post) => {
@@ -105,8 +109,9 @@ const HomeCards = () => {
   }
 
  
-  const visiblePosts = isMediumScreen ? posts.slice(0, 6) : posts.slice(0, 3);
 
+  const visiblePosts = isMediumScreen ? posts.slice(0, 6) : posts.slice(0, 3);
+  
   return (
     <div className="w-full h-full bg-lightBgBlue">
       <div className="p-9 md:p-16 h-full">
@@ -115,8 +120,10 @@ const HomeCards = () => {
         
         <div className="h-full w-full grid md:grid-cols-3 gap-6 my-6 md:px-16">
           {visiblePosts.map(post => (
+
             <div key={post.id} className="md:w-300 p-8 min-w-260 bg-lightCard backdrop-blur-md rounded-3xl flex flex-col justify-center drop-shadow-lg gap-4 hover:scale-105 transition-all duration-300">
               {/*<img src="frontend/src/img/free_img.png" alt="corner-image" className="absolute top-0 right-0 w-16 h-16 md:w-20 md:h-20 object-cover"/>*/}
+
               <div className="flex">
                 <img src={post.image} alt="logo" className="w-9 h-9 md:w-12 md:h-12 shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-110" />
                 <div className="mx-3">
@@ -128,14 +135,17 @@ const HomeCards = () => {
                 <p className="font-semibold">{post.jobTitle}</p>
                 <p className="text-[0.7rem] text-lighttextGray">{post.employmentType}</p>
               </div>
-              <p className="text-[0.7rem] text-justify">{post.description}</p>
+              <p className="text-[0.7rem] text-justify font-medium">{post.description}</p>
               <div className="flex justify-between pb-4 gap-3">
                 <p className="text-[0.7rem] text-lighttextGray">
                   <span className="text-xl font-bold text-lightModeTextColor">{post.salary}</span>
                 </p>
+
                 <div className="md:text-[0.9rem] text-[0.7rem] rounded-lg bg-lightBgBlue py-2 px-5 text-lightPrimary font-medium hover:shadow-lg duration-100 transition-all ease-in-out cursor-pointer" onClick={() => handleEnrollClick(post)}>
                   Enroll Now
                 </div>
+
+                
               </div>
             </div>
           ))}
