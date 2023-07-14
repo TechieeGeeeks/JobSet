@@ -63,10 +63,11 @@ const NavBar = () => {
                                     )}
                                 </span>
                             </Link>
-                            <li
+                            <Link
                                 className={`relative text-lg text-lightModeTextColor hover:text-lightPrimary cursor-pointer ${selectedItem === 1 ? ' text-lightPrimary' : ''
                                     }`}
                                 onClick={() => handleItemClick(2)}
+                                to='/findjob'
                             >
                                 <span className="relative">
                                     Find Job
@@ -74,7 +75,7 @@ const NavBar = () => {
                                         <span className="border-b-2 ease-in-out border-lightPrimary animate-border-animation"></span>
                                     )}
                                 </span>
-                            </li>
+                            </Link>
                             {isLoggedIn ? (
                                 <>
                                     <li className="flex gap-3 text-sm text-lightModeTextColor hover:text-lightPrimary cursor-pointer" onClick={dropDownHandle}>
