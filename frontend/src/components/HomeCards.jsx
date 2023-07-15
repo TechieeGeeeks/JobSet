@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import TeslaImg from '../img/tesla_img.png'
 import SpotifyImg from '../img/spotigy_img.png'
 import SonyImg from '../img/sony_img.png';
@@ -15,7 +16,8 @@ const posts = [
     employmentType: 'Full Time',
     description: 'Must be ready for Designing user interactions on websites, developing servers, and databases for website functionality, and coding for mobile platforms.',
     salary: '₹0',
-    image: ibmlogo
+    image: ibmlogo,
+    link: '/job/1'
   },
 
   {
@@ -26,7 +28,8 @@ const posts = [
     employmentType: 'Part Time',
     description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since.',
     salary: '₹15,00',
-    image: SpotifyImg
+    image: SpotifyImg,
+    link: '/job/2'
   },
 
   {
@@ -37,7 +40,8 @@ const posts = [
     employmentType: 'Full Time',
     description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since.',
     salary: '₹80,000',
-    image: SonyImg
+    image: SonyImg,
+    link: '/job/3'
   },
 
   {
@@ -48,7 +52,8 @@ const posts = [
     employmentType: 'Full Time',
     description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since.',
     salary: '₹80,000',
-    image: TeslaImg
+    image: TeslaImg,
+    link: '/job/4'
   },
 
   {
@@ -59,7 +64,8 @@ const posts = [
     employmentType: 'Part Time',
     description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since.',
     salary: '₹15,00',
-    image: SpotifyImg
+    image: SpotifyImg,
+    link: '/job/5'
   },
 
   {
@@ -70,7 +76,8 @@ const posts = [
     employmentType: 'Full Time',
     description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since.',
     salary: '₹80,000',
-    image: SonyImg
+    image: SonyImg,
+    link: '/job/6'
   },
 
 ];
@@ -78,6 +85,13 @@ const posts = [
 const HomeCards = () => {
   const isMediumScreen = window.innerWidth >= 768; 
   const visiblePosts = isMediumScreen ? posts.slice(0, 6) : posts.slice(0, 3);
+
+  const navigate = useNavigate();
+
+  const handleClick = (link) => {
+    navigate(link);
+  };
+
   
   return (
     <div className="w-full h-full bg-lightBgBlue">
@@ -102,7 +116,9 @@ const HomeCards = () => {
                 <p className="text-[0.7rem] text-lighttextGray">
                   <span className="text-xl font-bold text-lightModeTextColor">{post.salary}</span>/month
                 </p>
-                <button className="md:text-[0.9rem] text-[0.7rem] rounded-lg bg-lightBgBlue py-2 px-5 text-lightPrimary font-medium hover:shadow-lg duration-100 transition-all ease-in-out cursor-pointer">
+                <button className="md:text-[0.9rem] text-[0.7rem] rounded-lg bg-lightBgBlue py-2 px-5 text-lightPrimary font-medium hover:shadow-lg duration-100 transition-all ease-in-out cursor-pointer"
+                  onClick={() => handleClick(post.link)}
+                >
                   Apply
                 </button>
               </div>
