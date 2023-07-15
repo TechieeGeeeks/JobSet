@@ -77,7 +77,7 @@ const posts = [
     description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since.',
     salary: '₹80,000',
     image: SonyImg,
-    link: '/job/6'
+    link: '/job/7'
   },
 
 ];
