@@ -30,16 +30,6 @@ exports.createJob = async (req, res, next) => {
 // all jobs category
 exports.allJobs = async (req, res, next) => {
   try {
-    // Filter by category ids
-    let ids = [];
-    const jobTypeCategory = await JobType.find({}, { _id: 1 });
-    jobTypeCategory.forEach(element => {
-      ids.push(element._id);
-    });
-
-    let cat = req.query.cat;
-    let categ = cat !== '' ? cat : ids;
-
     const keyword = req.query.keyword
       ? {
           title: {
@@ -48,12 +38,26 @@ exports.allJobs = async (req, res, next) => {
           },
         }
       : {};
+
+    const cat = req.query.cat || null;
+    const location = req.query.location || null;
+
+    const jobTypeFilter = cat ? { jobType: cat } : {};
+    const locationFilter = location ? { location: location } : {};
+
+    let filter = { ...keyword, ...jobTypeFilter, ...locationFilter };
+
+    if (!cat && !location) {
+      filter = {}; // Retrieve all jobs if cat and location are not provided
+    }
+
     const pageSize = 5;
     const page = Number(req.query.pageNumber) || 1;
-    //const count = await Job.find({}).estimatedDocumentCount();
-    const count = await Job.find({ ...keyword, jobType: categ }).countDocuments();
 
-    const jobs = await Job.find({ ...keyword, jobType: categ})
+    const count = await Job.countDocuments(filter);
+
+    const jobs = await Job.find(filter)
+      .sort({createdAt:-1})
       .skip(pageSize * (page - 1))
       .limit(pageSize);
 
@@ -94,6 +98,19 @@ exports.updateJob = async (req, res, next) => {
     res.status(200).json({
       success: true,
       job,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+// Delete Job
+exports.deleteJob = async (req, res, next) => {
+  try {
+    const job = await Job.findByIdAndRemove(req.params.job_id)
+    res.status(200).json({
+      success: true,
+      message:"Job Has Been Deleted",
     });
   } catch (error) {
     next(error);

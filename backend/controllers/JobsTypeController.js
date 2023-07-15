@@ -31,3 +31,29 @@ exports.allJobsType =async(req,res,next)=>{
         next(error);
     }
 }
+
+// Update Job Type
+exports.updateJobType =async(req,res,next)=>{
+    try {
+        const jobTy = await JobType.findByIdAndUpdate(req.params.type_id,req.body, {new:true});
+        res.status(200).json({
+            success:true,
+            jobTy
+        })
+    } catch (error) {
+        next(error);
+    }
+}
+
+// Delete Job Type
+exports.deleteJobType =async(req,res,next)=>{
+    try {
+        const jobTy = await JobType.findByIdAndRemove(req.params.type_id);
+        res.status(200).json({
+            success:true,
+            message:"JobType Deleted"
+        })
+    } catch (error) {
+        next(new ErrorResponse("Server Error", 500));
+    }
+}

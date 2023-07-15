@@ -9,7 +9,7 @@ const Footer = () => {
   return (
     <div>
       {/* For Desktops */}
-      <div className='hidden w-screen md:flex flex-col bg-lightPrimary mt-12'>
+      <div className='hidden w-screen md:flex flex-col bg-lightPrimary mt-12 lg:mt-36'>
         <div className="flex items-center justify-center">
           <div className='absolute hidden bg-lightCard py-10 px-64 rounded-2xl md:flex items-center justify-center gap-9 shadow-2xl'>
             <div className='text-xl'>
@@ -49,7 +49,7 @@ const Footer = () => {
               <img src={GPSIcon} alt="mail_icon" className='w-7' />
               <div>Find Us</div>
               <div className='text-sm font-thin'>
-                Kopar Khairane, Navi Mumbai
+                Thane(west)
               </div>
             </div>
           </div>

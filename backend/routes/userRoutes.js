@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const {allUsers, singleUser, editUser, deleteUser, allAdmins} = require('../controllers/userController');
+const {allUsers, singleUser, editUser, deleteUser, allAdmins, createuserJobsHistory} = require('../controllers/userController');
 const { isAuthenticated, isAdmin } = require('../middleware/auth');
 
 //User Routes
@@ -19,5 +19,8 @@ router.delete('/user/delete/:id',isAuthenticated, isAdmin, deleteUser);
 
 //auth route for admin to get all Users Info =>   {/api/allusers}
 router.get('/alladmins',isAuthenticated,isAdmin, allAdmins);
+
+//auth route for applying job by User =>   {/api/user//jobhistory}
+router.post('/user/jobhistory',isAuthenticated, /*Do We want our admin to apply for jobs 😅 if not uncomment this ``` !isAdmin ```*/createuserJobsHistory);
 
 module.exports = router;
