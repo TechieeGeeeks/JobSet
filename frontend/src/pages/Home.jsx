@@ -1,6 +1,6 @@
 import React from 'react'
 // import  Header  from '../components/Header'
-import NavBar from '../components/NavBar'
+// import NavBar from '../components/NavBar'
 import HomeCards from '../components/HomeCards'
 import HeroSection from '../components/HeroSection'
 import FindJobsGlimpse from '../components/FindJobsGlimpse'
@@ -14,7 +14,7 @@ const Home = () => {
     <div className=' overflow-hidden'>
       
       {/* <Header/> */}
-      <NavBar />
+      {/* <NavBar /> */}
       <HeroSection />
       <HomeCards />
       <Testimonials />

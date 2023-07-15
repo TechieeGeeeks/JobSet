@@ -1,14 +1,14 @@
 import { Routes, BrowserRouter as Router, Route } from 'react-router-dom';
 import Home from './pages/Home'
 import NotFound from './pages/NotFound'
-// import NavBar from './components/NavBar';
+import NavBar from './components/NavBar';
 
 const App = () => {
   return (
     <>
 
       
-        {/* <NavBar className='w-screen h-auto' /> */}
+        <NavBar className='w-screen h-auto' />
         <Router>
           <Routes>
 
