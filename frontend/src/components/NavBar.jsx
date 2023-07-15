@@ -7,6 +7,7 @@ import SettingsIcon from "../img/settings_icon.svg"
 import MenuIcon from "../img/menu_icon.svg"
 import UserDashboard from "../img/user_dashboard.png"
 import AdminDashboard from "../img/admin_dashboard.png"
+import Logo from "../img/shirt-svgrepo-com.svg"
 
 import { Link } from 'react-router-dom';
 
@@ -30,6 +31,7 @@ const NavBar = () => {
                 {/* desktop & tablet */}
                 <div className="hidden md:flex w-full h-full items-center justify-between">
                     <div className="flex items-center gap-2">
+                        <img src={Logo} width='30px'  alt="logo" />
                         <p className="text-lightModeTextColor text-2xl "><span className="font-semibold">Job</span>Set</p>
                     </div>
 
