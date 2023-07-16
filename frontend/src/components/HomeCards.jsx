@@ -85,7 +85,6 @@ const posts = [
 const HomeCards = () => {
   const isMediumScreen = window.innerWidth >= 768; 
 
-  const navigate = useNavigate();
 
   const handleEnrollClick = (post) => {
     let link = ' ';
@@ -111,6 +110,13 @@ const HomeCards = () => {
  
 
   const visiblePosts = isMediumScreen ? posts.slice(0, 6) : posts.slice(0, 3);
+
+  const navigate = useNavigate();
+
+  const handleClick = (link) => {
+    navigate(link);
+  };
+
   
   return (
     <div className="w-full h-full bg-lightBgBlue">
