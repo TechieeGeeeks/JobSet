@@ -104,7 +104,7 @@ const HomeCards = () => {
       console.log("Post not found");
     }
 
-    window.location.href = link;
+    window.open(link, "_blank");
   }
 
  
