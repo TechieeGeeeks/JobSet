@@ -7,6 +7,7 @@ import SettingsIcon from "../img/settings_icon.svg"
 import MenuIcon from "../img/menu_icon.svg"
 import UserDashboard from "../img/user_dashboard.png"
 import AdminDashboard from "../img/admin_dashboard.png"
+import Logo from "../img/shirt-svgrepo-com.svg"
 
 import { Link } from 'react-router-dom';
 
@@ -26,10 +27,11 @@ const NavBar = () => {
 
 
     return (
-            <header className="fixed z-50 w-screen p-3 px-4 md:p-6 md:px-16 bg-lightCard">
+            <header className="fixed z-50 w-screen p-3 px-4 md:p-6 md:px-16 bg-lightCard shadow-md">
                 {/* desktop & tablet */}
                 <div className="hidden md:flex w-full h-full items-center justify-between">
                     <div className="flex items-center gap-2">
+                        <img src={Logo} width='30px'  alt="logo" />
                         <p className="text-lightModeTextColor text-2xl "><span className="font-semibold">Job</span>Set</p>
                     </div>
 
@@ -161,6 +163,7 @@ const NavBar = () => {
                 <div className="md:hidden flex items-center justify-between w-full h-full ">
 
                     <div to={"/"} className="flex items-center w-full justify-center">
+                        <img src={Logo} width='25px' className="mx-1"  alt="logo" />
                         <p className="text-lightModeTextColor text-xl "><span className="font-semibold">Job</span>Set</p>
                     </div>
 
