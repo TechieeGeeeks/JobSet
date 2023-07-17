@@ -101,7 +101,7 @@ const Footer = () => {
 
         </div>
         <div className='mt-9 text-[12px] flex items-center justify-between text-lightCard'>
-            <div>Copyright @2023. All rights reserved.</div>
+            <div>Copyright © 2023 Jobset. All rights reserved.</div>
             <div className='flex gap-2'>
               <img src={GithubIcon} alt="github_icon" className='w-5' />
               <img src={InstagramIcon} alt="instagram_icon" className='w-5' />
