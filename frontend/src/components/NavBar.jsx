@@ -53,7 +53,7 @@ const NavBar = () => {
                             </Link>
 
                             <Link
-                                className={`text-lg text-lightModeTextColor hover:text-lightPrimary cursor-pointer ${selectedItem === 1 ? ' text-lightPrimary' : ''
+                                className={`text-lg text-lightModeTextColor hover:text-lightPrimary cursor-pointer ${selectedItem === 0 ? ' text-lightPrimary' : ''
                                     }`}
                                 onClick={() => handleItemClick(1)}
                                 to='/resources'
@@ -65,10 +65,11 @@ const NavBar = () => {
                                     )}
                                 </span>
                             </Link>
-                            <li
-                                className={`relative text-lg text-lightModeTextColor hover:text-lightPrimary cursor-pointer ${selectedItem === 2 ? ' text-lightPrimary' : ''
+                            <Link
+                                className={`relative text-lg text-lightModeTextColor hover:text-lightPrimary cursor-pointer ${selectedItem === 1 ? ' text-lightPrimary' : ''
                                     }`}
                                 onClick={() => handleItemClick(2)}
+                                to='/findjob'
                             >
                                 <span className="relative">
                                     Find Job
@@ -76,7 +77,7 @@ const NavBar = () => {
                                         <span className="border-b-2 ease-in-out border-lightPrimary animate-border-animation"></span>
                                     )}
                                 </span>
-                            </li>
+                            </Link>
                             {isLoggedIn ? (
                                 <>
                                     <li className="flex gap-3 text-sm text-lightModeTextColor hover:text-lightPrimary cursor-pointer" onClick={dropDownHandle}>
@@ -254,7 +255,7 @@ const NavBar = () => {
 
 
                                 <p
-                                    className="text-lightPrimary m-2 p-2 rounded-md shadow-md flex items-center justify-center bg-lightPrimary gap-3 cursor-pointer hover:bg-gray-300 transition-all duration-100 ease-in-out "
+                                    className="m-2 p-2 rounded-md shadow-md flex items-center justify-center bg-lightPrimary gap-3 cursor-pointer hover:bg-gray-300 transition-all duration-100 ease-in-out text-lightCard text-base"
 
                                 >
                                     {isLoggedIn ? ('Log out') : ('Login / Sign Up')}
