@@ -33,7 +33,6 @@ const FindJob = () => {
         setCat(e.target.value);
     }
 
-
   return (
     <>
     <div className="relative z-10 ">
@@ -51,7 +50,6 @@ const FindJob = () => {
                             </Typography>
                         </Box>
                         <SelectComponent handleChangeCategory={handleChangeCategory} cat={cat} />
-
                     </Card>
 
                     {/* jobs by location */}
@@ -70,12 +68,9 @@ const FindJob = () => {
                                             </ListItemIcon>
                                             <Link to={`/search/location/${location}`}>{location}</Link>
                                         </MenuItem>
-
                                     ))
                                 }
-
                             </MenuList>
-
                         </Box>
                     </Card>
                 </Box>
@@ -96,8 +91,6 @@ const FindJob = () => {
                                         <h2>No result found!</h2>
                                     </Box>
                                 </> :
-
-
                                 jobs && jobs.map((job, i) => (
                                     <CardElement
                                         key={i}
@@ -116,9 +109,7 @@ const FindJob = () => {
             </Stack>
         </Container>
     </Box>
-
     </div>
-    
 </>
   )
 }
