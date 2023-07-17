@@ -56,7 +56,7 @@ const Footer = () => {
             </div>
           </div>
           <div className='mt-9 flex justify-between text-lightCard'>
-            <div>Copyright @2023. All rights reserved.</div>
+            <div>Copyright © 2023 Jobset. All rights reserved.</div>
             <div className='flex gap-2'>
               <img src={GithubIcon} alt="github_icon" className='w-10' />
               <img src={InstagramIcon} alt="instagram_icon" className='w-10' />
