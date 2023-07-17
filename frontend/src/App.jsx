@@ -5,6 +5,7 @@ import HomeCards from './components/HomeCards'
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import FindJob from './components/FindJob'
+import Policy from './components/Policy'
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
             <Route exact path='*' element={<NotFound />} />{/* Any Page that is not available will get redirected to not found using (*) */}
             <Route exact path='/findjob' element={<FindJob />} />
             <Route path='/search/location/:location' element={<FindJob />} />
+            <Route exact path='/policy' element={<Policy />} />
           </Routes>
         <Footer/>
         </Router>
