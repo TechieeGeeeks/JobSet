@@ -3,6 +3,8 @@ import PhoneIcon from '../img/phone_icon.png'
 import GPSIcon from '../img/location.png'
 import InstagramIcon from '../img/instagram_icon.png'
 import GithubIcon from '../img/github_icon.png'
+import TwitterIcon from '../img/twitter_icon.png'
+import LinkedInIcon from '../img/linkedin_icon.png'
 
 
 const Footer = () => {
@@ -57,7 +59,10 @@ const Footer = () => {
             <div>Copyright @2023. All rights reserved.</div>
             <div className='flex gap-2'>
               <img src={GithubIcon} alt="github_icon" className='w-10' />
-              <img src={InstagramIcon} alt="instagram_icon" className='w-10' /></div>
+              <img src={InstagramIcon} alt="instagram_icon" className='w-10' />
+              <img src={LinkedInIcon} alt="linkedin_icon" className='w-10' />
+              <img src={TwitterIcon} alt="twitter_icon" className='w-10' />
+              </div>
           </div>
         </div>
       </div>
@@ -99,7 +104,11 @@ const Footer = () => {
             <div>Copyright @2023. All rights reserved.</div>
             <div className='flex gap-2'>
               <img src={GithubIcon} alt="github_icon" className='w-5' />
-              <img src={InstagramIcon} alt="instagram_icon" className='w-5' /></div>
+              <img src={InstagramIcon} alt="instagram_icon" className='w-5' />
+              <img src={LinkedInIcon} alt="linkedin_icon" className='w-5' />
+              <img src={TwitterIcon} alt="twitter_icon" className='w-5' />
+            </div>
+              
           </div>
       </div>
     </div>
