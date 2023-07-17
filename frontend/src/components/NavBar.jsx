@@ -51,7 +51,7 @@ const NavBar = () => {
                             </Link>
 
                             <Link
-                                className={`text-lg text-lightModeTextColor hover:text-lightPrimary cursor-pointer ${selectedItem === 0 ? ' text-lightPrimary' : ''
+                                className={`text-lg text-lightModeTextColor hover:text-lightPrimary cursor-pointer ${selectedItem === 1 ? ' text-lightPrimary' : ''
                                     }`}
                                 onClick={() => handleItemClick(1)}
                                 to='/resources'
@@ -64,7 +64,7 @@ const NavBar = () => {
                                 </span>
                             </Link>
                             <li
-                                className={`relative text-lg text-lightModeTextColor hover:text-lightPrimary cursor-pointer ${selectedItem === 1 ? ' text-lightPrimary' : ''
+                                className={`relative text-lg text-lightModeTextColor hover:text-lightPrimary cursor-pointer ${selectedItem === 2 ? ' text-lightPrimary' : ''
                                     }`}
                                 onClick={() => handleItemClick(2)}
                             >

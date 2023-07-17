@@ -13,7 +13,7 @@ const Testimonials = () => {
 
             {/* //left side */}
             <div className=" py-2  relative h-420 w-full lg:h-650 ">
-                <div className="h-full flex gap-3 mr-24">
+                <div className="h-full flex gap-3">
                     <div className="w-1/2 gap-2 flex flex-col">
                         {/* left */}
                         <div className="w-full flex flex-col p-6 text-sm text-center border  rounded-e-xl rounded-b-xl gap-6">
@@ -29,7 +29,7 @@ const Testimonials = () => {
                             </div>
                         </div>
                         <div className="w-full h-full bg-lightBgBlue rounded-e-xl rounded-b-xl"></div>
-                        
+
                     </div>
                     <div className="w-1/2 full gap-2 flex flex-col">
                         {/* right */}
@@ -55,7 +55,7 @@ const Testimonials = () => {
 
 
             {/* //right side */}
-           
+
 
             <div className="py-2 items-start justify-center gap-6 md:mt-24 p-8 w-[90%]">
                 <div className="flex flex-col gap-3">
@@ -78,6 +78,59 @@ const Testimonials = () => {
                         PageMaker including versions of Lorem Ipsum.
                     </div>
                 </div>
+            </div>
+
+
+            <div className="md:hidden">
+                <section className="w-full h-screen" id="home">
+                    {/* Left side */}
+                    <div className="py-2 relative h-auto w-full">
+                        <div className="h-full flex flex-col gap-2">
+                            {/* Left content */}
+                            <div className="w-full flex flex-col p-6 text-sm text-center border rounded-e-xl rounded-b-xl gap-6">
+                                <p>
+                                    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+                                </p>
+                                <div className="flex w-full items-center justify-center gap-3">
+                                    <img src={Avatar2} alt="" className="w-10 rounded-full" />
+                                    <div className="flex flex-col items-start font-medium text-[1rem]">
+                                        <p>Vivek Sahu</p>
+                                        <p className="text-lightPrimary text-[0.7rem] leading-3">UI/UX Designer</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="w-full h-full bg-lightBgBlue rounded-e-xl rounded-b-xl"></div>
+                            {/* Right content */}
+                            <div className="w-full flex flex-col p-6 text-sm text-center border rounded-e-xl rounded-b-xl gap-6">
+                                <p>
+                                    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+                                </p>
+                                <div className="flex w-full items-center justify-center gap-3">
+                                    <img src={Avatar} alt="" className="w-10" />
+                                    <div className="flex flex-col items-start font-medium text-[1rem]">
+                                        <p>Vivek Sahu</p>
+                                        <p className="text-lightPrimary text-[0.7rem] leading-3">UI/UX Designer</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="w-full h-full bg-lightBgBlue rounded-e-xl rounded-b-xl"></div>
+                        </div>
+                    </div>
+
+                    {/* Right side */}
+                    <div className="py-2 items-start justify-center gap-6 p-8 w-full">
+                        <div className="flex flex-col gap-3">
+                            <div className="text-sm font-semibold text-lightPrimary">Testimonials</div>
+                            <div className="text-3xl font-bold">
+                                Trusted By Thousands of Employees and Employers all across the globe
+                            </div>
+                            <div className="text-sm mt-8 text-lighttextGray text-justify">
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
             </div>
         </section>
     )
