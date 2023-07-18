@@ -47,9 +47,15 @@ exports.allJobs = async (req, res, next) => {
 
     let filter = { ...keyword, ...jobTypeFilter, ...locationFilter };
 
-    if (!cat && !location) {
+    if (!cat && !location&& !keyword) {
       filter = {}; // Retrieve all jobs if cat and location are not provided
     }
+    let locations = [];
+    const jobByLocation = await Job.find({}, { location: 1 });
+    jobByLocation.forEach(val => {
+        locations.push(val.location);
+    });
+    let setUniqueLocation = [...new Set(locations)];
 
     const pageSize = 5;
     const page = Number(req.query.pageNumber) || 1;
@@ -68,6 +74,7 @@ exports.allJobs = async (req, res, next) => {
       page,
       count,
       pageSize,
+      setUniqueLocation
     });
   } catch (error) {
     next(error);
