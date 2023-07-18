@@ -3,7 +3,6 @@ const JobType = require("../models/JobTypeModel");
 const ErrorResponse = require("../utils/errorResponse");
 
 // Create Job Category
-
 exports.createJob = async (req, res, next) => {
   try {
     const job = await Job.create({
@@ -28,7 +27,7 @@ exports.createJob = async (req, res, next) => {
 };
 
 // all jobs category
-exports.allJobs = async (req, res, next) => {
+exports.allJobs = async (req, res, next)=>{
   try {
     const keyword = req.query.keyword
       ? {
@@ -38,7 +37,6 @@ exports.allJobs = async (req, res, next) => {
           },
         }
       : {};
-
     const cat = req.query.cat || null;
     const location = req.query.location || null;
 
@@ -66,7 +64,6 @@ exports.allJobs = async (req, res, next) => {
       .sort({createdAt:-1})
       .skip(pageSize * (page - 1))
       .limit(pageSize);
-
     res.status(200).json({
       success: true,
       jobs,
@@ -93,6 +90,7 @@ exports.singleJob = async (req, res, next) => {
     next(error);
   }
 };
+
 
 // Update Job
 exports.updateJob = async (req, res, next) => {
