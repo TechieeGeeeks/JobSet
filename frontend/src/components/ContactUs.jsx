@@ -160,11 +160,9 @@ export default function Example() {
             </div>
             <Switch.Label className="text-sm leading-6 text-gray-600">
               By selecting this, you agree to our{' '}
-              <a href="#" className="font-semibold text-indigo-600">
               <Link to ='/policy'>
                   privacy&nbsp;policy
               </Link>
-              </a>
               .
             </Switch.Label>
           </Switch.Group>
