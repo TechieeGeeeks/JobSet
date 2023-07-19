@@ -6,6 +6,7 @@ import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import FindJob from './components/FindJob'
 import Policy from './components/Policy'
+import Demo from './components/Demo';
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
             <Route exact path='/findjob' element={<FindJob />} />
             <Route path='/search/location/:location' element={<FindJob />} />
             <Route exact path='/policy' element={<Policy />} />
+            <Route exact path='/demo' element={<Demo />} />
           </Routes>
         <Footer/>
         </Router>
