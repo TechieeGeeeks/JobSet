@@ -8,6 +8,7 @@ import LoadingBox from './LoadingBox'
 import SelectComponent from './SelectComponent'
 import { jobTypeLoadAction } from '../redux/actions/jobTypeAction'
 import LocationOnIcon from '@mui/icons-material/LocationOn';
+import SearchInputEl from './SearchInput'
 
 const FindJob = () => {
 
@@ -15,7 +16,7 @@ const FindJob = () => {
 
     const { palette } = useTheme();
     const dispatch = useDispatch();
-    const { keyword, location } = useParams();
+    const { keyword, location } = useParams(); // This grabs the values from params
 
     const [page, setPage] = useState(1);
     const [cat, setCat] = useState('');
@@ -73,6 +74,8 @@ const FindJob = () => {
                             </MenuList>
                         </Box>
                     </Card>
+                    {/* Shit this below component to header */}
+                    <SearchInputEl/>
                 </Box>
                 <Box sx={{ flex: 5, p: 2 }}>
                     {
