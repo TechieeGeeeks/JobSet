@@ -5,6 +5,7 @@ import InstagramIcon from '../img/instagram_icon.png'
 import GithubIcon from '../img/github_icon.png'
 import TwitterIcon from '../img/twitter_icon.png'
 import LinkedInIcon from '../img/linkedin_icon.png'
+import SubcribeComponent from './SubcribeComponent'
 
 
 const Footer = () => {
@@ -12,17 +13,7 @@ const Footer = () => {
     <div>
       {/* For Desktops */}
       <div className='hidden w-screen md:flex flex-col bg-lightPrimary mt-12'>
-        <div className="flex items-center justify-center">
-          <div className='absolute hidden bg-lightCard py-10 px-64 rounded-2xl md:flex items-center justify-center gap-9 shadow-2xl'>
-            <div className='text-xl'>
-              Subscribe To Our Newsletter
-            </div>
-            <div className='flex gap-1'>
-              <input type="text" className='p-4 border border-black rounded-lg' placeholder='Enter Your Mail' />
-              <button className='p-4 rounded-lg bg-lightPrimary text-lightCard'>Subscribe</button>
-            </div>
-          </div>
-        </div>
+        <SubcribeComponent />
         <div className=' md:mt-40 p-16'>
           <div className="flex flex-col items-center justify-center">
             <div className="text-lightCard md:text-2xl">
