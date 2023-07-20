@@ -2,11 +2,11 @@ import React from "react";
 
 const Policy = () => {
   return (
-    <div className="grid grid-cols-2 gap-4">
+    <div className="grid grid-cols-2">
       {/* First section (Privacy Policy) */}
       <div className="col-span-1">
         <div className="p-8 max-w-2xl mt-24">
-          <div className="border-solid border mb-4 p-4 ">
+          <div className="border-solid border mb-4 p-4">
             <h2 className="text-lg font-bold border-b-2 pb-2">Privacy Policy</h2>
             <p className="mb-4">
               At [Your Company Name], we take your privacy seriously. This Privacy
@@ -49,22 +49,29 @@ const Policy = () => {
               information provided below.
             </p>
           </div>
-        </div>
 
-        {/* List (ul) centered at the bottom */}
-        <div className="items-center justify-center mb-12 ">
-          <ul className="list-disc pr-6">
-            
-              <h3 className="text-xl font-medium">Contact us:</h3>
-              <p className="mb-2">If you have any questions or concerns about our Privacy Policy or the
-                handling of your personal information, please contact us:</p>
-            
-            <li>Email: info@yourcompany.com</li>
-            <li>Phone: 123-456-7890</li>
-            <li>Address: 123 Main Street, City, State, ZIP</li>
-          </ul>
+          {/* Contact Information */}
+          <div className="items-center justify-center mb-12">
+            <h3 className="text-xl font-medium mb-2">Contact us:</h3>
+            <ul className="list-disc pr-6">
+              <li>Email: info@yourcompany.com</li>
+              <li>Phone: 123-456-7890</li>
+              <li>Address: 123 Main Street, City, State, ZIP</li>
+            </ul>
+          </div>
         </div>
       </div>
+
+      {/* Media query for mobile responsiveness */}
+      <style jsx>
+        {`
+          @media (max-width: 767px) {
+            .grid-cols-2 {
+              grid-template-columns: 1fr;
+            }
+          }
+        `}
+      </style>
     </div>
   );
 };
