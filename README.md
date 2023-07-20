@@ -15,7 +15,7 @@ Even if you have the slightest doubt, you can start a discussion about it in the
 - If youre confuse then you can look at Good First issues and start working on them.
 
   ## How to make a Pull Request?
-  **1.** Start by forking the [**JpbSet**](https://github.com/TechieeGeeeks/JobSet)) repository. Click on the <a href="[https://github.com/Vikash-8090-Yadav/Future.WebNet/fork](https://github.com/TechieeGeeeks/JobSet/fork)"><img src="https://i.imgur.com/G4z1kEe.png" height="21" width="21"></a> symbol at the top right corner.
+  **1.** Start by forking the [**JobSet**](https://github.com/TechieeGeeeks/JobSet)) repository. Click on the <a href="[https://github.com/Vikash-8090-Yadav/Future.WebNet/fork](https://github.com/TechieeGeeeks/JobSet/fork)"><img src="https://i.imgur.com/G4z1kEe.png" height="21" width="21"></a> symbol at the top right corner.
   
 **2.** Clone your forked repository on your local machine/computer with command:
 

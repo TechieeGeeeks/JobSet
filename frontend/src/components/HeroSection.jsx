@@ -1,5 +1,6 @@
 import React from "react";
 import HeroBg from '../img/hero_bg.png'
+import SearchInputEl from "./SearchInput";
 
 const HeroSection = () => {
     return (
@@ -19,10 +20,13 @@ const HeroSection = () => {
                 </p>
 
 
+                {/*
                 <div className="text-center md:w-[85%] flex flex-wrap gap-1 md:gap-3">
                     <input type="text" className="md:w-3/4 border px-2 py-3 rounded-lg " placeholder="Search Jobs"/>
                     <button className="bg-lightPrimary text-lightCard md:px-7 px-4 py-3   text-sm rounded-lg">Search</button>
                 </div>
+                */}
+                <SearchInputEl/>
 
 
             </div>

@@ -13,6 +13,7 @@ const authRoutes = require('./routes/authRoutes');
 const userRoutes = require('./routes/userRoutes');
 const jobsTypeRoutes = require('./routes/jobsTypeRoutes');
 const jobRoutes = require('./routes/jobRoutes');
+const courseRoutes = require('./routes/courseRoutes');
 
 const app = express();
 
@@ -30,6 +31,7 @@ app.use('/api',authRoutes);
 app.use('/api',userRoutes);
 app.use('/api',jobsTypeRoutes);
 app.use('/api', jobRoutes);
+app.use('/api', courseRoutes);
 
 // Custom Error Middleware
 app.use(errorHandler);
