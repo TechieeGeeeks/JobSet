@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import { Switch } from '@headlessui/react'
+import { Link } from 'react-router-dom';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -159,9 +160,9 @@ export default function Example() {
             </div>
             <Switch.Label className="text-sm leading-6 text-gray-600">
               By selecting this, you agree to our{' '}
-              <a href="#" className="font-semibold text-indigo-600">
-                privacy&nbsp;policy
-              </a>
+              <Link to ='/policy'>
+                  privacy&nbsp;policy
+              </Link>
               .
             </Switch.Label>
           </Switch.Group>
