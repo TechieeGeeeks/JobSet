@@ -37,28 +37,30 @@ const SearchInputEl = () => {
 
     return (
 
-        <form onSubmit={handleSubmit} style={{ width: '50%' }}>
-            <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
-                {/* <Search> */}
-
-                <InputBase sx={{ bgcolor: 'white', padding: '10px' }}
-                    fullWidth={true}
+        <form onSubmit={handleSubmit} className='w-1/2'>
+            <div className="text-center w-full flex gap-1 md:gap-3">
+                <input
+                    className="md:w-3/4 border px-2 py-3 rounded-lg"
+                    type="text"
                     id="search"
                     name="search"
-                    label="search"
-                    placeholder='ex: developer, front end'
+                    placeholder="ex: developer, front end"
                     value={values.search}
                     onChange={handleChange}
-                    error={touched.search && Boolean(errors.search)}
-                // helperText={touched.search && errors.search}
                 />
-
-                <Button color="primary" variant="contained" type="submit" disabled={isSubmitting}>
+                <button
+                    className="bg-lightPrimary text-lightCard md:px-7 px-4 py-3   text-sm rounded-lg"
+                    type="submit"
+                    disabled={isSubmitting}
+                >
                     Search
-                </Button>
-            </Box>
-            <Box component='span' sx={{ color: 'orange' }}>{touched.search && errors.search}</Box>
+                </button>
+            </div>
+            {touched.search && errors.search && (
+                <span className="text-orange">{errors.search}</span>
+            )}
         </form>
+
 
     );
 };
