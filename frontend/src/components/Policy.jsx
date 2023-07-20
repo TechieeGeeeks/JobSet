@@ -16,7 +16,6 @@ const Policy = () => {
           </div>
         </div>
       </div>
-
       {/* Second section (Information Collection) */}
       <div className="col-span-1 mt-24">
         <div className="p-8 max-w-2xl">
