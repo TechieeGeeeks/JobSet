@@ -79,6 +79,26 @@ const posts = [
     salary: 'FREE',
     image: MicrosoftImg
   },
+  {
+    id: 7,
+    company: 'Microsoft',
+    location: 'via classcentral',
+    jobTitle: 'Introduction to Computer and Operating Systems & Security',
+    employmentType: 'Duration: 14hrs',
+    description: 'Learn to identify the various components of a computer system,various components of a computer system interact with an operating system, basics of the cybersecurity landscape,& business computing environments',
+    salary: 'FREE',
+    image: MicrosoftImg
+  },
+  {
+    id: 8,
+    company: 'Microsoft',
+    location: 'via classcentral',
+    jobTitle: 'Introduction to Computer and Operating Systems & Security',
+    employmentType: 'Duration: 14hrs',
+    description: 'Learn to identify the various components of a computer system,various components of a computer system interact with an operating system, basics of the cybersecurity landscape,& business computing environments',
+    salary: 'FREE',
+    image: MicrosoftImg
+  },
 
 ];
 
@@ -109,7 +129,7 @@ const HomeCards = () => {
 
  
 
-  const visiblePosts = isMediumScreen ? posts.slice(0, 6) : posts.slice(0, 3);
+  const visiblePosts = isMediumScreen ? posts.slice(0, 8) : posts.slice(0, 3);
 
   const navigate = useNavigate();
 
@@ -124,7 +144,7 @@ const HomeCards = () => {
         <p className="text-[1.8rem] font-semibold" style={{marginTop: '2.5rem', marginBottom: '1.5rem'}}>
           <span className="text-lightPrimary">Recent</span> Posts</p>
         
-        <div className="h-full w-full grid md:grid-cols-3 gap-6 my-6 md:px-16">
+        <div className="h-full w-full grid md:grid-cols-4 gap-6 my-6 md:px-16">
           {visiblePosts.map(post => (
 
             <div key={post.id} className="md:w-300 p-8 min-w-260 bg-lightCard backdrop-blur-md rounded-3xl flex flex-col justify-center drop-shadow-lg gap-4 hover:scale-105 transition-all duration-300">
