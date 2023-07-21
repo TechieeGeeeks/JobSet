@@ -122,6 +122,7 @@ const NavBar = () => {
                                         <img src={EditProfileIcon} className="pl-1" alt="logout_icon" />
                                         <p
                                             className="w-full flex items-center justify-center gap-3"
+                                            onClick={() => setIsMenu(false)}
                                         >
                                             Edit Profile
                                         </p>
@@ -131,6 +132,7 @@ const NavBar = () => {
                                         <img src={AdminDashboard} className="pl-1" alt="logout_icon" />
                                         <p
                                             className="w-full flex items-center justify-center gap-3"
+                                            onClick={() => setIsMenu(false)}
                                         >
                                             Admin DashBoard
                                         </p>
@@ -140,8 +142,11 @@ const NavBar = () => {
                                         <img src={UserDashboard} className="pl-1" alt="logout_icon" />
                                         <p
                                             className="w-full flex items-center justify-center gap-3"
-                                        >
+                                            onClick={() => setIsMenu(false)}
+                                        ><Link to='/user/dashboard'>
                                             DashBoard
+                                        </Link>
+                                            
                                         </p>
                                     </div>}
 
@@ -149,6 +154,7 @@ const NavBar = () => {
                                         <img src={SettingsIcon} className="pl-1" alt="logout_icon" />
                                         <p
                                             className="w-full flex items-center justify-center gap-3"
+                                            onClick={() => setIsMenu(false)}
                                         >
                                             Settings
                                         </p>
@@ -159,6 +165,7 @@ const NavBar = () => {
                                             <img src={PrivacyPolicyIcon} className="pl-1" alt="logout_icon" />
                                             <p
                                                 className="w-full flex items-center justify-center gap-3"
+                                                onClick={() => setIsMenu(false)}
                                             >
                                                 Privacy Policy
                                             </p>
@@ -169,6 +176,7 @@ const NavBar = () => {
                                         <Link to='/' onClick={()=>{setIsLoggedIn(false)}}> 
                                         <p
                                             className="w-full flex items-center justify-center gap-3 text-red-600"
+                                            onClick={() => setIsMenu(false)}
                                         >
                                             Log out
                                         </p>
@@ -252,12 +260,15 @@ const NavBar = () => {
                                     }
 
                                     {!isAdmin &&
+                                    
                                         <li
                                             className="text-base text-lightModeTextColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-slate-100 px-4 py-2"
                                             onClick={() => setIsMenu(false)}
-                                        >
+                                        ><Link to="/user/dashboard">
                                             Dashboard
+                                        </Link>
                                         </li>
+                                    
                                     }
 
                                     {isLoggedIn ? (

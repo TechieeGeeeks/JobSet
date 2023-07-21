@@ -62,7 +62,7 @@ const Policy = () => {
       </div>
 
       {/* Media query for mobile responsiveness */}
-      <style jsx>
+      <style >
         {`
           @media (max-width: 767px) {
             .grid-cols-2 {

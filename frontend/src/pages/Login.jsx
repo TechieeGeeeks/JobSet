@@ -20,8 +20,6 @@ const validationSchema = yup.object({
         .required('Password is required'),
 });
 
-
-
 const LogIn = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -31,7 +29,6 @@ const LogIn = () => {
             navigate('/user/dashboard');
         }
     }, [isAuthenticated])
-
     // useFormik is hook
     const formik = useFormik({
         //  Setting up Intital Values
@@ -47,9 +44,7 @@ const LogIn = () => {
             dispatch(userSignInAction(values));
             actions.resetForm();
         }
-
-    })
-
+    });
     return (
         <>
             <Box sx={{ height: '81vh', display: "flex", alignItems: "center", justifyContent: "center" }}>
@@ -89,7 +84,6 @@ const LogIn = () => {
                             error={formik.touched.password && Boolean(formik.errors.password)}
                             helperText={formik.touched.password && formik.errors.password}
                         />
-
                         <Button fullWidth variant="contained" type='submit' >Log In</Button>
                     </Box>
                 </Box>
@@ -98,4 +92,4 @@ const LogIn = () => {
     )
 }
 
-export default LogIn
+export default LogIn;
