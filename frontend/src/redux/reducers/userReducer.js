@@ -32,4 +32,22 @@ export const userReducerSignIn = (state = {}, action) => {
     }
 }
 
-// Log Out feature
+//log out reducer
+export const userReducerLogout = (state = {}, action) => {
+    switch (action.type) {
+        case USER_LOGOUT_REQUEST:
+            return { loading: true }
+        case USER_LOGOUT_SUCCESS:
+            return {
+                loading: false,
+                user: action.payload,
+            }
+        case USER_LOGOUT_FAIL:
+            return { loading: false, error: action.payload }
+        case USER_LOGOUT_RESET:
+            return {}
+        default:
+            return state;
+    }
+
+}
