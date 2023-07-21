@@ -3,12 +3,12 @@ import { Box, Card, Container, ListItemIcon, MenuItem, MenuList, Pagination, Sta
 import { useDispatch, useSelector } from 'react-redux'
 import { jobLoadAction } from '../redux/actions/jobAction'
 import { Link, useParams } from 'react-router-dom'
-import CardElement from './CardElement'
-import LoadingBox from './LoadingBox'
-import SelectComponent from './SelectComponent'
+import CardElement from '../components/CardElement'
+import LoadingBox from '../components/LoadingBox'
+import SelectComponent from '../components/SelectComponent'
 import { jobTypeLoadAction } from '../redux/actions/jobTypeAction'
 import LocationOnIcon from '@mui/icons-material/LocationOn';
-import SearchInputEl from './SearchInput'
+import SearchInputEl from '../components/SearchInput'
 
 const FindJob = () => {
 

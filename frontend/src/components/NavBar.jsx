@@ -44,7 +44,7 @@ const NavBar = () => {
         if(userInfo){
             setIsLoggedIn(true);
         }else{
-            setIsLoggedIn(false);
+            setIsLoggedIn(false)
         }
     },[userInfo])
 
