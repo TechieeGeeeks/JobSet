@@ -9,14 +9,15 @@ import UserDashboard from "../img/user_dashboard.png"
 import AdminDashboard from "../img/admin_dashboard.png"
 import Logo from "../img/shirt-svgrepo-com.svg"
 import PrivacyPolicyIcon from "../img/privacy_policy.png"
-
+import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom';
+import { useEffect } from "react";
 
 const NavBar = () => {
     const [isMenu, setIsMenu] = useState(false);
-    const isLoggedIn = true;
+    const { userInfo } = useSelector((state) => state.signIn);
     const [selectedItem, setSelectedItem] = useState(null);
-
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
     const handleItemClick = (index) => {
         setSelectedItem(index);
     };
@@ -25,6 +26,12 @@ const NavBar = () => {
     const dropDownHandle = () => {
         setIsMenu(!isMenu);
     }
+
+    useEffect(()=>{
+        if(userInfo){
+            setIsLoggedIn(true);
+        }
+    },[userInfo])
 
 
     return (
@@ -93,12 +100,15 @@ const NavBar = () => {
                                 </>
                             ) : (
                                 <>
+                                <Link to= '/login'>
                                     <li className="text-lg text-lightModeTextColor hover:text-lightPrimary duration-100 transition-all ease-in-out cursor-pointer">
                                         Login
                                     </li>
+                                </Link>
                                     <li className="rounded-full border border-lightPrimary py-3 px-9 text-lg text-lightModeTextColor hover:shadow-lg duration-100 transition-all ease-in-out cursor-pointer">
                                         Register Now
                                     </li>
+                                
                                 </>
                             )}
                         </ul>
@@ -112,6 +122,7 @@ const NavBar = () => {
                                         <img src={EditProfileIcon} className="pl-1" alt="logout_icon" />
                                         <p
                                             className="w-full flex items-center justify-center gap-3"
+                                            onClick={() => setIsMenu(false)}
                                         >
                                             Edit Profile
                                         </p>
@@ -121,6 +132,7 @@ const NavBar = () => {
                                         <img src={AdminDashboard} className="pl-1" alt="logout_icon" />
                                         <p
                                             className="w-full flex items-center justify-center gap-3"
+                                            onClick={() => setIsMenu(false)}
                                         >
                                             Admin DashBoard
                                         </p>
@@ -130,8 +142,11 @@ const NavBar = () => {
                                         <img src={UserDashboard} className="pl-1" alt="logout_icon" />
                                         <p
                                             className="w-full flex items-center justify-center gap-3"
-                                        >
+                                            onClick={() => setIsMenu(false)}
+                                        ><Link to='/user/dashboard'>
                                             DashBoard
+                                        </Link>
+                                            
                                         </p>
                                     </div>}
 
@@ -139,29 +154,35 @@ const NavBar = () => {
                                         <img src={SettingsIcon} className="pl-1" alt="logout_icon" />
                                         <p
                                             className="w-full flex items-center justify-center gap-3"
+                                            onClick={() => setIsMenu(false)}
                                         >
                                             Settings
                                         </p>
                                     </div>
+                                    
                                     <Link to='/policy'>
                                         <div className="flex px-4 py-2 cursor-pointer hover:bg-slate-100 transition-all duration-100 ease-in-out text-lightModeTextColor">
                                             <img src={PrivacyPolicyIcon} className="pl-1" alt="logout_icon" />
                                             <p
                                                 className="w-full flex items-center justify-center gap-3"
+                                                onClick={() => setIsMenu(false)}
                                             >
                                                 Privacy Policy
                                             </p>
                                         </div>
                                     </Link>
-
                                     <div className="flex px-4 py-2 cursor-pointer hover:bg-slate-100 transition-all duration-100 ease-in-out text-lightModeTextColor">
                                         <img src={LogOutIcon} className="pl-1" alt="logout_icon" />
+                                        <Link to='/' onClick={()=>{setIsLoggedIn(false)}}> 
                                         <p
                                             className="w-full flex items-center justify-center gap-3 text-red-600"
+                                            onClick={() => setIsMenu(false)}
                                         >
                                             Log out
                                         </p>
+                                        </Link>
                                     </div>
+                                   
                                 </div>
                             )}
                         </div>
@@ -180,7 +201,7 @@ const NavBar = () => {
                     </div>
 
                     <div className="relative">
-                        {isLoggedIn ? (
+                        {isLoggedIn? (
                             <img
                                 // whileTap={{ scale: 0.6 }}
                                 src={ProfileImage}
@@ -239,12 +260,15 @@ const NavBar = () => {
                                     }
 
                                     {!isAdmin &&
+                                    
                                         <li
                                             className="text-base text-lightModeTextColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-slate-100 px-4 py-2"
                                             onClick={() => setIsMenu(false)}
-                                        >
+                                        ><Link to="/user/dashboard">
                                             Dashboard
+                                        </Link>
                                         </li>
+                                    
                                     }
 
                                     {isLoggedIn ? (

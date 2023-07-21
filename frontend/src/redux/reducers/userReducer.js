@@ -12,6 +12,7 @@ import {
     USER_SIGNIN_SUCCESS
 } from "../constants/userConstant"
 
+// Sign In feature
 export const userReducerSignIn = (state = {}, action) => {
     switch (action.type) {
         case USER_SIGNIN_REQUEST:
@@ -29,5 +30,6 @@ export const userReducerSignIn = (state = {}, action) => {
         default:
             return state;
     }
-
 }
+
+// Log Out feature

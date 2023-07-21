@@ -7,13 +7,19 @@ import Footer from './components/Footer';
 import FindJob from './components/FindJob'
 import Policy from './components/Policy'
 import Demo from './components/Demo';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import LogIn from './pages/Login';
+import UserDashBoard from './pages/user/UserDashBoard';
+import UserRoute from './components/UserRoutes';
 
 
 const App = () => {
   return (
     <>
-        {/*  */}
-        <Router>
+        {/*  */} 
+        <ToastContainer/>
+        <Router>   
         <NavBar className='w-screen h-auto' />
           <Routes>
             <Route exact path='/resources' element={<HomeCards/>}></Route>
@@ -24,10 +30,12 @@ const App = () => {
             <Route path='/search/:keyword' element={<FindJob />} />
             <Route exact path='/policy' element={<Policy />} />
             <Route exact path='/demo' element={<Demo />} />
+            <Route exact path='/login' element={<LogIn />} />
+            <Route exact path='/user/dashboard' element={<UserRoute><UserDashBoard /></UserRoute>} />
           </Routes>
         <Footer/>
         </Router>
-     
+      
     </>
   );
 
