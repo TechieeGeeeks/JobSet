@@ -12,7 +12,7 @@ const Footer = () => {
   return (
     <div>
       {/* For Desktops */}
-      <div className='hidden w-screen md:flex flex-col bg-lightPrimary mt-12'>
+      <div className='hidden w-screen md:flex flex-col bg-lightPrimary mt-15'>
         <SubcribeComponent />
         <div className=' md:mt-40 p-16'>
           <div className="flex flex-col items-center justify-center">
@@ -99,7 +99,7 @@ const Footer = () => {
               <img src={LinkedInIcon} alt="linkedin_icon" className='w-5' />
               <img src={TwitterIcon} alt="twitter_icon" className='w-5' />
             </div>
-              
+
           </div>
       </div>
     </div>
