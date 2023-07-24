@@ -15,8 +15,12 @@ import UserRoute from './components/UserRoutes';
 
 // HOC
 import Layout from './pages/global/Layout';
+import UserJobsHistory from './pages/user/UserJobHistory';
+import UserInfo from './pages/user/UserInfo';
 
 const UserDashBoardHOC = Layout(UserDashBoard);
+const UserJobsHistoryHOC = Layout(UserJobsHistory);
+const UserInfoHOC = Layout(UserInfo);
 
 const App = () => {
   return (
@@ -36,6 +40,8 @@ const App = () => {
             <Route exact path='/demo' element={<Demo />} />
             <Route exact path='/login' element={<LogIn />} />
             <Route exact path='/user/dashboard' element={<UserRoute><UserDashBoardHOC /></UserRoute>} />
+            <Route exact path='/user/jobs' element={<UserRoute><UserJobsHistoryHOC /></UserRoute>} />
+            <Route exact path='/user/info' element={<UserRoute><UserInfoHOC /></UserRoute>} />
           </Routes>
         <Footer/>
         </Router>

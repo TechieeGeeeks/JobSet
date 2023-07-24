@@ -25,7 +25,6 @@ const NavBar = () => {
         setSelectedItem(index);
     };
 
-    const [isAdmin, setIsAdmin] = useState(false);
     const dropDownHandle = () => {
         setIsMenu(!isMenu);
     }
@@ -135,15 +134,15 @@ const NavBar = () => {
                                 >
                                     <div className="flex px-4 py-2 cursor-pointer hover:bg-slate-100 transition-all duration-100 ease-in-out text-lightModeTextColor">
                                         <img src={EditProfileIcon} className="pl-1" alt="logout_icon" />
-                                        <p
+                                        <Link to='/user/info'
                                             className="w-full flex items-center justify-center gap-3"
                                             onClick={() => setIsMenu(false)}
                                         >
                                             Edit Profile
-                                        </p>
+                                        </Link>
                                     </div>
 
-                                    {isAdmin && <div className="flex px-4 py-2 cursor-pointer hover:bg-slate-100 transition-all duration-100 ease-in-out text-lightModeTextColor">
+                                    {userInfo && userInfo.role===1 && <div className="flex px-4 py-2 cursor-pointer hover:bg-slate-100 transition-all duration-100 ease-in-out text-lightModeTextColor">
                                         <img src={AdminDashboard} className="pl-1" alt="logout_icon" />
                                         <p
                                             className="w-full flex items-center justify-center gap-3"
@@ -153,27 +152,18 @@ const NavBar = () => {
                                         </p>
                                     </div>}
 
-                                    {!isAdmin && <div className="flex px-4 py-2 cursor-pointer hover:bg-slate-100 transition-all duration-100 ease-in-out text-lightModeTextColor">
+                                    {userInfo && userInfo.role===0 && <div className="flex px-4 py-2 cursor-pointer hover:bg-slate-100 transition-all duration-100 ease-in-out text-lightModeTextColor">
                                         <img src={UserDashboard} className="pl-1" alt="logout_icon" />
                                         <p
                                             className="w-full flex items-center justify-center gap-3"
                                             onClick={() => setIsMenu(false)}
                                         ><Link to='/user/dashboard'>
-                                            DashBoard
+                                            User DashBoard
                                         </Link>
                                             
                                         </p>
                                     </div>}
 
-                                    <div className="flex px-4 py-2 cursor-pointer hover:bg-slate-100 transition-all duration-100 ease-in-out text-lightModeTextColor">
-                                        <img src={SettingsIcon} className="pl-1" alt="logout_icon" />
-                                        <p
-                                            className="w-full flex items-center justify-center gap-3"
-                                            onClick={() => setIsMenu(false)}
-                                        >
-                                            Settings
-                                        </p>
-                                    </div>
                                     
                                     <Link to='/policy'>
                                         <div className="flex px-4 py-2 cursor-pointer hover:bg-slate-100 transition-all duration-100 ease-in-out text-lightModeTextColor">
@@ -266,7 +256,7 @@ const NavBar = () => {
                                     </li>
 
 
-                                    {isAdmin &&
+                                    {userInfo && userInfo.role===1&&
                                         <li
                                             className="text-base text-lightModeTextColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-slate-100 px-4 py-2"
                                             onClick={() => setIsMenu(false)}
@@ -275,7 +265,7 @@ const NavBar = () => {
                                         </li>
                                     }
 
-                                    {!isAdmin &&
+                                    {userInfo && userInfo.role===0 &&
                                     
                                         <li
                                             className="text-base text-lightModeTextColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-slate-100 px-4 py-2"
