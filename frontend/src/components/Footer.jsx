@@ -10,9 +10,9 @@ import SubcribeComponent from './SubcribeComponent'
 
 const Footer = () => {
   return (
-    <div>
+    <div className='mt-15'>
       {/* For Desktops */}
-      <div className='hidden w-screen md:flex flex-col bg-lightPrimary mt-15'>
+      <div className='hidden w-screen md:flex flex-col bg-lightPrimary mt-14'>
         <SubcribeComponent />
         <div className=' md:mt-40 p-16'>
           <div className="flex flex-col items-center justify-center">
