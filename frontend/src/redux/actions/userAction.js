@@ -52,3 +52,20 @@ export const userLogOutAction = () => async (dispatch) => {
     }
 }
 
+//user profile action
+export const userProfileAction = () => async (dispatch) => {
+    dispatch({ type: USER_LOAD_REQUEST });
+    try {
+        const { data } = await axios.get("/api/me");
+        dispatch({
+            type: USER_LOAD_SUCCESS,
+            payload: data
+        });
+
+    } catch (error) {
+        dispatch({
+            type: USER_LOAD_FAIL,
+            payload: error.response.data.error
+        });
+    }
+}
