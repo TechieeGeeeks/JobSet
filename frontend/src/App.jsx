@@ -17,7 +17,7 @@ import AdminRoute from './components/AdminRoute'
 // HOC 
 import Layout from './pages/global/Layout';
 import UserJobsHistory from './pages/user/UserJobHistory';
-import UserInfo from './pages/user/UserInfo';
+import UserInfoDashboard from './pages/user/UserInfoDashboard';
 
 import AdminDashboard from './pages/admin/AdminDashboard';
 import AdminJobs from './pages/admin/AdminJobs';
@@ -26,7 +26,7 @@ import AdminCategory from './pages/admin/AdminCategory';
 
 const UserDashBoardHOC = Layout(UserDashBoard);
 const UserJobsHistoryHOC = Layout(UserJobsHistory);
-const UserInfoHOC = Layout(UserInfo);
+const UserInfoHOC = Layout(UserInfoDashboard);
 const AdminDashboardHOC = Layout(AdminDashboard);
 const AdminJobsHOC = Layout(AdminJobs);
 const AdminUsersHOC = Layout(AdminUsers);

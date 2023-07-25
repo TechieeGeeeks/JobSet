@@ -69,3 +69,23 @@ export const userProfileAction = () => async (dispatch) => {
         });
     }
 }
+
+//log out action
+export const userLogoutAction = () => async (dispatch) => {
+    dispatch({ type: USER_LOGOUT_REQUEST });
+    try {
+        const { data } = await axios.get("/api/logout");
+        localStorage.removeItem('userInfo');
+        dispatch({
+            type: USER_LOGOUT_SUCCESS,
+            payload: data
+        });
+        toast.success("Log out successfully!");
+    } catch (error) {
+        dispatch({
+            type: USER_LOGOUT_FAIL,
+            payload: error.response.data.error
+        });
+        toast.error(error.response.data.error);
+    }
+}
