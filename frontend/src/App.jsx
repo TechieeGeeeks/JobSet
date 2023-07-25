@@ -23,6 +23,7 @@ import AdminDashboard from './pages/admin/AdminDashboard';
 import AdminJobs from './pages/admin/AdminJobs';
 import AdminUsers from './pages/admin/AdminUsers';
 import AdminCategory from './pages/admin/AdminCategory';
+import SingleJob from './pages/singleJob';
 
 const UserDashBoardHOC = Layout(UserDashBoard);
 const UserJobsHistoryHOC = Layout(UserJobsHistory);
@@ -46,6 +47,7 @@ const App = () => {
             <Route exact path='/findjob' element={<FindJob />} />
             <Route path='/search/location/:location' element={<FindJob />} />
             <Route path='/search/:keyword' element={<FindJob />} />
+            <Route path='/job/:id' element={<SingleJob/>} />
             <Route exact path='/policy' element={<Policy />} />
             <Route exact path='/demo' element={<Demo />} />
             <Route exact path='/login' element={<LogIn />} />
