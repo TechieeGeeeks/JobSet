@@ -12,7 +12,7 @@ const HeroSection = () => {
 
 
                 <p className="text-[2.5rem] text-center md:text-left lg:text-[3.5rem] font-bold tracking-wide text-headingColor md:w-[85%] md:leading-tight">
-                    <span className="text-lightPrimary text-[3rem] lg:text-[4rem]">JobSet</span> hain to life set hain
+                    <span className="text-lightPrimary text-[3rem] lg:text-[4rem]">JobSet</span> hai, toh life set hai!
                 </p>
 
                 <p className="text-center md:text-justify text-lighttextGray text-sm md:w-[85%] flex flex-wrap gap-1">

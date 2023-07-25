@@ -21,12 +21,18 @@ const validationSchema = yup.object({
 });
 
 const LogIn = () => {
+    const { userInfo} = useSelector((state) => state.signIn);
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const { isAuthenticated } = useSelector(state => state.signIn);
     useEffect(() => {
         if (isAuthenticated) {
-            navigate('/user/dashboard');
+            if(userInfo&& userInfo.role === 0){
+                navigate('/user/dashboard');
+            }if(userInfo&& userInfo.role === 1){
+                navigate('/admin/dashboard');
+            }
+            
         }
     }, [isAuthenticated])
     // useFormik is hook

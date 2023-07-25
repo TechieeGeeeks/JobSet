@@ -10,7 +10,7 @@ import AdminDashboard from "../img/admin_dashboard.png"
 import Logo from "../img/shirt-svgrepo-com.svg"
 import PrivacyPolicyIcon from "../img/privacy_policy.png"
 import { useDispatch, useSelector } from 'react-redux'
-import { Link,  useNavigate } from 'react-router-dom';
+import { NavLink,Link,  useNavigate } from 'react-router-dom';
 import { useEffect } from "react";
 import { userLogOutAction } from "../redux/actions/userAction";
 
@@ -25,7 +25,6 @@ const NavBar = () => {
         setSelectedItem(index);
     };
 
-    const [isAdmin, setIsAdmin] = useState(false);
     const dropDownHandle = () => {
         setIsMenu(!isMenu);
     }
@@ -46,7 +45,9 @@ const NavBar = () => {
         }else{
             setIsLoggedIn(false)
         }
-    },[userInfo])
+    }, [userInfo])
+    
+    const activeStyles = "text-lightPrimary after:block after:content-[''] after:absolute after:h-[2px] after:bg-lightPrimary after:w-full after:scale-x-100 after:transition after:duration-500"
 
 
     return (
@@ -61,47 +62,45 @@ const NavBar = () => {
                     </div>
                     <div className="flex items-center gap-8">
                         <ul className="flex items-center gap-10">
-                            <Link
-                                className={`text-lg text-lightModeTextColor hover:text-lightPrimary cursor-pointer ${selectedItem === 0 ? ' text-lightPrimary' : ''
-                                    }`}
-                                onClick={() => handleItemClick(0)}
-                                to='/'
+                        <NavLink
+                            className={({isActive})=>(`text-lg relative block text-lightModeTextColor hover:text-lightPrimary cursor-pointer after:scale-x-0 ${isActive? activeStyles:" "}`)}
+                            // onClick={() => handleItemClick(0)}
+                            to='/'
                             >
                                 <span className="relative">
                                     Home
-                                    {selectedItem === 0 && (
+                                    {/* {selectedItem === true && (
                                         <span className="border-b-2 ease-in-out border-lightPrimary animate-border-animation"></span>
-                                    )}
+                                    )} */}
                                 </span>
 
-                            </Link>
+                            </NavLink>
 
-                            <Link
-                                className={`text-lg text-lightModeTextColor hover:text-lightPrimary cursor-pointer ${selectedItem === 1 ? ' text-lightPrimary' : ''
-                                    }`}
-                                onClick={() => handleItemClick(1)}
+                            <NavLink
+                            className={({isActive})=>(`text-lg relative block text-lightModeTextColor hover:text-lightPrimary cursor-pointer after:scale-x-0 ${isActive? activeStyles:" "}`)}
+                                // onClick={() => handleItemClick(1)}
                                 to='/resources'
                             >
                                 <span className="relative">
                                     Resources
-                                    {selectedItem === 1 && (
+                                    {/* {selectedItem === 1 && (
                                         <span className="border-b-2 ease-in-out border-lightPrimary animate-border-animation"></span>
-                                    )}
+                                    )} */}
                                 </span>
-                            </Link>
-                            <Link
-                                className={`relative text-lg text-lightModeTextColor hover:text-lightPrimary cursor-pointer ${selectedItem === 2 ? ' text-lightPrimary' : ''
-                                    }`}
-                                onClick={() => handleItemClick(2)}
+                            </NavLink>
+                            <NavLink
+                            className={({isActive})=>(`text-lg relative block text-lightModeTextColor hover:text-lightPrimary cursor-pointer after:scale-x-0 ${isActive? activeStyles:" "}`)}
+
+                                // onClick={() => handleItemClick(2)}
                                 to='/findjob'
                             >
                                 <span className="relative">
                                     Find Job
-                                    {selectedItem === 2 && (
+                                    {/* {selectedItem === 2 && (
                                         <span className="border-b-2 ease-in-out border-lightPrimary animate-border-animation"></span>
-                                    )}
+                                    )} */}
                                 </span>
-                            </Link>
+                            </NavLink>
                             {isLoggedIn ? (
                                 <>
                                     <li className="flex gap-3 text-sm text-lightModeTextColor hover:text-lightPrimary cursor-pointer" onClick={dropDownHandle}>
@@ -135,45 +134,36 @@ const NavBar = () => {
                                 >
                                     <div className="flex px-4 py-2 cursor-pointer hover:bg-slate-100 transition-all duration-100 ease-in-out text-lightModeTextColor">
                                         <img src={EditProfileIcon} className="pl-1" alt="logout_icon" />
-                                        <p
+                                        <Link to='/user/info'
                                             className="w-full flex items-center justify-center gap-3"
                                             onClick={() => setIsMenu(false)}
                                         >
                                             Edit Profile
-                                        </p>
+                                        </Link>
                                     </div>
 
-                                    {isAdmin && <div className="flex px-4 py-2 cursor-pointer hover:bg-slate-100 transition-all duration-100 ease-in-out text-lightModeTextColor">
+                                    {userInfo && userInfo.role ===1 && <div className="flex px-4 py-2 cursor-pointer hover:bg-slate-100 transition-all duration-100 ease-in-out text-lightModeTextColor">
                                         <img src={AdminDashboard} className="pl-1" alt="logout_icon" />
-                                        <p
+                                        <Link to = '/admin/dashboard'
                                             className="w-full flex items-center justify-center gap-3"
                                             onClick={() => setIsMenu(false)}
                                         >
                                             Admin DashBoard
-                                        </p>
+                                        </Link>
                                     </div>}
 
-                                    {!isAdmin && <div className="flex px-4 py-2 cursor-pointer hover:bg-slate-100 transition-all duration-100 ease-in-out text-lightModeTextColor">
+                                    {userInfo && userInfo.role===0 && <div className="flex px-4 py-2 cursor-pointer hover:bg-slate-100 transition-all duration-100 ease-in-out text-lightModeTextColor">
                                         <img src={UserDashboard} className="pl-1" alt="logout_icon" />
                                         <p
                                             className="w-full flex items-center justify-center gap-3"
                                             onClick={() => setIsMenu(false)}
                                         ><Link to='/user/dashboard'>
-                                            DashBoard
+                                            User DashBoard
                                         </Link>
                                             
                                         </p>
                                     </div>}
 
-                                    <div className="flex px-4 py-2 cursor-pointer hover:bg-slate-100 transition-all duration-100 ease-in-out text-lightModeTextColor">
-                                        <img src={SettingsIcon} className="pl-1" alt="logout_icon" />
-                                        <p
-                                            className="w-full flex items-center justify-center gap-3"
-                                            onClick={() => setIsMenu(false)}
-                                        >
-                                            Settings
-                                        </p>
-                                    </div>
                                     
                                     <Link to='/policy'>
                                         <div className="flex px-4 py-2 cursor-pointer hover:bg-slate-100 transition-all duration-100 ease-in-out text-lightModeTextColor">
@@ -266,16 +256,16 @@ const NavBar = () => {
                                     </li>
 
 
-                                    {isAdmin &&
-                                        <li
+                                    {userInfo && userInfo.role===1&&
+                                        <Link to='/admin/dashboard'
                                             className="text-base text-lightModeTextColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-slate-100 px-4 py-2"
                                             onClick={() => setIsMenu(false)}
                                         >
                                             Admin Dashboard
-                                        </li>
+                                        </Link>
                                     }
 
-                                    {!isAdmin &&
+                                    {userInfo && userInfo.role===0 &&
                                     
                                         <li
                                             className="text-base text-lightModeTextColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-slate-100 px-4 py-2"

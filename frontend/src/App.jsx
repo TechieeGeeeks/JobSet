@@ -12,11 +12,25 @@ import 'react-toastify/dist/ReactToastify.css';
 import LogIn from './pages/Login';
 import UserDashBoard from './pages/user/UserDashBoard';
 import UserRoute from './components/UserRoutes';
+import AdminRoute from './components/AdminRoute'
 
-// HOC
+// HOC 
 import Layout from './pages/global/Layout';
+import UserJobsHistory from './pages/user/UserJobHistory';
+import UserInfo from './pages/user/UserInfo';
+
+import AdminDashboard from './pages/admin/AdminDashboard';
+import AdminJobs from './pages/admin/AdminJobs';
+import AdminUsers from './pages/admin/AdminUsers';
+import AdminCategory from './pages/admin/AdminCategory';
 
 const UserDashBoardHOC = Layout(UserDashBoard);
+const UserJobsHistoryHOC = Layout(UserJobsHistory);
+const UserInfoHOC = Layout(UserInfo);
+const AdminDashboardHOC = Layout(AdminDashboard);
+const AdminJobsHOC = Layout(AdminJobs);
+const AdminUsersHOC = Layout(AdminUsers);
+const AdminCategoryHOC = Layout(AdminCategory);
 
 const App = () => {
   return (
@@ -36,6 +50,12 @@ const App = () => {
             <Route exact path='/demo' element={<Demo />} />
             <Route exact path='/login' element={<LogIn />} />
             <Route exact path='/user/dashboard' element={<UserRoute><UserDashBoardHOC /></UserRoute>} />
+            <Route exact path='/user/jobs' element={<UserRoute><UserJobsHistoryHOC /></UserRoute>} />
+            <Route exact path='/user/info' element={<UserRoute><UserInfoHOC /></UserRoute>} />
+            <Route exact path='/admin/dashboard' element={<AdminRoute><AdminDashboardHOC /></AdminRoute>} />
+            <Route exact path='/admin/users' element={<AdminRoute><AdminUsersHOC /></AdminRoute>} />
+            <Route exact path='/admin/jobs' element={<AdminRoute><AdminJobsHOC /></AdminRoute>} />
+            <Route exact path='/admin/category' element={<AdminRoute><AdminCategoryHOC/></AdminRoute>} />
           </Routes>
         <Footer/>
         </Router>
