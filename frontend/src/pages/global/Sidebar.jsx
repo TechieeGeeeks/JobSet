@@ -1,5 +1,5 @@
-import React from 'react'
-import { Sidebar, Menu, MenuItem, menuClasses, useProSidebar,  } from 'react-pro-sidebar';
+import React, { useEffect } from 'react'
+import { Sidebar, Menu, MenuItem, menuClasses, useProSidebar } from 'react-pro-sidebar';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import GroupAddIcon from '@mui/icons-material/GroupAdd';
 import { Box, Button, IconButton, useTheme } from '@mui/material';
@@ -11,7 +11,7 @@ import Avatar from '@mui/material/Avatar';
 import logoDashboard from '../../images/hr-project.png'
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { userLogOutAction } from '../../redux/actions/userAction';
+import { userLogoutAction, userProfileAction } from '../../redux/actions/userAction';
 import { useNavigate } from 'react-router-dom';
 import LoginIcon from '@mui/icons-material/Login';
 
@@ -23,9 +23,13 @@ const SidebarAdm = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
+    useEffect(() => {
+        dispatch(userProfileAction());
+    }, []);
+
     //log out 
     const logOut = () => {
-        dispatch(userLogOutAction());
+        dispatch(userLogoutAction());
         window.location.reload(true);
         setTimeout(() => {
             navigate('/');

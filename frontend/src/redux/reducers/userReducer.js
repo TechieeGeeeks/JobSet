@@ -69,5 +69,4 @@ export const userReducerProfile = (state = { user: null }, action) => {
         default:
             return state;
     }
-
 }
