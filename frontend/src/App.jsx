@@ -23,7 +23,7 @@ import AdminDashboard from './pages/admin/AdminDashboard';
 import AdminJobs from './pages/admin/AdminJobs';
 import AdminUsers from './pages/admin/AdminUsers';
 import AdminCategory from './pages/admin/AdminCategory';
-import SingleJob from './pages/singleJob';
+import SingleJob from './pages/SingleJob';
 
 const UserDashBoardHOC = Layout(UserDashBoard);
 const UserJobsHistoryHOC = Layout(UserJobsHistory);
