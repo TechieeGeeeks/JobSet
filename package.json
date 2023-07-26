@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "@mui/x-data-grid": "^6.10.1",
-    "react-google-charts": "^4.0.1"
-  }
-}
