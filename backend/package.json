@@ -4,7 +4,8 @@
   "description": "IBM Front End Internship Backend Package",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "nodemon app.js",
+    "build": "npm install"
   },
   "author": "DevSwayam",
   "license": "ISC",
