@@ -31,7 +31,7 @@ const SingleJob = () => {
 
             <Box sx={{ bgcolor: "#fafafa" }}>
 
-                
+               
                 <Box sx={{ height: '85vh' }}>
                     <Container sx={{ pt: '30px' }}>
 

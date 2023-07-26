@@ -27,9 +27,6 @@ const NavBar = () => {
         visible ? "" : "hidden"
       }`;
 
-
-
-
     const handleItemClick = (index) => {
         setSelectedItem(index);
     };

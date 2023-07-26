@@ -76,25 +76,6 @@ export const userProfileAction = () => async (dispatch) => {
     }
 }
 
-//log out action
-export const userLogoutAction = () => async (dispatch) => {
-    dispatch({ type: USER_LOGOUT_REQUEST });
-    try {
-        const { data } = await axios.get("/api/logout");
-        localStorage.removeItem('userInfo');
-        dispatch({
-            type: USER_LOGOUT_SUCCESS,
-            payload: data
-        });
-        toast.success("Log out successfully!");
-    } catch (error) {
-        dispatch({
-            type: USER_LOGOUT_FAIL,
-            payload: error.response.data.error
-        });
-        toast.error(error.response.data.error);
-    }
-}
 
 //user job apply action
 export const userApplyJobAction = (job) => async (dispatch) => {
@@ -113,5 +94,23 @@ export const userApplyJobAction = (job) => async (dispatch) => {
             payload: error.response.data.error
         });
         toast.error(error.response.data.error);
+    }
+}
+
+//all user action
+export const allUserAction = () => async (dispatch) => {
+    dispatch({ type: ALL_USER_LOAD_REQUEST });
+    try {
+        const { data } = await axios.get("/api/allusers");
+        dispatch({
+            type: ALL_USER_LOAD_SUCCESS,
+            payload: data
+        });
+
+    } catch (error) {
+        dispatch({
+            type: ALL_USER_LOAD_FAIL,
+            payload: error.response.data.error
+        });
     }
 }
