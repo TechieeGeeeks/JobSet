@@ -11,6 +11,7 @@
     "@heroicons/react": "^2.0.18",
     "@mui/icons-material": "^5.13.7",
     "@mui/material": "^5.13.7",
+    "@mui/x-data-grid": "^6.10.1",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -24,6 +25,7 @@
     "react": "^18.2.0",
     "react-bootstrap": "^2.8.0",
     "react-dom": "^18.2.0",
+    "react-google-charts": "^4.0.1",
     "react-pro-sidebar": "^1.1.0-alpha.1",
     "react-redux": "^8.1.1",
     "react-router-dom": "^6.14.1",
@@ -65,5 +67,5 @@
     "redux-devtools-extension": "^2.13.9",
     "tailwindcss": "^3.3.2"
   },
-  "proxy": "http://localhost:8000"
+  "proxy": "https://jobset-api.onrender.com"
 }
