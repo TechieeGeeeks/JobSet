@@ -10,9 +10,11 @@ import Demo from './components/Demo';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import LogIn from './pages/Login';
+import SignUp from './pages/SignUp';
 import UserDashBoard from './pages/user/UserDashBoard';
 import UserRoute from './components/UserRoutes';
 import AdminRoute from './components/AdminRoute'
+
 
 // HOC 
 import Layout from './pages/global/Layout';
@@ -51,6 +53,7 @@ const App = () => {
             <Route exact path='/policy' element={<Policy />} />
             <Route exact path='/demo' element={<Demo />} />
             <Route exact path='/login' element={<LogIn />} />
+            <Route exact path='/register' element={<SignUp />} />
             <Route exact path='/user/dashboard' element={<UserRoute><UserDashBoardHOC /></UserRoute>} />
             <Route exact path='/user/jobs' element={<UserRoute><UserJobsHistoryHOC /></UserRoute>} />
             <Route exact path='/user/info' element={<UserRoute><UserInfoHOC /></UserRoute>} />

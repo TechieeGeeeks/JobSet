@@ -15,7 +15,10 @@ import {
     USER_LOGOUT_SUCCESS,
     USER_SIGNIN_FAIL,
     USER_SIGNIN_REQUEST,
-    USER_SIGNIN_SUCCESS
+    USER_SIGNIN_SUCCESS,
+    USER_SIGNUP_REQUEST,
+    USER_SIGNUP_FAIL,
+    USER_SIGNUP_SUCCESS
 } from '../constants/userConstant';
 
 
@@ -97,6 +100,26 @@ export const userApplyJobAction = (job) => async (dispatch) => {
     }
 }
 
+//add user action
+export const userSignUpAction = (user) => async (dispatch) => {
+    dispatch({ type:  USER_SIGNUP_REQUEST });
+    try {
+        const { data } = await axios.post("/api/signup",user);
+        dispatch({
+            type: USER_SIGNUP_SUCCESS,
+            payload: data
+        });
+        toast.success("Signed Up Successfully")
+
+    } catch (error) {
+        dispatch({
+            type: USER_SIGNUP_FAIL,
+            payload: error.response.data.error
+        });
+        toast.error(error.response.data.error);
+    }
+}
+
 //all user action
 export const allUserAction = () => async (dispatch) => {
     dispatch({ type: ALL_USER_LOAD_REQUEST });
@@ -114,3 +137,4 @@ export const allUserAction = () => async (dispatch) => {
         });
     }
 }
+

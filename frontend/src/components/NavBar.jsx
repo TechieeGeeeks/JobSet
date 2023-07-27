@@ -143,10 +143,11 @@ const NavBar = () => {
                                         Login
                                     </li>
                                 </Link>
+                                <Link to='/register'>
                                 <li className="rounded-full border border-lightPrimary py-3 px-9 text-lg text-lightModeTextColor hover:shadow-lg duration-100 transition-all ease-in-out cursor-pointer">
                                     Register Now
                                 </li>
-
+                                </Link>
                             </>
                         )}
                     </ul>
@@ -328,12 +329,13 @@ const NavBar = () => {
 
                             </ul>
 
-
+                                    
                             <p
                                 className="m-2 p-2 rounded-md shadow-md flex items-center justify-center bg-lightPrimary gap-3 cursor-pointer hover:bg-gray-300 transition-all duration-100 ease-in-out text-lightCard text-base"
 
                             >
-                                {isLoggedIn ? ('Log out') : ('Login / Sign Up')}
+                                {isLoggedIn ? ('Log out') :
+                                 ('Login / Sign Up')}
                             </p>
                         </div>
                     )}
