@@ -26,7 +26,7 @@ export default function Example() {
   return (
 
     
-    <div className="isolate bg-white px-6 py-24 sm:py-32 lg:px-8 drop-shadow-lg " >
+    <div className="isolate bg-white px-6 py-24 sm:pt-4 pb-32 lg:px-8 drop-shadow-lg " >
       <div
         className="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem] "
         aria-hidden="true"
@@ -43,7 +43,7 @@ export default function Example() {
 
       
       <div className="mx-auto max-w-2xl text-center " >
-        <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Contact sales</h2>
+        <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Contact Us</h2>
         <p className="mt-2 text-lg leading-8 text-gray-600">
         We're here to help! Contact us and we'll make sure all your queries and concerns are resolved.
         </p>

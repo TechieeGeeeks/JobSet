@@ -9,7 +9,7 @@ const Testimonials = () => {
             <div>
                 <div className="hidden md:flex">
                     <section
-                        className="grid grid-cols-1 md:grid-cols-2 gap-2 w-full sm:m-12 h-screen"
+                        className="grid grid-cols-1 md:grid-cols-2 gap-2 w-full sm:m-12"
                         id="home"
                     >
 
