@@ -37,7 +37,7 @@ const SearchInputEl = () => {
 
     return (
 
-        <form onSubmit={handleSubmit} className='w-1/2'>
+        <form onSubmit={handleSubmit} className=''>
             <div className="text-center w-full flex gap-1 md:gap-3">
                 <input
                     className="md:w-3/4 border px-2 py-3 rounded-lg"
