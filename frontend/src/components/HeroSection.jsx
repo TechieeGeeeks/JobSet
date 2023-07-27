@@ -8,10 +8,10 @@ const HeroSection = () => {
             className="grid grid-cols-1 md:grid-cols-2 gap-2 w-full sm:m12"
             id="home"
         >
-            <div className="py-2 flex-1 flex flex-col items-start justify-center gap-6 mt-24 p-8">
+            <div className="py-2 flex-1 flex flex-col items-start justify-center gap-6 p-8 h-screen">
 
 
-                <p className="text-[2.5rem] text-center md:text-left lg:text-[3.5rem] font-bold tracking-wide text-headingColor md:w-[85%] leading-tight">
+                <p className="text-[2.5rem] text-center md:text-left lg:text-[3.5rem] font-bold tracking-wide text-headingColor md:w-[85%] md:leading-tight">
                     <span className="text-lightPrimary text-[3rem] lg:text-[4rem]">JobSet</span> hai, toh life set hai!
                 </p>
 
@@ -30,7 +30,7 @@ const HeroSection = () => {
 
 
             </div>
-            <div className="py-2 flex-1 flex items-center relative">
+            <div className="flex-1 flex items-center relative -mt-24 md:mt-0">
                 <img
                     src={HeroBg}
                     className=" ml-auto h-420 w-full lg:w-auto lg:h-650"
