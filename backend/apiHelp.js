@@ -86,3 +86,10 @@ const allApis = {
 }
 
 // USER CAN DELETE HIS OWN PROFILE {Do We Really Need THis?} 
+
+
+{
+    /*
+    "proxy": "http://localhost:8000" 
+    "proxy : "https://jobset-api.onrender.com"*/
+}

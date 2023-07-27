@@ -53,8 +53,8 @@ const NavBar = () => {
         setIsMenu(!isMenu);
     }
 
-    const logOutUser = () => {
-        dispatch(userLogOutAction());
+    const logOutUser = async() => {
+        await dispatch(userLogOutAction());
         setIsLoggedIn(false);
         window.location.reload(true);
         setTimeout(() => {
