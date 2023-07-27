@@ -53,9 +53,6 @@ const SingleJob = () => {
                                                     <Box component="span" sx={{ fontWeight: 700 }}>Salary</Box>: ${singleJob && singleJob.salary}
                                                 </Typography>
                                                 <Typography variant="body2">
-                                                    <Box component="span" sx={{ fontWeight: 700 }}>Category</Box>: {singleJob && singleJob.jobType ? singleJob.jobType.jobTypeName : "No category"}
-                                                </Typography>
-                                                <Typography variant="body2">
                                                     <Box component="span" sx={{ fontWeight: 700 }}>Location</Box>: {singleJob && singleJob.location}
                                                 </Typography>
                                                 <Typography variant="body2" sx={{ pt: 2 }}>

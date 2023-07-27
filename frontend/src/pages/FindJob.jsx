@@ -3,17 +3,19 @@ import TeslaLogo from '../img/tesla_img.png'
 import { Pagination, Stack } from '@mui/material'
 import { useDispatch, useSelector } from 'react-redux'
 import { jobLoadAction } from '../redux/actions/jobAction'
-import { Link, useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import CardElement from '../components/CardElement'
 import LoadingBox from '../components/LoadingBox'
 import { jobTypeLoadAction } from '../redux/actions/jobTypeAction'
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import SlcComponent from '../components/SlcComponent'
-
+import SearchInputEl from '../components/SearchInput'
 
 const FindJob = () => {
+    // For Loading Jobs 
     const { jobs, setUniqueLocation, pages, loading } = useSelector(state => state.loadJobs);
 
+    const navigate = useNavigate();
     // const { palette } = useTheme();
     const dispatch = useDispatch();
     const { keyword, location } = useParams(); // This grabs the values from params
@@ -66,10 +68,6 @@ const FindJob = () => {
         setPartTime(false);
     };
 
-
-
-
-
     return (
         <section>
 
@@ -83,18 +81,14 @@ const FindJob = () => {
             </div>
             <button className='bg-lightPrimary text-lightCard p-4 px-12 rounded-full'>Search</button> */}
                         <div className='flex flex-col items-center justify-center gap-6 '>
-                            <div className='p-4 bg-lightCard shadow-xl rounded-full flex items-center justify-center'>
-                                <input type="text" placeholder='Job Title' className='w-1/2 h-full px-8 rounded-full outline-none' />
-                                <input type="text" placeholder='Location' className='w-1/2 h-full px-8 rounded-e-full border-l-2 outline-none' />
-                            </div>
-                            <button className='bg-lightPrimary text-lightCard p-4 px-12 rounded-full'>Search</button>
+                        <SearchInputEl/>
                         </div>
                     </div>
 
-
                     <div className='md:w-screen lg:w-full px-8'>
-                        <ul className='mt-9 flex w-full justify-between items-center' >
-                            {/* <li className=' px-8 py-3 rounded-full border'>Part Time</li> */}
+                        { /*
+                            <ul className='mt-9 flex w-full justify-between items-center' >
+                            { <li className=' px-8 py-3 rounded-full border'>Part Time</li> 
                             <li className=' px-8 py-3 rounded-full border hover:bg-lightPrimary hover:text-lightCard cursor-pointer'>Remote</li>
                             <li className=' px-8 py-3 rounded-full border hover:bg-lightPrimary hover:text-lightCard cursor-pointer'>Designer</li>
                             <li className=' px-8 py-3 rounded-full border hover:bg-lightPrimary hover:text-lightCard cursor-pointer'>Illustrator</li>
@@ -104,16 +98,15 @@ const FindJob = () => {
                             <li className=' px-8 py-3 rounded-full border hover:bg-lightPrimary hover:text-lightCard cursor-pointer'>Senior Level</li>
                             <li className=' px-8 py-3 rounded-full border hover:bg-lightPrimary hover:text-lightCard cursor-pointer'>Developer</li>
                         </ul>
+                        */ }
 
-
-
-                        <div class="grid grid-cols-5 gap-10 mt-8 ">
+                        <div className="grid grid-cols-5 gap-10 mt-8 ">
                             {/* Left Side */}
-                            <div class="col-span-1">
+                            <div className="col-span-1">
                                 <div className='flex flex-col gap-2'>
                                     {/* <p>Filter</p> */}
                                     {/* <input type="text" placeholder='Search Job' className='w-full p-3 border border-lighttextGray rounded-lg' /> */}
-                                    <SlcComponent />
+                                    <SlcComponent handleChangeCategory={handleChangeCategory} cat={cat} />
 
                                     <div>
                                         <div className='flex justify-between mt-8'>
@@ -194,7 +187,7 @@ const FindJob = () => {
 
 
                             {/* Right Side */}
-                            <div class="col-span-4">
+                            <div className="col-span-4">
 
 
                                 {/* Map through jobData to render job items */}
@@ -257,14 +250,8 @@ const FindJob = () => {
             {/* For Mobile */}
             <div className='md:hidden flex flex-col w-screen pt-32 px-8'>
                 <div className='flex flex-col items-center justify-center gap-6 '>
-                    <div className='p-4 bg-lightCard shadow-xl rounded-full flex items-center justify-center'>
-                        <input type="text" placeholder='Job Title' className='w-1/2 h-full px-8 rounded-full outline-none' />
-                        <input type="text" placeholder='Location' className='w-1/2 h-full px-8 rounded-e-full border-l-2 outline-none' />
-                    </div>
-                    <button className='bg-lightPrimary text-lightCard p-4 px-12 rounded-full'>Search</button>
+                    <SearchInputEl/>
                 </div>
-
-
 
                 <div className='mt-10'>
                     {/* <p onClick={handleJTClick}>JobType</p>
@@ -285,10 +272,8 @@ const FindJob = () => {
                             type="submit"
                             onClick={handleFilterClick}
                         >
-                            Filter
+                            More Options
                         </button>
-
-
                     </div>
 
                     <div className='flex items-center justify-center'>
@@ -302,7 +287,7 @@ const FindJob = () => {
                                                 <p onClick={handleFilterClick}>x</p>
                                             </div>
                                             {/* <input type="text" placeholder='Search Job' className='w-full p-3 border border-lighttextGray rounded-lg' /> */}
-                                            <SlcComponent />
+                                            <SlcComponent handleChangeCategory={handleChangeCategory} cat={cat}/>
                                             <div>
                                                 <div className='flex justify-between mt-8'>
                                                     <p className='text-lightPrimary font-medium'>Job Type</p>
