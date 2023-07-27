@@ -23,9 +23,8 @@ const NavBar = () => {
     const [selectedItem, setSelectedItem] = useState(null);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const dispatch = useDispatch();
-    const headerClasses = `fixed z-50 w-screen p-3 px-4 md:p-6 md:px-16 bg-lightCard shadow-md ${
-        visible ? "" : "hidden"
-      }`;
+    const headerClasses = `fixed z-50 w-screen p-3 px-4 md:p-6 md:px-16 bg-lightCard shadow-md ${visible ? "" : "hidden"
+        }`;
 
     const handleItemClick = (index) => {
         setSelectedItem(index);
@@ -39,16 +38,16 @@ const NavBar = () => {
             setVisible(visible);
             setPrevScrollPos(currentScrollPos);
         };
-    
+
         window.addEventListener("scroll", handleScroll);
 
-      
+
         return () => {
             window.removeEventListener("scroll", handleScroll);
         };
     }, [prevScrollPos]);
 
-    
+
 
     const dropDownHandle = () => {
         setIsMenu(!isMenu);
@@ -226,9 +225,11 @@ const NavBar = () => {
             {/* mobile */}
             <div className="md:hidden flex items-center justify-between w-full h-full ">
 
-                <div to={"/"} className="flex items-center w-full justify-center">
+                <div className="flex items-center w-full justify-center">
                     <img src={Logo} width='25px' className="mx-1" alt="logo" />
-                    <p className="text-lightModeTextColor text-xl "><span className="font-semibold">Job</span>Set</p>
+                    <NavLink to={"/"}>
+                        <p className="text-lightModeTextColor text-xl "><span className="font-semibold">Job</span>Set</p>
+                    </NavLink>
                 </div>
 
                 <div className="relative">
@@ -243,7 +244,7 @@ const NavBar = () => {
                         <img
                             // whileTap={{ scale: 0.6 }}
                             src={MenuIcon}
-                            className="w-10 min-w-[40px] h-10 min-h-[40px] drop-shadow-xl cursor-pointer rounded-full"
+                            className="w-10 h-10 drop-shadow-xl cursor-pointer"
                             alt="menu"
                             onClick={dropDownHandle}
                         />
@@ -265,19 +266,26 @@ const NavBar = () => {
                                     className="text-base text-lightModeTextColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-slate-100 px-4 py-2"
                                     onClick={() => setIsMenu(false)}
                                 >
-                                    Home
+                                    <NavLink to={'/'}>
+                                        Home
+                                    </NavLink>
                                 </li>
                                 <li
                                     className="text-base text-lightModeTextColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-slate-100 px-4 py-2"
                                     onClick={() => setIsMenu(false)}
                                 >
-                                    Resources
+                                    <NavLink to={'/resources'}>
+                                        Resources
+                                    </NavLink>
+
                                 </li>
                                 <li
                                     className="text-base text-lightModeTextColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-slate-100 px-4 py-2"
                                     onClick={() => setIsMenu(false)}
                                 >
-                                    Find Job
+                                    <NavLink to={'findjob'}>
+                                        Find Job
+                                    </NavLink>
                                 </li>
 
 
