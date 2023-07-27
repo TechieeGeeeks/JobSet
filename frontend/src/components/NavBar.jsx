@@ -225,9 +225,11 @@ const NavBar = () => {
             {/* mobile */}
             <div className="md:hidden flex items-center justify-between w-full h-full ">
 
-                <div to={"/"} className="flex items-center w-full justify-center">
+                <div className="flex items-center w-full justify-center">
                     <img src={Logo} width='25px' className="mx-1" alt="logo" />
-                    <p className="text-lightModeTextColor text-xl "><span className="font-semibold">Job</span>Set</p>
+                    <NavLink to={"/"}>
+                        <p className="text-lightModeTextColor text-xl "><span className="font-semibold">Job</span>Set</p>
+                    </NavLink>
                 </div>
 
                 <div className="relative">
