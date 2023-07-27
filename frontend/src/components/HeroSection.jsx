@@ -11,7 +11,7 @@ const HeroSection = () => {
             <div className="py-2 flex-1 flex flex-col items-start justify-center gap-6 mt-24 p-8">
 
 
-                <p className="text-[2.5rem] text-center md:text-left lg:text-[3.5rem] font-bold tracking-wide text-headingColor md:w-[85%] md:leading-tight">
+                <p className="text-[2.5rem] text-center md:text-left lg:text-[3.5rem] font-bold tracking-wide text-headingColor md:w-[85%] leading-tight">
                     <span className="text-lightPrimary text-[3rem] lg:text-[4rem]">JobSet</span> hai, toh life set hai!
                 </p>
 
