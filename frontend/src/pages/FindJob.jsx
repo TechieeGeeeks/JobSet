@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import TeslaLogo from '../img/tesla_img.png'
-import { Box, Card, Container, ListItemIcon, MenuItem, MenuList, Pagination, Stack, Typography, useTheme } from '@mui/material'
+import { Pagination, Stack } from '@mui/material'
 import { useDispatch, useSelector } from 'react-redux'
 import { jobLoadAction } from '../redux/actions/jobAction'
 import { Link, useParams } from 'react-router-dom'
@@ -8,19 +8,29 @@ import CardElement from '../components/CardElement'
 import LoadingBox from '../components/LoadingBox'
 import { jobTypeLoadAction } from '../redux/actions/jobTypeAction'
 import LocationOnIcon from '@mui/icons-material/LocationOn';
-import SearchInputEl from '../components/SearchInput'
 import SlcComponent from '../components/SlcComponent'
 
 
 const FindJob = () => {
     const { jobs, setUniqueLocation, pages, loading } = useSelector(state => state.loadJobs);
 
-    const { palette } = useTheme();
+    // const { palette } = useTheme();
     const dispatch = useDispatch();
     const { keyword, location } = useParams(); // This grabs the values from params
 
     const [page, setPage] = useState(1);
     const [cat, setCat] = useState('');
+    const [isFilterClicked, setIsFilterClicked] = useState(false);
+    const [fullTime, setFullTime] = useState(false);
+    const [freelance, setFreelance] = useState(false);
+    const [partTime, setPartTime] = useState(false);
+
+    // const [eL, setEL] = useState(false);
+    // const [interm, setInterm] = useState(false);
+    // const [exper, setExper] = useState(false);
+    // const [isJTClicked, setIsJTClicked] = useState(false);
+
+
 
     // On the Load of page dispatch function will run and if any values changes then it would re-render
     useEffect(() => {
@@ -43,35 +53,6 @@ const FindJob = () => {
         setCurrentPage(newPage);
     };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    const [fullTime, setFullTime] = useState(false);
-    const [freelance, setFreelance] = useState(false);
-    const [partTime, setPartTime] = useState(false);
-    // const [eL, setEL] = useState(false);
-    // const [interm, setInterm] = useState(false);
-    // const [exper, setExper] = useState(false);
-    // const [isJTClicked, setIsJTClicked] = useState(false);
-    const [isFilterClicked, setIsFilterClicked] = useState(false);
-
-
-
     //handle filter click for mobile devices
     const handleFilterClick = () => {
         setIsFilterClicked(!isFilterClicked);
@@ -85,52 +66,6 @@ const FindJob = () => {
         setPartTime(false);
     };
 
-
-    // handles check box's div 2
-    // const handleClearExp = () => {
-    //   setEL(false);
-    //   setInterm(false);
-    //   setExper(false);
-    // };
-
-    // const handleJTClick = () => {
-    //   setIsJTClicked(!isJTClicked);
-    // }
-
-
-
-    //list Items
-    const jobData = [
-        {
-            id: 1,
-            logoSrc: TeslaLogo,
-            title: 'Ui/Ux Designer',
-            company: 'Tesla Inc.',
-            type: 'Part Time',
-            level: 'Intermediate',
-            salary: '₹85,000',
-        },
-        {
-            id: 2,
-            logoSrc: TeslaLogo,
-            title: 'Ui/Ux Designer',
-            company: 'Tesla Inc.',
-            type: 'Part Time',
-            level: 'Intermediate',
-            salary: '₹85,000',
-        },
-        {
-            id: 3,
-            logoSrc: TeslaLogo,
-            title: 'Ui/Ux Designer',
-            company: 'Tesla Inc.',
-            type: 'Part Time',
-            level: 'Intermediate',
-            salary: '₹85,000',
-        },
-
-
-    ];
 
 
 
@@ -160,14 +95,14 @@ const FindJob = () => {
                     <div className='md:w-screen lg:w-full px-8'>
                         <ul className='mt-9 flex w-full justify-between items-center' >
                             {/* <li className=' px-8 py-3 rounded-full border'>Part Time</li> */}
-                            <li className=' px-8 py-3 rounded-full border'>Remote</li>
-                            <li className=' px-8 py-3 rounded-full border'>Designer</li>
-                            <li className=' px-8 py-3 rounded-full border'>Illustrator</li>
-                            <li className=' px-8 py-3 rounded-full border'>Manager</li>
-                            <li className=' px-8 py-3 rounded-full border'>Editor</li>
-                            <li className=' px-8 py-3 rounded-full border'>Junior Level</li>
-                            <li className=' px-8 py-3 rounded-full border'>Senior Level</li>
-                            <li className=' px-8 py-3 rounded-full border'>Developer</li>
+                            <li className=' px-8 py-3 rounded-full border hover:bg-lightPrimary hover:text-lightCard cursor-pointer'>Remote</li>
+                            <li className=' px-8 py-3 rounded-full border hover:bg-lightPrimary hover:text-lightCard cursor-pointer'>Designer</li>
+                            <li className=' px-8 py-3 rounded-full border hover:bg-lightPrimary hover:text-lightCard cursor-pointer'>Illustrator</li>
+                            <li className=' px-8 py-3 rounded-full border hover:bg-lightPrimary hover:text-lightCard cursor-pointer'>Manager</li>
+                            <li className=' px-8 py-3 rounded-full border hover:bg-lightPrimary hover:text-lightCard cursor-pointer'>Editor</li>
+                            <li className=' px-8 py-3 rounded-full border hover:bg-lightPrimary hover:text-lightCard cursor-pointer'>Junior Level</li>
+                            <li className=' px-8 py-3 rounded-full border hover:bg-lightPrimary hover:text-lightCard cursor-pointer'>Senior Level</li>
+                            <li className=' px-8 py-3 rounded-full border hover:bg-lightPrimary hover:text-lightCard cursor-pointer'>Developer</li>
                         </ul>
 
 
