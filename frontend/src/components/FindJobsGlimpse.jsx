@@ -6,7 +6,7 @@ const FindJobsGlimpse = () => {
 
         <section
             className="md:px-16 grid grid-cols-1 md:grid-cols-2 gap-2 w-full"
-            id="home"
+            id=""
         >
             <div className="mb-auto flex-1 flex flex-col items-start justify-center gap-11 md:gap-24 px-8 pb-8 md:p-0">
 
