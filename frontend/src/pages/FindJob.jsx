@@ -6,7 +6,6 @@ import { jobLoadAction } from '../redux/actions/jobAction'
 import { Link, useParams } from 'react-router-dom'
 import CardElement from '../components/CardElement'
 import LoadingBox from '../components/LoadingBox'
-import SelectComponent from '../components/SelectComponent'
 import { jobTypeLoadAction } from '../redux/actions/jobTypeAction'
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import SearchInputEl from '../components/SearchInput'
