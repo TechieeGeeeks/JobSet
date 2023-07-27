@@ -3,7 +3,7 @@ import TeslaLogo from '../img/tesla_img.png'
 import { Pagination, Stack } from '@mui/material'
 import { useDispatch, useSelector } from 'react-redux'
 import { jobLoadAction } from '../redux/actions/jobAction'
-import { Link, useNavigate, useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import CardElement from '../components/CardElement'
 import LoadingBox from '../components/LoadingBox'
 import { jobTypeLoadAction } from '../redux/actions/jobTypeAction'
@@ -15,7 +15,7 @@ const FindJob = () => {
     // For Loading Jobs 
     const { jobs, setUniqueLocation, pages, loading } = useSelector(state => state.loadJobs);
 
-    const navigate = useNavigate();
+
     // const { palette } = useTheme();
     const dispatch = useDispatch();
     const { keyword, location } = useParams(); // This grabs the values from params
