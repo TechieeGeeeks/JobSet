@@ -38,33 +38,34 @@ const AdminCategoryHOC = Layout(AdminCategory);
 const App = () => {
   return (
     <>
-        {/*  */} 
-        <ToastContainer/>
-        <Router>   
+      {/*  */}
+      <ToastContainer />
+      <Router>
         <NavBar className='w-screen h-auto' />
-          <Routes>
-            <Route exact path='/resources' element={<Resources/>}></Route>
-            <Route exact path='/' element={<Home />} />
-            <Route exact path='*' element={<NotFound />} />{/* Any Page that is not available will get redirected to not found using (*) */}
-            <Route exact path='/findjob' element={<FindJob />} />
-            <Route path='/search/location/:location' element={<FindJob />} />
-            <Route path='/search/:keyword' element={<FindJob />} />
-            <Route path='/job/:id' element={<SingleJob/>} />
-            <Route exact path='/policy' element={<Policy />} />
-            <Route exact path='/demo' element={<Demo />} />
-            <Route exact path='/login' element={<LogIn />} />
-            <Route exact path='/register' element={<SignUp />} />
-            <Route exact path='/user/dashboard' element={<UserRoute><UserDashBoardHOC /></UserRoute>} />
-            <Route exact path='/user/jobs' element={<UserRoute><UserJobsHistoryHOC /></UserRoute>} />
-            <Route exact path='/user/info' element={<UserRoute><UserInfoHOC /></UserRoute>} />
-            <Route exact path='/admin/dashboard' element={<AdminRoute><AdminDashboardHOC /></AdminRoute>} />
-            <Route exact path='/admin/users' element={<AdminRoute><AdminUsersHOC /></AdminRoute>} />
-            <Route exact path='/admin/jobs' element={<AdminRoute><AdminJobsHOC /></AdminRoute>} />
-            <Route exact path='/admin/category' element={<AdminRoute><AdminCategoryHOC/></AdminRoute>} />
-          </Routes>
-        <Footer/>
-        </Router>
-      
+        <Routes>
+
+          <Route exact path='/resources' element={<Resources />}></Route>
+          <Route exact path='/' element={<Home />} />
+          <Route exact path='*' element={<NotFound />} />{/* Any Page that is not available will get redirected to not found using (*) */}
+          <Route exact path='/findjob' element={<FindJob />} />
+          <Route path='/search/location/:location' element={<FindJob />} />
+          <Route path='/search/:keyword' element={<FindJob />} />
+          <Route path='/job/:id' element={<SingleJob />} />
+          <Route exact path='/policy' element={<Policy />} />
+          <Route exact path='/demo' element={<Demo />} />
+          <Route exact path='/login' element={<LogIn />} />
+          <Route exact path='/register' element={<SignUp />} />
+          <Route exact path='/user/dashboard' element={<UserRoute><UserDashBoardHOC /></UserRoute>} />
+          <Route exact path='/user/jobs' element={<UserRoute><UserJobsHistoryHOC /></UserRoute>} />
+          <Route exact path='/user/info' element={<UserRoute><UserInfoHOC /></UserRoute>} />
+          <Route exact path='/admin/dashboard' element={<AdminRoute><AdminDashboardHOC /></AdminRoute>} />
+          <Route exact path='/admin/users' element={<AdminRoute><AdminUsersHOC /></AdminRoute>} />
+          <Route exact path='/admin/jobs' element={<AdminRoute><AdminJobsHOC /></AdminRoute>} />
+          <Route exact path='/admin/category' element={<AdminRoute><AdminCategoryHOC /></AdminRoute>} />
+        </Routes>
+        <Footer />
+      </Router>
+
     </>
   );
 
