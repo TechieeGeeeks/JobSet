@@ -25,7 +25,10 @@ import AdminDashboard from './pages/admin/AdminDashboard';
 import AdminJobs from './pages/admin/AdminJobs';
 import AdminUsers from './pages/admin/AdminUsers';
 import AdminCategory from './pages/admin/AdminCategory';
+import AdminEditJob from './pages/admin/AdminEditJob';
+import AdminJobCreate from './pages/admin/AdminJobCreate';
 import SingleJob from './pages/SingleJob';
+import AdminDeleteJob from './pages/admin/AdminDeleteJob';
 
 const UserDashBoardHOC = Layout(UserDashBoard);
 const UserJobsHistoryHOC = Layout(UserJobsHistory);
@@ -34,6 +37,9 @@ const AdminDashboardHOC = Layout(AdminDashboard);
 const AdminJobsHOC = Layout(AdminJobs);
 const AdminUsersHOC = Layout(AdminUsers);
 const AdminCategoryHOC = Layout(AdminCategory);
+const AdminEditJobHOC = Layout(AdminEditJob);
+const AdminJobCreateHOC = Layout(AdminJobCreate);
+const AdminDeleteJobHOC = Layout(AdminDeleteJob); 
 
 const App = () => {
   return (
@@ -42,6 +48,7 @@ const App = () => {
       <ToastContainer />
       <Router>
         <NavBar className='w-screen h-auto' />
+
         <Routes>
 
           <Route exact path='/resources' element={<Resources />}></Route>
@@ -62,6 +69,9 @@ const App = () => {
           <Route exact path='/admin/users' element={<AdminRoute><AdminUsersHOC /></AdminRoute>} />
           <Route exact path='/admin/jobs' element={<AdminRoute><AdminJobsHOC /></AdminRoute>} />
           <Route exact path='/admin/category' element={<AdminRoute><AdminCategoryHOC /></AdminRoute>} />
+          <Route exact path='/admin/job/create' element={<AdminRoute><AdminJobCreateHOC/></AdminRoute>} />
+          <Route exact path='/admin/delete/job/:id' element={<AdminRoute><AdminDeleteJobHOC/></AdminRoute>} />
+          <Route exact path='/admin/edit/job/:id' element={<AdminRoute><AdminEditJobHOC/></AdminRoute>} />
         </Routes>
         <Footer />
       </Router>

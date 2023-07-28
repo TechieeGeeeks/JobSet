@@ -80,7 +80,10 @@ const AdminJobs = () => {
             renderCell: (values) => (
                 <Box sx={{ display: "flex", justifyContent: "space-between", width: "170px" }}>
                     <Button variant="contained"><Link style={{ color: "white", textDecoration: "none" }} to={`/admin/edit/job/${values.row._id}`}>Edit</Link></ Button>
-                    < Button onClick={(e) => deleteJobById(e, values.row._id)} variant="contained" color="error">Delete</ Button>
+                    <Link to= {`/admin/delete/job/${values.row._id}`}>
+                    < Button variant="contained" color="error">Delete</ Button>
+                    </Link>
+                    
                 </Box>
             )
         }
