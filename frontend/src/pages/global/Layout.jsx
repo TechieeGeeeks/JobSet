@@ -1,23 +1,21 @@
-import { Box } from '@mui/material';
-import React from 'react'
+import React from 'react';
 import HeaderTop from './HeaderTop';
 import SidebarAdm from './Sidebar';
 
 const Layout = (Component) => ({ ...props }) => {
+  return (
+    <>
+      <div className="flex min-h-screen">
+        <SidebarAdm />
+        <div className="w-full bg-blue-900">
+          <HeaderTop />
+          <div className="p-4">
+            <Component {...props} />
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
 
-    return (
-        <>
-            <div style={{ display: 'flex', minHeight: "100vh" }}>
-                <SidebarAdm />
-                <Box sx={{ width: "100%", bgcolor: "#002952" }}>
-                    <HeaderTop />
-                    <Box sx={{ p: 3 }}>
-                        <Component {...props} />
-                    </Box>
-                </Box>
-            </div>
-        </>
-    )
-}
-
-export default Layout
+export default Layout;

@@ -1,136 +1,86 @@
-import React, { useEffect } from 'react'
-import { Box, Button, Paper, Typography } from '@mui/material'
-import { DataGrid, gridClasses } from '@mui/x-data-grid';
-import { Link } from 'react-router-dom';
-import AddIcon from '@mui/icons-material/Add';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { jobLoadAction } from '../../redux/actions/jobAction';
 
-
-
 const AdminJobs = () => {
+  const dispatch = useDispatch();
 
+  useEffect(() => {
+    dispatch(jobLoadAction());
+  }, []);
 
-    const dispatch = useDispatch();
+  const { jobs, loading } = useSelector((state) => state.loadJobs);
+  let data = [];
+  data = jobs !== undefined && jobs.length > 0 ? jobs : [];
 
-    useEffect(() => {
-        dispatch(jobLoadAction())
-    }, []);
+  //delete job by Id
+  const deleteJobById = (id) => {
+    console.log(id);
+  };
 
+  return (
+    <div>
+      <h4 className="text-black text-2xl pb-3">Jobs list</h4>
+      <div className="pb-2 flex justify-end">
+        <button className="bg-green-500 text-white px-4 py-2 rounded-lg flex items-center space-x-2">
+          <span>Create Job</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-5 w-5"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              fillRule="evenodd"
+              d="M10 18a8 8 0 100-16 8 8 0 000 16zM9 9V5a1 1 0 112 0v4h4a1 1 0 110 2h-4v4a1 1 0 11-2 0v-4H5a1 1 0 110-2h4z"
+              clipRule="evenodd"
+            />
+          </svg>
+        </button>
+      </div>
+      <div className="bg-blue-900 shadow rounded">
+        <table className="table-auto w-full">
+          <thead>
+            <tr>
+              <th className="px-4 py-2">Job ID</th>
+              <th className="px-4 py-2">Job name</th>
+              <th className="px-4 py-2">Category</th>
+              <th className="px-4 py-2">User</th>
+              <th className="px-4 py-2">Available</th>
+              <th className="px-4 py-2">Salary</th>
+              <th className="px-4 py-2">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {data.map((job) => (
+              <tr key={job._id} className="hover:bg-gray-200">
+                <td className="px-4 py-2">{job._id}</td>
+                <td className="px-4 py-2">{job.title}</td>
+                <td className="px-4 py-2">{job.jobType.jobTypeName}</td>
+                <td className="px-4 py-2">{job.user.firstName}</td>
+                <td className="px-4 py-2">{job.available ? 'Yes' : 'No'}</td>
+                <td className="px-4 py-2">${job.salary}</td>
+                <td className="px-4 py-2">
+                  <div className="flex items-center space-x-2">
+                    <button className="bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600">
+                      <a href={`/admin/edit/job/${job._id}`}>Edit</a>
+                    </button>
+                    <button
+                      onClick={() => deleteJobById(job._id)}
+                      className="bg-red-500 text-white px-2 py-1 rounded hover:bg-red-600"
+                    >
+                      Delete
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+};
 
-    const { jobs, loading } = useSelector(state => state.loadJobs);
-    let data = [];
-    data = (jobs !== undefined && jobs.length > 0) ? jobs : []
-
-
-    //delete job by Id
-    const deleteJobById = (e, id) => {
-        console.log(id)
-    }
-
-    const columns = [
-
-        {
-            field: '_id',
-            headerName: 'Job ID',
-            width: 150,
-            editable: true,
-        },
-        {
-            field: 'title',
-            headerName: 'Job name',
-            width: 150,
-        },
-        {
-            field: 'jobType',
-            headerName: 'Category',
-            width: 150,
-            valueGetter: (data) => data.row.jobType.jobTypeName
-        },
-        {
-            field: 'user',
-            headerName: 'User',
-            width: 150,
-            valueGetter: (data) => data.row.user.firstName
-        },
-        {
-            field: 'available',
-            headerName: 'available',
-            width: 150,
-            renderCell: (values => (
-                values.row.available ? "Yes" : "No"
-            ))
-
-        },
-
-        {
-            field: 'salary',
-            headerName: 'Salary',
-            type: Number,
-            width: 150,
-            renderCell: (values => (
-                "$" + values.row.salary
-            ))
-
-        },
-
-        {
-            field: "Actions",
-            width: 200,
-            renderCell: (values) => (
-                <Box sx={{ display: "flex", justifyContent: "space-between", width: "170px" }}>
-                    <Button variant="contained"><Link style={{ color: "white", textDecoration: "none" }} to={`/admin/edit/job/${values.row._id}`}>Edit</Link></ Button>
-                    <Link to= {`/admin/delete/job/${values.row._id}`}>
-                    < Button variant="contained" color="error">Delete</ Button>
-                    </Link>
-                    
-                </Box>
-            )
-        }
-    ];
-
-
-    return (
-        <Box >
-
-            <Typography variant="h4" sx={{ color: "white", pb: 3 }}>
-                Jobs list
-            </Typography>
-            <Box sx={{ pb: 2, display: "flex", justifyContent: "right" }}>
-                <Button variant='contained' color="success" startIcon={<AddIcon />}> <Link style={{ color: "white", textDecoration: "none" }} to="/admin/job/create">Create Job</Link></Button>
-            </Box>
-            <Paper sx={{ bgcolor: "#003366" }} >
-
-                <Box sx={{ height: 400, width: '100%' }}>
-                    <DataGrid
-                        getRowId={(row) => row._id}
-                        sx={{
-
-                            '& .MuiTablePagination-displayedRows': {
-                                color: 'white',
-                            },
-                            color: 'white',
-                            [`& .${gridClasses.row}`]: {
-                                bgcolor: (theme) =>
-                                    // theme.palette.mode === 'light' ? grey[200] : grey[900],
-                                    theme.palette.secondary.main
-                            },
-                            button: {
-                                color: '#ffffff'
-                            }
-
-                        }}
-                        rows={data}
-                        columns={columns}
-                        pageSize={5}
-                        rowsPerPageOptions={[5]}
-                        checkboxSelection
-                    />
-                </Box>
-            </Paper>
-
-        </Box>
-    )
-}
-
-export default AdminJobs
+export default AdminJobs;
