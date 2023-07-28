@@ -23,7 +23,7 @@ const NavBar = () => {
     const [selectedItem, setSelectedItem] = useState(null);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const dispatch = useDispatch();
-    const headerClasses = `fixed z-50 w-screen p-3 px-4 md:p-6 md:px-16 bg-lightCard shadow-md ${visible ? "" : "hidden"
+    const headerClasses = `z-50 w-screen p-3 px-4 md:p-6 md:px-16 bg-lightCard shadow-md ${visible ? "" : "hidden"
         }`;
 
     const handleItemClick = (index) => {
@@ -71,7 +71,7 @@ const NavBar = () => {
         }
     }, [userInfo])
 
-    const activeStyles = "text-lightPrimary after:block after:content-[''] after:absolute after:h-[2px] after:bg-lightPrimary after:w-full after:scale-x-100 after:transition after:duration-500"
+    const activeStyles = "text-lightPrimary after:block after:content-[''] after:absolute after:h-[2px] after:bg-lightPrimary after:w-full after:scale-x-100 after:transition after:duration-500 "
 
 
     return (

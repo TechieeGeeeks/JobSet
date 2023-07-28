@@ -73,7 +73,7 @@ const FindJob = () => {
 
             {/* For Desktops */}
             <div className='hidden md:flex w-screen items-center justify-center'>
-                <div className='md:pt-60 lg:pt-40 p-16'>
+                <div className='p-16'>
                     <div className='flex items-center justify-center gap-6'>
                         {/* <div className='w-1/2 p-4 bg-lightCard shadow-xl rounded-full flex items-center justify-center'>
               <input type="text" placeholder='Job Title' className='w-1/2 h-full px-12 rounded-full outline-none' />
@@ -287,7 +287,7 @@ const FindJob = () => {
                                                 <p onClick={handleFilterClick}>x</p>
                                             </div>
                                             {/* <input type="text" placeholder='Search Job' className='w-full p-3 border border-lighttextGray rounded-lg' /> */}
-                                            <SlcComponent handleChangeCategory={handleChangeCategory} cat={cat}/>
+                                            <SlcComponent handleChangeCategory={handleChangeCategory} cat={cat} />
                                             <div>
                                                 <div className='flex justify-between mt-8'>
                                                     <p className='text-lightPrimary font-medium'>Job Type</p>
