@@ -80,7 +80,7 @@ const SignUp = () => {
 
   return (
     <div
-      className="flex flex-col items-center justify-center min-h-screen p-4 bg-center bg-cover"
+      className="flex items-center justify-center min-h-screen p-4 bg-center bg-cover"
       style={{
         backgroundImage: `url(${bg_img})`,
       }}
