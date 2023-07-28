@@ -22,15 +22,20 @@ const CardElement = ({ jobTitle, description, category, location, id, salary }) 
                 <div className="flex justify-end mt-4">
 
                     <div className="flex items-center justify-center">
-                        <p className="font-bold text-2xl ">{salary}</p>
-                        <p className="text-lighttextGray">/month</p>
+                        <p className="font-bold text-2xl ">{salary}$</p>
+                        <p className="text-lighttextGray">/Year</p>
                     </div>
-                    {/* <Link
+                     <Link
                    to={`/job/${id}`}
-                   className="text-white bg-blue-500 px-4 py-2 rounded-md shadow-md text-sm font-medium"
                >
-                   More Details
-               </Link> */}
+                   <button
+                    className="bg-lightPrimary text-lightCard md:px-7 ml-4 px-2 py-2   text-sm rounded-lg"
+                    type="submit"
+                >
+                    More Details
+                </button>
+               </Link> 
+               
                 </div>
 
 
