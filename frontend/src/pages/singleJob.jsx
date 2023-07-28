@@ -28,7 +28,7 @@ const SingleJob = () => {
 
     return (
         <>
-
+        <div className='hidden md:flex w-screen items-center justify-center'></div>
             <Box sx={{ bgcolor: "#fafafa" }}>
 
                
