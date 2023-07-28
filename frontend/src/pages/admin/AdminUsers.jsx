@@ -1,118 +1,82 @@
-import React, { useEffect } from 'react'
-import { Box, Button, IconButton, Paper, Typography } from '@mui/material'
-import { DataGrid, gridClasses, GridToolbar } from '@mui/x-data-grid';
-import { Link } from 'react-router-dom';
-import AddIcon from '@mui/icons-material/Add';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import moment from 'moment'
+import moment from 'moment';
 import { allUserAction } from '../../redux/actions/userAction';
 
 const AdminUsers = () => {
+  const dispatch = useDispatch();
 
-    const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(allUserAction());
+  }, []);
 
-    useEffect(() => {
-        dispatch(allUserAction());
-    }, []);
+  const { users, loading } = useSelector((state) => state.allUsers);
+  let data = [];
+  data = users !== undefined && users.length > 0 ? users : [];
 
+  const deleteUserById = (id) => {
+    console.log(id);
+  };
 
-    const { users, loading } = useSelector(state => state.allUsers);
-    let data = [];
-    data = (users !== undefined && users.length > 0) ? users : []
+  return (
+    <div>
+      <h4 className="text-black text-2xl pb-3">All users</h4>
+      <div className="pb-2 flex justify-end">
+        <button className="bg-green-500 text-white px-4 py-2 rounded-lg flex items-center space-x-2">
+          <span>Create user</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-5 w-5"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              fillRule="evenodd"
+              d="M10 18a8 8 0 100-16 8 8 0 000 16zM9 9V5a1 1 0 112 0v4h4a1 1 0 110 2h-4v4a1 1 0 11-2 0v-4H5a1 1 0 110-2h4z"
+              clipRule="evenodd"
+            />
+          </svg>
+        </button>
+      </div>
+      <div className="bg-blue-900 shadow rounded">
+        <table className="table-auto w-full">
+          <thead>
+            <tr>
+              <th className="px-4 py-2">User ID</th>
+              <th className="px-4 py-2">E_mail</th>
+              <th className="px-4 py-2">User status</th>
+              <th className="px-4 py-2">Creation date</th>
+              <th className="px-4 py-2">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {data.map((user) => (
+              <tr key={user._id} className="hover:bg-gray-200">
+                <td className="px-4 py-2">{user._id}</td>
+                <td className="px-4 py-2">{user.email}</td>
+                <td className="px-4 py-2">{user.role === 1 ? 'Admin' : 'Regular user'}</td>
+                <td className="px-4 py-2">{moment(user.createdAt).format('YYYY-MM-DD HH:MM:SS')}</td>
+                <td className="px-4 py-2">
+                  <div className="flex items-center space-x-2">
+                    <button className="bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600">
+                      <a href={`/admin/edit/user/${user._id}`}>Edit</a>
+                    </button>
+                    <button
+                      onClick={() => deleteUserById(user._id)}
+                      className="bg-red-500 text-white px-2 py-1 rounded hover:bg-red-600"
+                    >
+                      Delete
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+};
 
-    const deleteUserById = (e, id) => {
-        console.log(id);
-    }
-
-    const columns = [
-
-        {
-            field: '_id',
-            headerName: 'User ID',
-            width: 150,
-            editable: true,
-        },
-
-        {
-            field: 'email',
-            headerName: 'E_mail',
-            width: 150,
-        },
-
-        {
-            field: 'role',
-            headerName: 'User status',
-            width: 150,
-            renderCell: (params) => (
-                params.row.role === 1 ? "Admin" : "Regular user"
-            )
-        },
-
-        {
-            field: 'createdAt',
-            headerName: 'Creation date',
-            width: 150,
-            renderCell: (params) => (
-                moment(params.row.createdAt).format('YYYY-MM-DD HH:MM:SS')
-            )
-        },
-
-        {
-            field: "Actions",
-            width: 200,
-            renderCell: (values) => (
-                <Box sx={{ display: "flex", justifyContent: "space-between", width: "170px" }}>
-                    <Button variant="contained"><Link style={{ color: "white", textDecoration: "none" }} to={`/admin/edit/user/${values.row._id}`}>Edit</Link></ Button>
-                    < Button onClick={(e) => deleteUserById(e, values.row._id)} variant="contained" color="error">Delete</ Button>
-                </Box>
-            )
-        }
-    ];
-
-    return (
-        <>
-            <Box >
-
-                <Typography variant="h4" sx={{ color: "white", pb: 3 }}>
-                    All users
-                </Typography>
-                <Box sx={{ pb: 2, display: "flex", justifyContent: "right" }}>
-                    <Button variant='contained' color="success" startIcon={<AddIcon />}> Create user</Button>
-                </Box>
-                <Paper sx={{ bgcolor: "#003366" }} >
-
-                    <Box sx={{ height: 400, width: '100%' }}>
-                        <DataGrid
-                            sx={{
-
-                                '& .MuiTablePagination-displayedRows': {
-                                    color: 'white',
-                                },
-                                color: 'white',
-                                [`& .${gridClasses.row}`]: {
-                                    bgcolor: (theme) =>
-                                        // theme.palette.mode === 'light' ? grey[200] : grey[900],
-                                        theme.palette.secondary.main
-                                },
-                                button: {
-                                    color: '#ffffff'
-                                }
-
-                            }}
-                            getRowId={(row) => row._id}
-                            rows={data}
-                            columns={columns}
-                            pageSize={3}
-                            rowsPerPageOptions={[3]}
-                            checkboxSelection
-                            slots={{ toolbar: GridToolbar }}
-                        />
-                    </Box>
-                </Paper>
-
-            </Box>
-        </>
-    )
-}
-
-export default AdminUsers
+export default AdminUsers;
