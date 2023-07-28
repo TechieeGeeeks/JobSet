@@ -139,9 +139,9 @@ const HomeCards = () => {
 
   
   return (
-    <div className="w-full h-full bg-[#fff]">
-      <div className="p-9 md:p-16 h-full">
-        <p className="text-[1.8rem] font-semibold" style={{marginTop: '2.5rem', marginBottom: '1.5rem'}}>
+    <div className="w-full bg-[#fff]">
+      <div className="p-9 h-full">
+        <p className="text-[1.8rem] font-semibold" style={{marginBottom: '1.5rem'}}>
           <span className="text-lightPrimary">Recent</span> Posts</p>
         
         <div className="h-full w-full grid md:grid-cols-4 gap-6 my-6 md:px-16">
