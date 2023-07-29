@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { jobLoadAction } from '../../redux/actions/jobAction';
+import { jobLoadAction } from '../../../redux/actions/jobAction';
+import { Link } from 'react-router-dom';
 
 const AdminJobs = () => {
   const dispatch = useDispatch();
@@ -13,15 +14,11 @@ const AdminJobs = () => {
   let data = [];
   data = jobs !== undefined && jobs.length > 0 ? jobs : [];
 
-  //delete job by Id
-  const deleteJobById = (id) => {
-    console.log(id);
-  };
-
   return (
     <div>
       <h4 className="text-black text-2xl pb-3">Jobs list</h4>
       <div className="pb-2 flex justify-end">
+      <Link to={`/admin/job/create`}>
         <button className="bg-green-500 text-white px-4 py-2 rounded-lg flex items-center space-x-2">
           <span>Create Job</span>
           <svg
@@ -38,6 +35,8 @@ const AdminJobs = () => {
             />
           </svg>
         </button>
+      </Link>
+        
       </div>
       <div className="bg-blue-900 shadow rounded">
         <table className="table-auto w-full">
@@ -64,14 +63,16 @@ const AdminJobs = () => {
                 <td className="px-4 py-2">
                   <div className="flex items-center space-x-2">
                     <button className="bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600">
-                      <a href={`/admin/edit/job/${job._id}`}>Edit</a>
+                      <Link to={`/admin/edit/job/${job._id}`}>Edit</Link>
                     </button>
-                    <button
-                      onClick={() => deleteJobById(job._id)}
-                      className="bg-red-500 text-white px-2 py-1 rounded hover:bg-red-600"
-                    >
-                      Delete
-                    </button>
+                    <Link to={`/admin/delete/job/${job._id}`}>
+                      <button
+                        className="bg-red-500 text-white px-2 py-1 rounded hover:bg-red-600"
+                      >
+                        Delete
+                      </button>
+                    </Link>
+                    
                   </div>
                 </td>
               </tr>

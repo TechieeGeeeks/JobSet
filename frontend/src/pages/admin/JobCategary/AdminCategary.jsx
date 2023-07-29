@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { jobTypeLoadAction } from '../../redux/actions/jobTypeAction';
+import { jobTypeLoadAction } from '../../../redux/actions/jobTypeAction';
 
 const AdminJobCategory = () => {
   const [hoveredItemId, setHoveredItemId] = useState(null);
