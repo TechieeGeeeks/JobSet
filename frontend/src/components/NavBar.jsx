@@ -30,22 +30,22 @@ const NavBar = () => {
         setSelectedItem(index);
     };
 
-    useEffect(() => {
-        // Function to handle scroll events
-        const handleScroll = () => {
-            const currentScrollPos = window.pageYOffset;
-            const visible = prevScrollPos > currentScrollPos;
-            setVisible(visible);
-            setPrevScrollPos(currentScrollPos);
-        };
+    // useEffect(() => {
+    //     // Function to handle scroll events
+    //     const handleScroll = () => {
+    //         const currentScrollPos = window.pageYOffset;
+    //         const visible = prevScrollPos > currentScrollPos;
+    //         setVisible(visible);
+    //         setPrevScrollPos(currentScrollPos);
+    //     };
 
-        window.addEventListener("scroll", handleScroll);
+    //     window.addEventListener("scroll", handleScroll);
 
 
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-        };
-    }, [prevScrollPos]);
+    //     return () => {
+    //         window.removeEventListener("scroll", handleScroll);
+    //     };
+    // }, [prevScrollPos]);
 
 
 
