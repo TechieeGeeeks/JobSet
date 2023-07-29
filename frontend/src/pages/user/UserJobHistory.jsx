@@ -30,7 +30,7 @@ const CardElement = ({ jobTitle, description, category, location, id, salary }) 
 };
 
 const UserJobsHistory = () => {
-  const { user } = useSelector((state) => state.userProfile);
+  const { userInfo } = useSelector((state) => state.signIn);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -41,8 +41,8 @@ const UserJobsHistory = () => {
     <div className="bg-blue-900 p-6 rounded">
       <h4 className="text-white text-2xl pb-3">Jobs History</h4>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {user &&
-          user.jobsHistory.map((history, i) => (
+        {userInfo.user &&
+          userInfo.user.jobsHistory.map((history, i) => (
             <CardElement
               key={i}
               id={history._id}
