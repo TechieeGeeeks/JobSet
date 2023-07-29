@@ -7,7 +7,7 @@ const Layout = (Component) => ({ ...props }) => {
     <>
       <div className="flex min-h-screen">
         <SidebarAdm />
-        <div className="w-full bg-blue-900">
+        <div className="w-full">
           <HeaderTop />
           <div className="p-4">
             <Component {...props} />

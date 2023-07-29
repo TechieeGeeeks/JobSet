@@ -10,19 +10,19 @@ const UserDashboard = () => {
 
   return (
     <div>
-      <h4 className="text-white text-2xl pb-3">Dashboard</h4>
+      <h4 className="text-2xl pb-3">Dashboard</h4>
       <div className="flex flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-4">
         <StatComponent
           value={user && moment(user.createdAt).format('YYYY / MM / DD')}
           icon={
-            <CalendarMonthIcon className="text-white" style={{ fontSize: 30 }} />
+            <CalendarMonthIcon style={{ fontSize: 30, color: 'white'}} />
           }
           description="Member since"
           money=""
         />
         <StatComponent
           value={user && user.jobsHistory.length}
-          icon={<WorkIcon className="text-white" style={{ fontSize: 30 }} />}
+          icon={<WorkIcon className="" style={{ fontSize: 30, color: 'white' }} />}
           description="Number of jobs submitted"
           money=""
         />

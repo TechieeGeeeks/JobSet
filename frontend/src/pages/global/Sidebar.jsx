@@ -36,10 +36,11 @@ const SidebarAdm = () => {
   };
 
   return (
-    <Sidebar backgroundColor="#003366" style={{ borderRightStyle: 'none' }}>
+    <Sidebar className=' ' style={{ borderRightStyle: 'none' }}>
       <div className="flex flex-col h-full">
         <div className="py-5 flex justify-center transition-all duration-500">
           {collapsed ? (
+           
             <Avatar
               className="transform scale-75 opacity-50 hover:scale-100 hover:opacity-100 cursor-pointer"
               alt="logo dashboard"
@@ -47,11 +48,11 @@ const SidebarAdm = () => {
             />
           ) : (
             <div className="flex justify-center">
-              <img
+              {/* <img
                 className="w-100 h-100 transform scale-75 opacity-50 hover:scale-100 hover:opacity-100 cursor-pointer transition-all duration-500"
                 src={logoDashboard}
                 alt="logo dashboard"
-              />
+              /> */}
             </div>
           )}
         </div>
