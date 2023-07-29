@@ -6,15 +6,15 @@ const StatComponent = ({ value, icon, description, money }) => {
             <div className="p-4">
                 <div className="flex items-center mb-2 gap-3">
                     <button
-                        className="w-12 h-12 items-center justify-center rounded-full bg-lightModeTextColor"
+                        className="w-12 h-12 items-center justify-center rounded-full bg-lightPrimary"
                     >
                         {icon}
                     </button>
                     <div>
-                        <h4 className="text-2xl font-bold mb-1">
+                        <h4 className="text-2xl font-bold ">
                             {money !== '' ? money + value : value}
                         </h4>
-                        <p className="text-sm mb-0">{description}</p>
+                        <p className="text-sm mb-0 text-lightPrimary">{description}</p>
                     </div>
 
                 </div>

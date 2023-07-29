@@ -61,28 +61,28 @@ const SidebarAdm = () => {
           {userInfo && userInfo.role === 1 ? (
             <>
               <MenuItem
-                className="hover:bg-blue-600"
+                className="text-blue-600"
                 component={<Link to="/admin/dashboard" />}
                 icon={<DashboardIcon />}
               >
                 Dashboard
               </MenuItem>
               <MenuItem
-                className="hover:bg-blue-600"
+                className="hover:text-lightPrimary"
                 component={<Link to="/admin/users" />}
                 icon={<GroupAddIcon />}
               >
                 Users
               </MenuItem>
               <MenuItem
-                className="hover:bg-blue-600"
+                className="hover:text-lightPrimary"
                 component={<Link to="/admin/jobs" />}
                 icon={<WorkIcon />}
               >
                 Jobs
               </MenuItem>
               <MenuItem
-                className="hover:bg-blue-600"
+                className="hover:text-lightPrimary"
                 component={<Link to="/admin/category" />}
                 icon={<CategoryIcon />}
               >
@@ -92,21 +92,21 @@ const SidebarAdm = () => {
           ) : (
             <>
               <MenuItem
-                className="hover:bg-blue-600"
+                className="hover:text-lightPrimary"
                 component={<Link to="/user/dashboard" />}
                 icon={<DashboardIcon />}
               >
                 Dashboard
               </MenuItem>
               <MenuItem
-                className="hover:bg-blue-600"
+                className="hover:text-lightPrimary"
                 component={<Link to="/user/jobs" />}
                 icon={<WorkHistoryIcon />}
               >
                 Applied Jobs
               </MenuItem>
               <MenuItem
-                className="hover:bg-blue-600"
+                className="hover:text-lightPrimary"
                 component={<Link to="/user/info" />}
                 icon={<Person3Icon />}
               >
@@ -119,7 +119,7 @@ const SidebarAdm = () => {
         <Menu>
           <MenuItem
             onClick={logOut}
-            className="hover:bg-red-600"
+            className="hover:text-red-600"
             icon={<LoginIcon />}
           >
             Log out

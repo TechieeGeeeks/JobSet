@@ -6,7 +6,7 @@ const CardElement = ({ jobTitle, description, category, location, id, salary }) 
   return (
     <div className="bg-white rounded-lg shadow-md p-4">
       <div className="flex flex-col space-y-2">
-        <h5 className="text-xl font-bold">{jobTitle}</h5>
+        <h5 className="text-xl font-bold ">{jobTitle}</h5>
         <p className="text-sm text-gray-600">{location}</p>
       </div>
       <p className="text-sm mb-2">{category}</p>
@@ -20,7 +20,7 @@ const CardElement = ({ jobTitle, description, category, location, id, salary }) 
         </div>
         <a
           href={`/job/${id}`}
-          className="bg-blue-500 text-white px-4 py-2 rounded-lg ml-4 text-sm font-medium"
+          className="bg-lightPrimary text-white px-4 py-2 rounded-lg ml-4 text-sm font-medium"
         >
           More Details
         </a>
@@ -39,7 +39,7 @@ const UserJobsHistory = () => {
 
   return (
     <div className="p-6 rounded">
-      <h4 className="text-2xl font-semibold pb-8">Jobs History</h4>
+      <h4 className="text-2xl font-semibold pb-8 text-lightPrimary ">Jobs History</h4>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {user &&
           user.jobsHistory.map((history, i) => (

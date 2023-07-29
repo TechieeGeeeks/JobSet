@@ -277,7 +277,7 @@ const NavBar = () => {
                                 >
                                     <NavLink to={'/resources'}>
                                         Resources
-                                    </NavLink>
+                                    </NavLink>  
 
                                 </li>
                                 <li
