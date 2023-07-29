@@ -7,8 +7,8 @@ const CardElement = ({ jobTitle, description, category, location, id, salary }) 
   return (
     <div className="bg-white rounded-lg shadow-md p-4">
       <div className="flex flex-col space-y-2">
-        <h5 className="text-xl font-bold">Title: {jobTitle}</h5>
-        <p className="text-sm text-gray-600">Location: {location}</p>
+        <h5 className="text-xl font-bold ">{jobTitle}</h5>
+        <p className="text-sm text-gray-600">{location}</p>
       </div>
       <p className="text-base">
         Description: {description}
@@ -18,42 +18,48 @@ const CardElement = ({ jobTitle, description, category, location, id, salary }) 
           <p className="font-bold text-2xl ">{salary}$</p>
           <p className="text-gray-600">/month</p>
         </div>
-        
+        <a
+          href={`/job/${id}`}
+          className="bg-lightPrimary text-white px-4 py-2 rounded-lg ml-4 text-sm font-medium"
+        >
+          More Details
+        </a>
+
       </div>
       {/* Tracking Dots */}
       <div className="flex items-center space-x-4 mt-4">
         {/* Render different dots and ticks based on applicationStatus */}
         {category === 'pending' && (
           <>
-            <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
-            <div className="w-3 h-3 bg-gray-300 rounded-full"></div>
-            <div className="w-3 h-3 bg-gray-300 rounded-full"></div>
+            <div className="w-3 h-3 bg-lightPrimary rounded-full"></div>
+            <div className="w-3 h-3 bg-lighttextGray rounded-full"></div>
+            <div className="w-3 h-3 bg-lighttextGray rounded-full"></div>
           </>
         )}
         {category === 'accepted' && (
           <>
-            <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
-            <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
-            <div className="w-3 h-3 bg-gray-300 rounded-full"></div>
+            <div className="w-3 h-3 bg-lightPrimary rounded-full"></div>
+            <div className="w-3 h-3 bg-lightPrimary rounded-full"></div>
+            <div className="w-3 h-3 bg-lighttextGray rounded-full"></div>
           </>
         )}
         {category === 'rejected' && (
           <>
             <div className="w-3 h-3 bg-red-500 rounded-full"></div>
             <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-            <div className="w-3 h-3 bg-gray-300 rounded-full"></div>
+            <div className="w-3 h-3 bg-lighttextGray rounded-full"></div>
           </>
         )}
       </div>
       {/* Labels for Dots */}
       <div className="flex justify-between mt-2">
-        <span className={`text-sm ${category === 'pending' ? 'text-blue-500' : 'text-gray-600'}`}>
+        <span className={`text-sm font-semibold ${category === 'pending' ? 'text-lightPrimary' : 'text-lightPrimary'}`}>
           Pending
         </span>
-        <span className={`text-sm ${category === 'accepted' ? 'text-blue-500' : 'text-gray-600'}`}>
+        <span className={`text-sm font-semibold ${category === 'accepted' ? 'text-green-600' : 'text-green-600'}`}>
           Accepted
         </span>
-        <span className={`text-sm ${category === 'rejected' ? 'text-red-500' : 'text-gray-600'}`}>
+        <span className={`text-sm font-semibold ${category === 'rejected' ? 'text-red-500' : 'text-lighttextGray'}`}>
           Rejected
         </span>
       </div>
@@ -73,7 +79,7 @@ const UserJobsHistory = () => {
 
   return (
     <div className="p-6 rounded">
-      <h4 className="text-2xl font-semibold pb-8">Jobs History</h4>
+      <h4 className="text-2xl font-semibold pb-8 text-lightPrimary ">Jobs History</h4>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {userInfo.user &&
           userInfo.user.jobsHistory.map((history, i) => (

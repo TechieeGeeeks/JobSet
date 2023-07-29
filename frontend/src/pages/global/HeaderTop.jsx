@@ -10,12 +10,12 @@ const HeaderTop = () => {
   return (
     <div className="flex-grow">
       <nav className="border-b-1 shadow-sm border-lighttextGray">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl ml-4 mr-auto">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
               <button
                 onClick={() => collapseSidebar()}
-                className=" hover:text-lightPrimary focus:outline-none focus:text-white transition duration-300"
+                className=" hover:text-lightPrimary focus:outline-none transition duration-300"
               >
                 <MenuIcon />
               </button>

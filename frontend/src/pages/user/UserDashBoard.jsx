@@ -9,8 +9,8 @@ const UserDashboard = () => {
   const { user } = useSelector((state) => state.userProfile);
 
   return (
-    <div>
-      <h4 className="text-2xl pb-3">Dashboard</h4>
+    <div className='p-6'>
+      <h4 className="text-2xl pb-3 font-semibold text-lightPrimary">Dashboard</h4>
       <div className="flex flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-4">
         <StatComponent
           value={user && moment(user.createdAt).format('YYYY / MM / DD')}
