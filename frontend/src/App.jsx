@@ -48,21 +48,33 @@ import AdminJobCreate from './pages/admin/Jobs/AdminJobCreate';
 import AdminDeleteJob from './pages/admin/Jobs/AdminDeleteJob';
 
 /* Admin Job Category Opeartions*/
-import AdminCategary from './pages/admin/JobCategary/AdminCategary';
+import AdminJobTypes from './pages/admin/JobCategary/AdminJobTypes';
+import AdminCreateJobType  from './pages/admin/JobCategary/AdminCreateJobType'
+import AdminDeleteJobType from './pages/admin/JobCategary/AdminDeleteJobType'
+import AdminEditJobType from './pages/admin/JobCategary/AdminEditJobType';
 
 const UserDashBoardHOC = Layout(UserDashBoard);
-const AdminDashboardHOC = Layout(AdminDashboard);
 const UserJobsHistoryHOC = Layout(UserJobsHistory);
 const UserInfoHOC = Layout(UserInfoDashboard);
+
+const AdminDashboardHOC = Layout(AdminDashboard);
+
 const AdminJobsHOC = Layout(AdminJobs);
-const AdminUsersHOC = Layout(AdminUsers);
-const AdminCategaryHOC = Layout(AdminCategary);
 const AdminEditJobHOC = Layout(AdminEditJob);
 const AdminJobCreateHOC = Layout(AdminJobCreate);
 const AdminDeleteJobHOC = Layout(AdminDeleteJob); 
+
+const AdminUsersHOC = Layout(AdminUsers);
 const AdminEditUserHOC = Layout(AdminEditUser);
 const AdminDeleteUserHOC = Layout(AdminDeleteUser);
 const AdminCreateUserHOC = Layout(AdminCreateuser);
+
+const AdminJobTypesHOC = Layout(AdminJobTypes);
+const AdminCreateJobTypeHOC = Layout(AdminCreateJobType);
+const AdminDeleteJobTypeHOC = Layout(AdminDeleteJobType);
+const AdminEditJobTypeHOC = Layout(AdminEditJobType);
+
+
 
 const App = () => {
   return (
@@ -91,13 +103,20 @@ const App = () => {
           <Route exact path='/admin/dashboard' element={<AdminRoute><AdminDashboardHOC /></AdminRoute>} />
           <Route exact path='/admin/users' element={<AdminRoute><AdminUsersHOC /></AdminRoute>} />
           <Route exact path='/admin/jobs' element={<AdminRoute><AdminJobsHOC /></AdminRoute>} />
-          <Route exact path='/admin/category' element={<AdminRoute><AdminCategaryHOC /></AdminRoute>} />
+          
           <Route exact path='/admin/job/create' element={<AdminRoute><AdminJobCreateHOC/></AdminRoute>} />
           <Route exact path='/admin/delete/job/:id' element={<AdminRoute><AdminDeleteJobHOC/></AdminRoute>} />
           <Route exact path='/admin/delete/user/:id' element={<AdminRoute><AdminDeleteUserHOC/></AdminRoute>} />
           <Route exact path='/admin/edit/job/:id' element={<AdminRoute><AdminEditJobHOC/></AdminRoute>} />
           <Route exact path='/admin/edit/user/:id' element={<AdminRoute><AdminEditUserHOC/></AdminRoute>} />
           <Route exact path='/admin/create/user' element={<AdminRoute><AdminCreateUserHOC/></AdminRoute>} />
+
+          <Route exact path='/admin/category' element={<AdminRoute><AdminJobTypesHOC /></AdminRoute>} />
+          <Route exact path='/admin/create/jobtype' element={<AdminRoute><AdminCreateJobTypeHOC /></AdminRoute>} />
+          <Route exact path='/admin/edit/jobtype/:id' element={<AdminRoute><AdminEditJobTypeHOC /></AdminRoute>} />
+          <Route exact path='/admin/delete/jobtype/:id' element={<AdminRoute><AdminDeleteJobTypeHOC /></AdminRoute>} />
+
+
         </Routes>
         <Footer />
       </Router>
