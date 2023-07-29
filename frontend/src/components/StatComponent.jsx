@@ -1,27 +1,27 @@
-import { Card, CardContent, IconButton, Typography, useTheme } from '@mui/material'
-import React from 'react'
+import React from 'react';
 
 const StatComponent = ({ value, icon, description, money }) => {
-    const { palette } = useTheme();
     return (
-        <>
-            <Card sx={{ bgcolor: "#003366", width: "100%" }}>
-                <CardContent >
-
-                    <IconButton sx={{ bgcolor: palette.primary.main, mb: 2 }} >
+        <div className="w-full shadow-lg rounded-xl">
+            <div className="p-4">
+                <div className="flex items-center mb-2 gap-3">
+                    <button
+                        className="w-12 h-12 items-center justify-center rounded-full bg-lightModeTextColor"
+                    >
                         {icon}
-                    </IconButton>
-                    <Typography variant='h4' sx={{ color: "#fafafa", mb: '1px', fontWeight: 700 }}>
-                        {money !== '' ? money + value : value}
-                    </Typography>
-                    <Typography variant="body2" sx={{ color: palette.primary.main, mb: 0 }}>
-                        {description}
-                    </Typography>
-                </CardContent>
+                    </button>
+                    <div>
+                        <h4 className="text-2xl font-bold mb-1">
+                            {money !== '' ? money + value : value}
+                        </h4>
+                        <p className="text-sm mb-0">{description}</p>
+                    </div>
 
-            </Card>
-        </>
-    )
-}
+                </div>
 
-export default StatComponent
+            </div>
+        </div>
+    );
+};
+
+export default StatComponent;
