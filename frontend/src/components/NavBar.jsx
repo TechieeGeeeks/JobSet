@@ -53,7 +53,7 @@ const NavBar = () => {
         setIsMenu(!isMenu);
     }
 
-    const logOutUser = async() => {
+    const logOutUser = async () => {
         await dispatch(userLogOutAction());
         setIsLoggedIn(false);
         window.location.reload(true);
@@ -144,9 +144,9 @@ const NavBar = () => {
                                     </li>
                                 </Link>
                                 <Link to='/register'>
-                                <li className="rounded-full border border-lightPrimary py-3 px-9 text-lg text-lightModeTextColor hover:shadow-lg duration-100 transition-all ease-in-out cursor-pointer">
-                                    Register Now
-                                </li>
+                                    <li className="rounded-full border border-lightPrimary py-3 px-9 text-lg text-lightModeTextColor hover:shadow-lg duration-100 transition-all ease-in-out cursor-pointer">
+                                        Register Now
+                                    </li>
                                 </Link>
                             </>
                         )}
@@ -155,7 +155,7 @@ const NavBar = () => {
                     <div className="relative">
                         {isMenu && (
                             <div
-                                className="w-[200px] bg-lightCard drop-shadow-lg rounded-lg flex flex-col absolute top-8 right-7 py-2"
+                                className="z-50 w-[200px] bg-lightCard drop-shadow-lg rounded-lg flex flex-col absolute top-8 right-7 py-2"
                             >
                                 <div className="flex px-4 py-2 cursor-pointer hover:bg-slate-100 transition-all duration-100 ease-in-out text-lightModeTextColor">
                                     <img src={EditProfileIcon} className="pl-1" alt="logout_icon" />
@@ -313,29 +313,31 @@ const NavBar = () => {
 
                                 {isLoggedIn ? (
                                     <div>
-                                        <li
+                                        {/* <li
                                             className="text-base text-lightModeTextColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-slate-100 px-4 py-2"
                                             onClick={() => setIsMenu(false)}
                                         >
                                             Edit Profile
-                                        </li>
+                                        </li> */}
+                                        <Link to={'/policy'}> 
                                         <li
                                             className="text-base text-lightModeTextColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-slate-100 px-4 py-2"
                                             onClick={() => setIsMenu(false)}
                                         >
-                                            Settings
+                                            Privacy Policy
                                         </li>
+                                        </Link>
                                     </div>) : ('')}
 
                             </ul>
 
-                                    
+
                             <p
                                 className="m-2 p-2 rounded-md shadow-md flex items-center justify-center bg-lightPrimary gap-3 cursor-pointer hover:bg-gray-300 transition-all duration-100 ease-in-out text-lightCard text-base"
 
                             >
-                                {isLoggedIn ? ('Log out') :
-                                 ('Login / Sign Up')}
+                                {isLoggedIn ? (<Link to='/' onClick={() => { logOutUser() }}><div className="w-full h-fulll"><p onClick={() => setIsMenu(false)}>Logout</p></div></Link>) :
+                                    ('Login / Sign Up')}
                             </p>
                         </div>
                     )}
