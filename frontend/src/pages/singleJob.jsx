@@ -1,9 +1,10 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
-import LoadingBox from "../components/LoadingBox";
-import { jobLoadSingleAction } from "../redux/actions/jobAction";
-import { userApplyJobAction } from "../redux/actions/userAction";
+import React from 'react';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
+import LoadingBox from '../components/LoadingBox';
+import { jobLoadSingleAction } from '../redux/actions/jobAction';
+import { userApplyJobAction } from '../redux/actions/userAction';
 
 const SingleJob = () => {
   const dispatch = useDispatch();
@@ -11,7 +12,7 @@ const SingleJob = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    dispatch(jobLoadSingleAction(id));
+   dispatch(jobLoadSingleAction(id));
   }, [id]);
 
   const applyForAJob = () => {

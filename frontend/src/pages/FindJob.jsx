@@ -15,7 +15,6 @@ const FindJob = () => {
     // For Loading Jobs 
     const { jobs, setUniqueLocation, pages, loading } = useSelector(state => state.loadJobs);
 
-
     // const { palette } = useTheme();
     const dispatch = useDispatch();
     const { keyword, location } = useParams(); // This grabs the values from params

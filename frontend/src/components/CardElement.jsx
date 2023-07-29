@@ -1,7 +1,5 @@
 import React from 'react';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
 import { Link } from 'react-router-dom';
-import AddIcon from '@mui/icons-material/Add';
 
 const CardElement = ({ jobTitle, description, category, location, id, salary }) => {
     return (

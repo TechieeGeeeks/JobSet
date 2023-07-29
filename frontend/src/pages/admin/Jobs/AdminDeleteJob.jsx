@@ -2,7 +2,7 @@ import React from 'react'
 
 const AdminDeleteJob = () => {
   return (
-    <div>AdminDeletedJob</div>
+    <div>AdminDeleteJob</div>
   )
 }
 
