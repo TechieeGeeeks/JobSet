@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { userProfileAction } from '../../redux/actions/userAction';
-import { Link } from 'react-router-dom';
+
 
 const CardElement = ({ jobTitle, description, category, location, id, salary }) => {
   return (
