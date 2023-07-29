@@ -15,7 +15,6 @@ import UserDashBoard from './pages/user/UserDashBoard';
 import UserRoute from './components/UserRoutes';
 import AdminRoute from './components/AdminRoute'
 
-
 // HOC 
 import Layout from './pages/global/Layout';
 import UserJobsHistory from './pages/user/UserJobHistory';
@@ -40,6 +39,7 @@ const AdminCategoryHOC = Layout(AdminCategory);
 const AdminEditJobHOC = Layout(AdminEditJob);
 const AdminJobCreateHOC = Layout(AdminJobCreate);
 const AdminDeleteJobHOC = Layout(AdminDeleteJob); 
+
 
 const App = () => {
   return (

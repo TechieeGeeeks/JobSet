@@ -1,33 +1,67 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { userProfileAction } from '../../redux/actions/userAction';
+import { Link } from 'react-router-dom';
 
 const CardElement = ({ jobTitle, description, category, location, id, salary }) => {
   return (
     <div className="bg-white rounded-lg shadow-md p-4">
       <div className="flex flex-col space-y-2">
-        <h5 className="text-xl font-bold">{jobTitle}</h5>
-        <p className="text-sm text-gray-600">{location}</p>
+        <h5 className="text-xl font-bold">Title: {jobTitle}</h5>
+        <p className="text-sm text-gray-600">Location: {location}</p>
       </div>
-      <p className="text-sm mb-2">{category}</p>
       <p className="text-base">
-        Description: {description.split(' ').slice(0, 15).join(' ') + '...'}
+        Description: {description}
       </p>
       <div className="flex justify-end mt-4">
         <div className="flex items-center justify-center">
-          <p className="font-bold text-2xl ">{salary}</p>
+          <p className="font-bold text-2xl ">{salary}$</p>
           <p className="text-gray-600">/month</p>
         </div>
-        <a
-          href={`/job/${id}`}
-          className="bg-blue-500 text-white px-4 py-2 rounded-lg ml-4 text-sm font-medium"
-        >
-          More Details
-        </a>
+        
+      </div>
+      {/* Tracking Dots */}
+      <div className="flex items-center space-x-4 mt-4">
+        {/* Render different dots and ticks based on applicationStatus */}
+        {category === 'pending' && (
+          <>
+            <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
+            <div className="w-3 h-3 bg-gray-300 rounded-full"></div>
+            <div className="w-3 h-3 bg-gray-300 rounded-full"></div>
+          </>
+        )}
+        {category === 'accepted' && (
+          <>
+            <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
+            <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
+            <div className="w-3 h-3 bg-gray-300 rounded-full"></div>
+          </>
+        )}
+        {category === 'rejected' && (
+          <>
+            <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+            <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+            <div className="w-3 h-3 bg-gray-300 rounded-full"></div>
+          </>
+        )}
+      </div>
+      {/* Labels for Dots */}
+      <div className="flex justify-between mt-2">
+        <span className={`text-sm ${category === 'pending' ? 'text-blue-500' : 'text-gray-600'}`}>
+          Pending
+        </span>
+        <span className={`text-sm ${category === 'accepted' ? 'text-blue-500' : 'text-gray-600'}`}>
+          Accepted
+        </span>
+        <span className={`text-sm ${category === 'rejected' ? 'text-red-500' : 'text-gray-600'}`}>
+          Rejected
+        </span>
       </div>
     </div>
   );
 };
+
+
 
 const UserJobsHistory = () => {
   const { userInfo } = useSelector((state) => state.signIn);
@@ -48,7 +82,7 @@ const UserJobsHistory = () => {
               id={history._id}
               jobTitle={history.title}
               description={history.description}
-              category=""
+              category={history.applicationStatus} // Pass the applicationStatus as the category
               location={history.location}
               salary={history.salary}
             />
