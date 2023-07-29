@@ -1,3 +1,4 @@
+import React from 'react';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
@@ -11,7 +12,7 @@ const SingleJob = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    dispatch(jobLoadSingleAction(id));
+   dispatch(jobLoadSingleAction(id));
   }, [id]);
 
   const applyForAJob = () => {
