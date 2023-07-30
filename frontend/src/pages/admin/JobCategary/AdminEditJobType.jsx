@@ -1,9 +1,107 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
+import { useSpring, animated } from "@react-spring/web";
+import { useDispatch, useSelector } from "react-redux";
+import { editJobTypeAction } from "../../../redux/actions/jobTypeAction";
+import { useNavigate, useParams } from "react-router-dom";
 
 const AdminEditJobType = () => {
-  return (
-    <div>AdminEditJobType</div>
-  )
-}
+  const { id } = useParams(); // Extract the job type ID from the URL parameter
+  const navigate = useNavigate();
+  const [showForm, setShowForm] = useState(false);
+  const dispatch = useDispatch();
 
-export default AdminEditJobType
+  // Animation for the form entrance
+  const formAnimation = useSpring({
+    opacity: showForm ? 1 : 0,
+    transform: showForm ? "translateY(0)" : "translateY(50px)",
+  });
+
+  const [formData, setFormData] = useState({
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    // You can perform form submission or validation here
+    await dispatch(
+      editJobTypeAction(id, {
+        jobTypeName: formData.jobTypeName,
+        requirements: formData.requirements,
+      })
+    );
+    navigate("/job-types");
+    console.log(formData);
+  };
+
+  useEffect(() => {
+    // Set the showForm state to true after the component mounts
+    setShowForm(true);
+  }, []);
+
+  return (
+    <div
+      className="h-screen flex items-center justify-center bg-[#0d1bcf]"
+      style={{ fontFamily: "Roboto, sans-serif" }}
+    >
+      <div className="max-w-md w-full p-8 bg-white rounded-lg">
+        <animated.div style={formAnimation}>
+          <h2 className="text-2xl font-bold mb-4 text-center text-gray-800">
+            Edit Job Type
+          </h2>
+          <form onSubmit={handleSubmit}>
+            <div className="mb-4">
+              <label
+                htmlFor="jobTypeName"
+                className="mb-4 text-center text-gray-800 font-bold"
+              >
+                Job Type Name
+              </label>
+              <input
+                type="text"
+                id="jobTypeName"
+                name="jobTypeName"
+                value={formData.jobTypeName}
+                onChange={handleChange}
+                className="mt-1 p-2 w-full border rounded-md"
+                required
+              />
+            </div>
+            <div className="mb-4">
+              <label
+                htmlFor="requirements"
+                className="mb-4 text-center text-gray-800 font-bold"
+              >
+                Requirements
+              </label>
+              <textarea
+                id="requirements"
+                name="requirements"
+                value={formData.requirements}
+                onChange={handleChange}
+                className="mt-1 p-2 w-full border rounded-md h-40"
+                required
+              />
+            </div>
+            <div className="mb-4 text-center">
+              <button
+                type="submit"
+                className="px-4 py-2 bg-blue-500 text-white rounded-md font-bold"
+              >
+                Submit
+              </button>
+            </div>
+          </form>
+        </animated.div>
+      </div>
+    </div>
+  );
+};
+
+export default AdminEditJobType;

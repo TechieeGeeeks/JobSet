@@ -18,3 +18,12 @@ export const jobTypeLoadAction = () => async (dispatch) => {
         });
     }
 }
+
+export const createJobTypeAction = () => async (dispatch) => {
+    console.log("good");
+}
+
+export const editJobTypeAction = () => async (dispatch) => {
+    console.log("good");
+}
+

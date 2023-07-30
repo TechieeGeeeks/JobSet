@@ -39,3 +39,8 @@ export const jobLoadSingleAction = (id) => async (dispatch) => {
         });
     }
 }
+
+export const createJobAction =(pageNumber, keyword='', cat='', location='')=>async(dispatch)=>{
+    console.log("Job Created");
+
+}
