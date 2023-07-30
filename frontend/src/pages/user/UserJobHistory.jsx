@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { userProfileAction } from '../../redux/actions/userAction';
 
-
 const CardElement = ({ jobTitle, description, category, location, id, salary }) => {
   return (
     <div className="bg-white rounded-lg shadow-md p-4">
@@ -18,12 +17,6 @@ const CardElement = ({ jobTitle, description, category, location, id, salary }) 
           <p className="font-bold text-2xl ">{salary}$</p>
           <p className="text-gray-600">/month</p>
         </div>
-        <a
-          href={`/job/${id}`}
-          className="bg-lightPrimary text-white px-4 py-2 rounded-lg ml-4 text-sm font-medium"
-        >
-          More Details
-        </a>
 
       </div>
       {/* Tracking Dots */}
