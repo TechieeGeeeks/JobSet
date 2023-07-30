@@ -23,7 +23,7 @@ const NavBar = () => {
     const headerClasses = `z-50 w-screen p-3 px-4 md:p-6 md:px-16 bg-lightCard shadow-md ${visible ? "" : "hidden"
         }`;
 
-   
+
 
     // useEffect(() => {
     //     // Function to handle scroll events
@@ -228,7 +228,7 @@ const NavBar = () => {
                     </NavLink>
                 </div>
 
-                <div className="relative">
+                <div className="relative z-50">
                     {isLoggedIn ? (
                         <img
                             // whileTap={{ scale: 0.6 }}
@@ -272,7 +272,7 @@ const NavBar = () => {
                                 >
                                     <NavLink to={'/resources'}>
                                         Resources
-                                    </NavLink>  
+                                    </NavLink>
 
                                 </li>
                                 <li
@@ -314,13 +314,13 @@ const NavBar = () => {
                                         >
                                             Edit Profile
                                         </li> */}
-                                        <Link to={'/policy'}> 
-                                        <li
-                                            className="text-base text-lightModeTextColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-slate-100 px-4 py-2"
-                                            onClick={() => setIsMenu(false)}
-                                        >
-                                            Privacy Policy
-                                        </li>
+                                        <Link to={'/policy'}>
+                                            <li
+                                                className="text-base text-lightModeTextColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-slate-100 px-4 py-2"
+                                                onClick={() => setIsMenu(false)}
+                                            >
+                                                Privacy Policy
+                                            </li>
                                         </Link>
                                     </div>) : ('')}
 
@@ -328,11 +328,20 @@ const NavBar = () => {
 
 
                             <p
-                                className="m-2 p-2 rounded-md shadow-md flex items-center justify-center bg-lightPrimary gap-3 cursor-pointer hover:bg-gray-300 transition-all duration-100 ease-in-out text-lightCard text-base"
-
+                                className="m-2 p-2 rounded-md shadow-md flex items-center justify-center bg-lightPrimary gap-3 cursor-pointer hover:bg-gray-300 transition-all duration-100 ease-in-out text-lightCard text-base" 
+                                onClick={() => setIsMenu(false)}
                             >
-                                {isLoggedIn ? (<Link to='/' onClick={() => { logOutUser() }}><div className="w-full h-fulll"><p onClick={() => setIsMenu(false)}>Logout</p></div></Link>) :
-                                    ('Login / Sign Up')}
+                                {isLoggedIn ? (
+                                    <Link to='/' onClick={() => { logOutUser() }}>
+                                        <div className="w-full h-fulll">
+                                            <p>Logout</p>
+                                        </div>
+                                    </Link>) :
+                                    (<Link to={'/login'}>
+                                        <div>
+                                            <p>Login / Sign Up</p>
+                                        </div>
+                                    </Link>)}
                             </p>
                         </div>
                     )}
