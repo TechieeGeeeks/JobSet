@@ -224,7 +224,7 @@ const NavBar = () => {
 
 
             {/* mobile */}
-            <div className="md:hidden flex items-center justify-between w-full h-full ">
+            <div className="z-50 md:hidden flex items-center justify-between w-full h-full ">
 
                 <div className="flex items-center w-full justify-center">
                     <img src={Logo} width='25px' className="mx-1" alt="logo" />
@@ -256,7 +256,7 @@ const NavBar = () => {
                             // initial={{ opacity: 0, scale: 0.6 }}
                             // animate={{ opacity: 1, scale: 1 }}
                             // exit={{ opacity: 0, scale: 0.6 }}
-                            className="w-40 bg-gray-50 shadow-xl rounded-lg flex flex-col absolute top-12 right-0"
+                            className="w-40 bg-gray-50 shadow-xl rounded-lg flex flex-col absolute top-12 right-0 z-50"
                         >
 
 

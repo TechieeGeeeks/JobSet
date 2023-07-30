@@ -17,6 +17,7 @@ import Policy from './components/Policy'
 import Demo from './components/Demo';
 import LogIn from './pages/Login';
 import SignUp from './pages/SignUp';
+
 import SingleJob from './pages/SingleJob';
 
 /* Authentication Routes */
