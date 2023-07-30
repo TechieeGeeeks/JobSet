@@ -48,6 +48,9 @@ export const userLogOutAction = () => async (dispatch) => {
     try {
         const { data } = await axios.get("/api/logout");
         await localStorage.removeItem('userInfo');
+        if(localStorage.getItem('userInfo')){
+            userLogOutAction();
+        }
         dispatch({
             type: USER_LOGOUT_SUCCESS,
             payload: data
