@@ -3,7 +3,6 @@ import ProfileImage from "../img/user_profile_image.png";
 import DownArrow from "../img/down_arrow.svg"
 import EditProfileIcon from "../img/edit_profile_icon.svg"
 import LogOutIcon from "../img/logout_icon.svg"
-import SettingsIcon from "../img/settings_icon.svg"
 import MenuIcon from "../img/menu_icon.svg"
 import UserDashboard from "../img/user_dashboard.png"
 import AdminDashboard from "../img/admin_dashboard.png"
@@ -16,19 +15,15 @@ import { userLogOutAction } from "../redux/actions/userAction";
 
 const NavBar = () => {
     const [isMenu, setIsMenu] = useState(false);
-    const [prevScrollPos, setPrevScrollPos] = useState(0);
     const [visible, setVisible] = useState(true);
     const navigate = useNavigate();
     const { userInfo } = useSelector((state) => state.signIn);
-    const [selectedItem, setSelectedItem] = useState(null);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const dispatch = useDispatch();
     const headerClasses = `z-50 w-screen p-3 px-4 md:p-6 md:px-16 bg-lightCard shadow-md ${visible ? "" : "hidden"
         }`;
 
-    const handleItemClick = (index) => {
-        setSelectedItem(index);
-    };
+   
 
     // useEffect(() => {
     //     // Function to handle scroll events
