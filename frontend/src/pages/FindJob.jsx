@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import TeslaLogo from '../img/tesla_img.png'
 import { Pagination, Stack } from '@mui/material'
 import { useDispatch, useSelector } from 'react-redux'
 import { jobLoadAction } from '../redux/actions/jobAction'
@@ -46,13 +45,9 @@ const FindJob = () => {
         setCat(e.target.value);
     }
 
-    const [currentPage, setCurrentPage] = useState(1);
-    const totalPages = 10; // Replace this with the total number of pages in your data
 
-    const handlePageChange = (newPage) => {
-        // Perform any data fetching or state updates here based on the newPage value
-        setCurrentPage(newPage);
-    };
+
+  
 
     //handle filter click for mobile devices
     const handleFilterClick = () => {
@@ -101,7 +96,7 @@ const FindJob = () => {
 
                         <div className="grid grid-cols-5 gap-10 mt-8 ">
                             {/* Left Side */}
-                            <div className="col-span-1">
+                            <div className="col-span-1 ">
                                 <div className='flex flex-col gap-2'>
                                     {/* <p>Filter</p> */}
                                     {/* <input type="text" placeholder='Search Job' className='w-full p-3 border border-lighttextGray rounded-lg' /> */}
@@ -276,7 +271,7 @@ const FindJob = () => {
                     </div>
 
                     <div className='flex items-center justify-center'>
-                        <div className='absolute'>
+                        <div className='absolute z-20'>
                             {
                                 isFilterClicked && (
                                     <div className='bg-white'>
@@ -378,9 +373,9 @@ const FindJob = () => {
                         ))
                     )}
 
-                    <div className='w-screen flex items-center justify-center'>
+                    {/* <div className='w-screen flex items-center justify-center'>
                         <Pagination page={currentPage} pages={totalPages} onChange={handlePageChange} />
-                    </div>
+                    </div> */}
                 </div>
 
                 {/* Map through jobData to render job items */}

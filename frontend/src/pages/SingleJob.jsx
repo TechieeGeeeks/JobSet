@@ -31,7 +31,7 @@ const SingleJob = () => {
       <div className="hidden md:flex w-screen items-center justify-center"></div>
       <div className="bg-gray-100 min-h-screen">
         <div className="py-10">
-          <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
+          <div className="max-w-9xl mx-auto sm:px-6 lg:px-8">
             <div className="px-4 py-8 sm:px-0">
               {loading ? (
                 <div className="h-screen md:mt-36 flex justify-center">
@@ -55,15 +55,20 @@ const SingleJob = () => {
                     <p className="text-lightModeTextColor">
                       {singleJob && singleJob.description}
                     </p>
-                  </div>
-                  <div className="bg-white p-4 rounded-md shadow-md flex items-center justify-center">
+                    <hr className='my-3'/>
                     <button
                       onClick={applyForAJob}
-                      className="bg-lightPrimary hover:bg-lightBgBlue hover:text-lightModeTextColor text-white px-3 py-1 rounded-lg"
+                      className="bg-lightPrimary hover:bg-lightBgBlue hover:text-lightModeTextColor text-white px-3 py-1 rounded-lg my-3"
                     >
                       Applied
                     </button>
                   </div>
+                  {/*
+                    <div className="bg-white p-4 rounded-md shadow-md flex items-center justify-center">
+                    
+                    </div>
+              */}
+                  
                 </div>
               )}
             </div>

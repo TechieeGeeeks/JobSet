@@ -83,7 +83,7 @@ const SignUp = () => {
       className="flex items-center justify-center min-h-screen p-4 bg-center bg-cover"
       style={{ backgroundImage: `url(${login})`, backgroundSize: 'cover', backgroundPosition: 'center',padding:'50x' }}
     >
-      <div className="max-w-md w-full p-8 bg-white rounded-lg">
+      <div className="shadow-xl max-w-md w-full p-8 bg-white rounded-lg">
         <animated.div style={formAnimation}>
           <h2 className="text-2xl font-bold mb-4 text-center">SIGN-UP</h2><br/>
           <form onSubmit={handleSubmit}>
@@ -91,7 +91,7 @@ const SignUp = () => {
               <div className="flex-1">
                 <label
                   htmlFor="firstName"
-                  className="block text-gray-700 font-bold"
+                  className="block text-black font-bold"
                 >
                   First Name
                 </label>
@@ -108,7 +108,7 @@ const SignUp = () => {
               <div className="flex-1">
                 <label
                   htmlFor="middleName"
-                  className="block text-gray-700 font-bold"
+                  className="block text-black font-bold"
                 >
                   Middle Name
                 </label>
@@ -126,7 +126,7 @@ const SignUp = () => {
               <div className="flex-1">
                 <label
                   htmlFor="lastName"
-                  className="block text-gray-700 font-bold"
+                  className="block text-black font-bold"
                 >
                   Last Name
                 </label>
@@ -143,7 +143,7 @@ const SignUp = () => {
               <div className="flex-1">
                 <label
                   htmlFor="email"
-                  className="block text-gray-700 font-bold"
+                  className="block text-black font-bold"
                 >
                   Email
                 </label>
@@ -162,7 +162,7 @@ const SignUp = () => {
               <div className="flex-1">
                 <label
                   htmlFor="password"
-                  className="block text-gray-700 font-bold"
+                  className="block text-black font-bold"
                 >
                   Password
                 </label>
@@ -177,7 +177,7 @@ const SignUp = () => {
                 />
               </div>
               <div className="flex-1">
-                <label htmlFor="role" className="block text-gray-700 font-bold">
+                <label htmlFor="role" className="block text-black font-bold">
                   Role
                 </label>
                 <select
@@ -189,7 +189,6 @@ const SignUp = () => {
                   required
                 >
                   <option value="0">User</option>
-                  <option value="1">Admin</option>
                 </select>
               </div>
             </div>
@@ -197,7 +196,7 @@ const SignUp = () => {
               <div className="flex-1">
                 <label
                   htmlFor="gender"
-                  className="block text-gray-700 font-bold"
+                  className="block text-black font-bold"
                 >
                   Gender
                 </label>
@@ -210,7 +209,7 @@ const SignUp = () => {
                       checked={formData.gender === "Male"}
                       onChange={handleChange}
                     />
-                    <span className="ml-2">Male</span>
+                    <span className="ml-2 text-black">Male</span>
                   </label>
                   <label>
                     <input
@@ -220,14 +219,14 @@ const SignUp = () => {
                       checked={formData.gender === "FeMale"}
                       onChange={handleChange}
                     />
-                    <span className="ml-2">Female</span>
+                    <span className="ml-2 text-black">Female</span>
                   </label>
                 </div>
               </div>
               <div className="flex-1">
                 <label
                   htmlFor="dateOfBirth"
-                  className="block text-gray-700 font-bold"
+                  className="block text-black font-bold"
                 >
                   Date of Birth
                 </label>
@@ -243,7 +242,7 @@ const SignUp = () => {
               </div>
             </div>
             <div className="mb-4">
-              <label htmlFor="city" className="block text-gray-700 font-bold">
+              <label htmlFor="city" className="block text-black font-bold">
                 City
               </label>
               <input
@@ -257,7 +256,7 @@ const SignUp = () => {
               />
             </div>
             <div className="mb-4">
-              <label htmlFor="state" className="block text-gray-700 font-bold">
+              <label htmlFor="state" className="block text-black font-bold">
                 State
               </label>
               <input
@@ -273,7 +272,7 @@ const SignUp = () => {
             <div className="mb-4">
               <label
                 htmlFor="contact"
-                className="block text-gray-700 font-bold"
+                className="block text-black font-bold"
               >
                 Contact
               </label>
@@ -291,13 +290,13 @@ const SignUp = () => {
               <center>
               <button
                 type="submit"
-                className="px-4 py-2 bg-blue-500 text-white rounded-md"
+                className="px-4 py-2 bg-white text-lightPrimary rounded-md w-full hover:shadow-lg"
               >
                 Submit
               </button>
               </center>
             </div>
-            <p className="mt-4 text-center text-gray-700">
+            <p className="mt-4 text-center text-black">
               Already have an account?
             </p>
           </form>

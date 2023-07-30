@@ -3,7 +3,6 @@ import ProfileImage from "../img/user_profile_image.png";
 import DownArrow from "../img/down_arrow.svg"
 import EditProfileIcon from "../img/edit_profile_icon.svg"
 import LogOutIcon from "../img/logout_icon.svg"
-import SettingsIcon from "../img/settings_icon.svg"
 import MenuIcon from "../img/menu_icon.svg"
 import UserDashboard from "../img/user_dashboard.png"
 import AdminDashboard from "../img/admin_dashboard.png"
@@ -16,19 +15,15 @@ import { userLogOutAction } from "../redux/actions/userAction";
 
 const NavBar = () => {
     const [isMenu, setIsMenu] = useState(false);
-    const [prevScrollPos, setPrevScrollPos] = useState(0);
-    const [visible, setVisible] = useState(true);
+    const [visible] = useState(true);
     const navigate = useNavigate();
     const { userInfo } = useSelector((state) => state.signIn);
-    const [selectedItem, setSelectedItem] = useState(null);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const dispatch = useDispatch();
     const headerClasses = `z-50 w-screen p-3 px-4 md:p-6 md:px-16 bg-lightCard shadow-md ${visible ? "" : "hidden"
         }`;
 
-    const handleItemClick = (index) => {
-        setSelectedItem(index);
-    };
+
 
     // useEffect(() => {
     //     // Function to handle scroll events
@@ -224,7 +219,7 @@ const NavBar = () => {
 
 
             {/* mobile */}
-            <div className="md:hidden flex items-center justify-between w-full h-full ">
+            <div className="z-50 md:hidden flex items-center justify-between w-full h-full ">
 
                 <div className="flex items-center w-full justify-center">
                     <img src={Logo} width='25px' className="mx-1" alt="logo" />
@@ -233,7 +228,7 @@ const NavBar = () => {
                     </NavLink>
                 </div>
 
-                <div className="relative">
+                <div className="relative z-50">
                     {isLoggedIn ? (
                         <img
                             // whileTap={{ scale: 0.6 }}
@@ -256,7 +251,7 @@ const NavBar = () => {
                             // initial={{ opacity: 0, scale: 0.6 }}
                             // animate={{ opacity: 1, scale: 1 }}
                             // exit={{ opacity: 0, scale: 0.6 }}
-                            className="w-40 bg-gray-50 shadow-xl rounded-lg flex flex-col absolute top-12 right-0"
+                            className="w-40 bg-gray-50 shadow-xl rounded-lg flex flex-col absolute top-12 right-0 z-50"
                         >
 
 
@@ -277,7 +272,7 @@ const NavBar = () => {
                                 >
                                     <NavLink to={'/resources'}>
                                         Resources
-                                    </NavLink>  
+                                    </NavLink>
 
                                 </li>
                                 <li
@@ -319,13 +314,13 @@ const NavBar = () => {
                                         >
                                             Edit Profile
                                         </li> */}
-                                        <Link to={'/policy'}> 
-                                        <li
-                                            className="text-base text-lightModeTextColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-slate-100 px-4 py-2"
-                                            onClick={() => setIsMenu(false)}
-                                        >
-                                            Privacy Policy
-                                        </li>
+                                        <Link to={'/policy'}>
+                                            <li
+                                                className="text-base text-lightModeTextColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-slate-100 px-4 py-2"
+                                                onClick={() => setIsMenu(false)}
+                                            >
+                                                Privacy Policy
+                                            </li>
                                         </Link>
                                     </div>) : ('')}
 
@@ -333,11 +328,20 @@ const NavBar = () => {
 
 
                             <p
-                                className="m-2 p-2 rounded-md shadow-md flex items-center justify-center bg-lightPrimary gap-3 cursor-pointer hover:bg-gray-300 transition-all duration-100 ease-in-out text-lightCard text-base"
-
+                                className="m-2 p-2 rounded-md shadow-md flex items-center justify-center bg-lightPrimary gap-3 cursor-pointer hover:bg-gray-300 transition-all duration-100 ease-in-out text-lightCard text-base" 
+                                onClick={() => setIsMenu(false)}
                             >
-                                {isLoggedIn ? (<Link to='/' onClick={() => { logOutUser() }}><div className="w-full h-fulll"><p onClick={() => setIsMenu(false)}>Logout</p></div></Link>) :
-                                    ('Login / Sign Up')}
+                                {isLoggedIn ? (
+                                    <Link to='/' onClick={() => { logOutUser() }}>
+                                        <div className="w-full h-fulll">
+                                            <p>Logout</p>
+                                        </div>
+                                    </Link>) :
+                                    (<Link to={'/login'}>
+                                        <div>
+                                            <p>Login / Sign Up</p>
+                                        </div>
+                                    </Link>)}
                             </p>
                         </div>
                     )}
