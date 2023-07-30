@@ -5,7 +5,7 @@ import bg_img from "../img/bg_bg.png";
 import { useDispatch } from "react-redux";
 import { userSignUpAction } from "../redux/actions/userAction";
 import { useNavigate } from "react-router-dom";
-
+import login from '../img/login.png';
 const SignUp = () => {
   const navigate = useNavigate();
   const [showForm, setShowForm] = useState(false);
@@ -81,13 +81,11 @@ const SignUp = () => {
   return (
     <div
       className="flex items-center justify-center min-h-screen p-4 bg-center bg-cover"
-      style={{
-        backgroundImage: `url(${bg_img})`,
-      }}
+      style={{ backgroundImage: `url(${login})`, backgroundSize: 'cover', backgroundPosition: 'center',padding:'50x' }}
     >
       <div className="max-w-md w-full p-8 bg-white rounded-lg">
         <animated.div style={formAnimation}>
-          <h2 className="text-2xl font-bold mb-4 text-center">Signup</h2>
+          <h2 className="text-2xl font-bold mb-4 text-center">SIGN-UP</h2><br/>
           <form onSubmit={handleSubmit}>
             <div className="flex gap-4 mb-4">
               <div className="flex-1">
@@ -290,12 +288,14 @@ const SignUp = () => {
               />
             </div>
             <div className="mt-8">
+              <center>
               <button
                 type="submit"
                 className="px-4 py-2 bg-blue-500 text-white rounded-md"
               >
                 Submit
               </button>
+              </center>
             </div>
             <p className="mt-4 text-center text-gray-700">
               Already have an account?
@@ -304,7 +304,9 @@ const SignUp = () => {
         </animated.div>
       </div>
     </div>
+    
   );
+ 
 };
 
 export default SignUp;

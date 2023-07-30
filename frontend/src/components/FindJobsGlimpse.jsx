@@ -1,6 +1,6 @@
 import React from 'react'
 import WalkingGirl from '../img/walking_girl.png'
-
+import { Link } from 'react-router-dom';
 const FindJobsGlimpse = () => {
     return (
 
@@ -23,17 +23,21 @@ const FindJobsGlimpse = () => {
                     </p>
                 </div>
 
-                <div className='w-full flex justify-center md:hidden'>
-                    <button className='min-w-210 bg-lightPrimary w-300 p-4 rounded-full text-lightCard cursor-pointer hover:shadow-xl'>
-                        Find Jobs
-                    </button>
+
+                   {/* Find Jobs Button */}
+                   
+                   <div className='w-full flex justify-center md:hidden'>
+                    <Link to="/findjob" className='min-w-210 bg-lightPrimary w-300 p-4 rounded-full text-lightCard cursor-pointer hover:shadow-xl'>
+                       <center> Find Jobs</center>
+                    </Link>
                 </div>
 
-                <div className='hidden md:flex '>
-                    <button className='min-w-210 bg-lightPrimary w-300 p-4 rounded-full text-lightCard cursor-pointer hover:shadow-xl'>
-                        Find Jobs
-                    </button>
+                <div className='hidden md:flex items-center justify-center'>
+                    <Link to="/findjob" className='min-w-210 bg-lightPrimary w-300 p-4 rounded-full text-lightCard cursor-pointer hover:shadow-xl'>
+                       <center> Find Jobs</center>
+                    </Link>
                 </div>
+
 
 
             </div>
