@@ -1,4 +1,3 @@
-import { useNavigate } from 'react-router-dom';
 import React from 'react';
 
 
@@ -131,11 +130,8 @@ const HomeCards = () => {
 
   const visiblePosts = isMediumScreen ? posts.slice(0, 8) : posts.slice(0, 3);
 
-  const navigate = useNavigate();
 
-  const handleClick = (link) => {
-    navigate(link);
-  };
+ 
 
   
   return (
