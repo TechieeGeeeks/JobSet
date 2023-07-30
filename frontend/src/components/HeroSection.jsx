@@ -16,7 +16,7 @@ const HeroSection = () => {
                 </p>
 
                 <p className="text-center md:text-justify text-lighttextGray text-sm md:w-[85%] flex flex-wrap gap-1">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially...
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially...
                 </p>
 
 
@@ -26,7 +26,13 @@ const HeroSection = () => {
                     <button className="bg-lightPrimary text-lightCard md:px-7 px-4 py-3   text-sm rounded-lg">Search</button>
                 </div>
                 */}
-                <SearchInputEl/>
+                <div className='md:hidden w-full flex items-center justify-center'>
+                    <SearchInputEl />
+                </div>
+
+                <div className='md:flex hidden'>
+                    <SearchInputEl />
+                </div>
 
 
             </div>
@@ -39,7 +45,7 @@ const HeroSection = () => {
             </div>
 
 
-        
+
         </section>
 
     );
