@@ -228,7 +228,7 @@ const NavBar = () => {
                     </NavLink>
                 </div>
 
-                <div className="relative">
+                <div className="relative z-50">
                     {isLoggedIn ? (
                         <img
                             // whileTap={{ scale: 0.6 }}
