@@ -13,14 +13,18 @@ export default function Example() {
 
   const sendEmail = (e) => {
     e.preventDefault();
-
-    emailjs.sendForm('service_wsi9si2', 'template_qngjrv9', form.current, 'amWqooGzGHrL9hum3')
+    console.log('sendEmail function called');
+    emailjs.sendForm('service_ww3y82f', 'template_or7wf2u', form.current, '3YOMSGk_k2X7hyEOU')
       .then((result) => {
           console.log(result.text);
           console.log("Message Sent");
+          form.current.reset();
+          setAgreed(false);
+          console.log('form.current:', form.current); // Check if this is the correct form element
       }, (error) => {
           console.log(error.text);
       });
+      
   };
 
   return (
@@ -162,7 +166,7 @@ export default function Example() {
             </div>
             <Switch.Label className="text-sm leading-6 text-gray-600">
               By selecting this, you agree to our{' '}
-              <Link to ='/policy'>
+              <Link to ='/policy' className=' text-sm font-semibold leading-6 text-[#0d1bcf]'>
                   privacy&nbsp;policy
               </Link>
               .
@@ -172,7 +176,7 @@ export default function Example() {
         <div className="mt-10">
           <button
             type="submit"
-            className="block w-full rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            className="block w-full rounded-md bg-[#0d1bcf] px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
           >
             Let's talk
           </button>

@@ -22,11 +22,12 @@ import {
 } from '../constants/userConstant';
 
 
+const host = "https://jobset-api.onrender.com"
 
 export const userSignInAction = (user) => async (dispatch) => {
     dispatch({ type: USER_SIGNIN_REQUEST });
     try {
-        const { data } = await axios.post("/api/signin", user);
+        const { data } = await axios.post(`${host}/api/signin`, user);
         localStorage.setItem('userInfo', JSON.stringify(data));
         dispatch({
             type: USER_SIGNIN_SUCCESS,
@@ -47,6 +48,9 @@ export const userLogOutAction = () => async (dispatch) => {
     try {
         const { data } = await axios.get("/api/logout");
         await localStorage.removeItem('userInfo');
+        if(localStorage.getItem('userInfo')){
+            userLogOutAction();
+        }
         dispatch({
             type: USER_LOGOUT_SUCCESS,
             payload: data
