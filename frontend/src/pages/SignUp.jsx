@@ -191,7 +191,6 @@ const SignUp = () => {
                   required
                 >
                   <option value="0">User</option>
-                  <option value="1">Admin</option>
                 </select>
               </div>
             </div>

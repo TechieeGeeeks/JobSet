@@ -22,7 +22,7 @@ const AdminUsers = () => {
       <div className="pb-2 flex justify-end">
         <button className="bg-green-500 text-white px-4 py-2 rounded-lg flex items-center space-x-2">
           <Link to='/admin/create/user'>
-            <span>Create user</span>
+            <span>Create Admin</span>
           </Link>
           
           <svg

@@ -1,7 +1,7 @@
 import { Avatar, Box } from '@mui/material';
 import React, { useEffect } from 'react';
 import LockClockOutlined from '@mui/icons-material/LockClockOutlined';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
 import { useDispatch, useSelector } from 'react-redux';
@@ -55,7 +55,7 @@ const LogIn = () => {
 
   return (
     <section className="bg-blue-900 h-screen flex items-center justify-center">
-      <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+      <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0 bg-blue-primary">
         <div className="flex items-center mb-6 text-2xl font-semibold text-white">
           <LockClockOutlined className="w-8 h-8 mr-2" />
           Login
@@ -75,7 +75,7 @@ const LogIn = () => {
                   name="email"
                   id="email"
                   className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="name@company.com"
+                  placeholder="Your Email"
                   value={formik.values.email}
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
@@ -105,15 +105,13 @@ const LogIn = () => {
                 )}
               </div>
               <div className="flex items-center justify-between">
-               
-                
+                <button
+                  type="submit"
+                  className="w-full text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                >
+                  Sign in
+                </button>
               </div>
-              <button
-                type="submit"
-                className="w-full text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-              >
-                Sign in
-              </button>
               <p className="text-sm font-light text-gray-500 dark:text-gray-400">
                 Don’t have an account yet?{' '}
                 <Link to='/register' className="font-medium text-blue-600 hover:underline dark:text-blue-500">
