@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { useProSidebar,Sidebar, Menu, MenuItem } from 'react-pro-sidebar';
+import React, { useEffect, useState } from 'react';
+import { useProSidebar, Sidebar, Menu, MenuItem } from 'react-pro-sidebar';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import GroupAddIcon from '@mui/icons-material/GroupAdd';
 import WorkIcon from '@mui/icons-material/Work';
@@ -7,7 +7,7 @@ import CategoryIcon from '@mui/icons-material/Category';
 import WorkHistoryIcon from '@mui/icons-material/WorkHistory';
 import Person3Icon from '@mui/icons-material/Person3';
 import logoDashboard from '../../images/hr-project.png';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { userLogOutAction, userProfileAction } from '../../redux/actions/userAction';
 import { useNavigate } from 'react-router-dom';
@@ -17,10 +17,12 @@ import LoginIcon from '@mui/icons-material/Login';
 import Avatar from '@mui/material/Avatar';
 
 const SidebarAdm = () => {
+  const [activeMenuItem, setActiveMenuItem] = useState(null);
   const { userInfo } = useSelector((state) => state.signIn);
-  const { collapsed } = useProSidebar(); // Add useProSidebar import
+  const { collapsed } = useProSidebar();
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     dispatch(userProfileAction());
@@ -35,12 +37,22 @@ const SidebarAdm = () => {
     }, 500);
   };
 
+  // For Selecting Menu Items I have used route to determine which page we are on and according to that, changing color
+  const getMenuItemClass = (route) => {
+    return location.pathname === route ? 'text-lightPrimary' : 'hover:text-lightPrimary';
+  };
+
+
+  // For Changing Color
+  useEffect(() => {
+    setActiveMenuItem(null); // Reset the active menu item on route change
+  }, [location.pathname]);
+
   return (
     <Sidebar className=' ' style={{ borderRightStyle: 'none' }}>
       <div className="flex flex-col h-full">
         <div className="py-5 flex justify-center transition-all duration-500">
           {collapsed ? (
-           
             <Avatar
               className="transform scale-75 opacity-50 hover:scale-100 hover:opacity-100 cursor-pointer"
               alt="logo dashboard"
@@ -61,28 +73,28 @@ const SidebarAdm = () => {
           {userInfo && userInfo.role === 1 ? (
             <>
               <MenuItem
-                className="text-blue-600"
+                className={getMenuItemClass('/admin/dashboard')}
                 component={<Link to="/admin/dashboard" />}
                 icon={<DashboardIcon />}
               >
                 Dashboard
               </MenuItem>
               <MenuItem
-                className="hover:text-lightPrimary"
+                className={getMenuItemClass('/admin/users')}
                 component={<Link to="/admin/users" />}
                 icon={<GroupAddIcon />}
               >
                 Users
               </MenuItem>
               <MenuItem
-                className="hover:text-lightPrimary"
+                className={getMenuItemClass('/admin/jobs')}
                 component={<Link to="/admin/jobs" />}
                 icon={<WorkIcon />}
               >
                 Jobs
               </MenuItem>
               <MenuItem
-                className="hover:text-lightPrimary"
+                className={getMenuItemClass('/admin/category')}
                 component={<Link to="/admin/category" />}
                 icon={<CategoryIcon />}
               >
@@ -92,21 +104,21 @@ const SidebarAdm = () => {
           ) : (
             <>
               <MenuItem
-                className="hover:text-lightPrimary"
+                className={getMenuItemClass('/user/dashboard')}
                 component={<Link to="/user/dashboard" />}
                 icon={<DashboardIcon />}
               >
                 Dashboard
               </MenuItem>
               <MenuItem
-                className="hover:text-lightPrimary"
+                className={getMenuItemClass('/user/jobs')}
                 component={<Link to="/user/jobs" />}
                 icon={<WorkHistoryIcon />}
               >
                 Applied Jobs
               </MenuItem>
               <MenuItem
-                className="hover:text-lightPrimary"
+                className={getMenuItemClass('/user/info')}
                 component={<Link to="/user/info" />}
                 icon={<Person3Icon />}
               >
@@ -117,11 +129,7 @@ const SidebarAdm = () => {
         </Menu>
 
         <Menu>
-          <MenuItem
-            onClick={logOut}
-            className="hover:text-red-600"
-            icon={<LoginIcon />}
-          >
+          <MenuItem onClick={logOut} className="hover:text-red-600" icon={<LoginIcon />}>
             Log out
           </MenuItem>
         </Menu>
