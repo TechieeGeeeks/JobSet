@@ -30,7 +30,7 @@ export const jobLoadAction =(pageNumber, keyword='', cat='', location='')=>async
 export const jobLoadSingleAction = (id) => async (dispatch) => {
     dispatch({ type: JOB_LOAD_SINGLE_REQUEST });
     try {
-        const { data } = await axios.get(`/api/job/${id}`);
+        const { data } = await axios.get(`${host}/api/job/${id}`);
         dispatch({
             type: JOB_LOAD_SINGLE_SUCCESS,
             payload: data
