@@ -1,7 +1,17 @@
 import React from 'react'
 import WalkingGirl from '../img/walking_girl.png'
+import { Link } from 'react-router-dom'
 
 const FindJobsGlimpse = () => {
+
+    //whenever page navigate to findJob should start from top
+    const handleScrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+        });
+    };
+
     return (
 
         <section
@@ -23,16 +33,25 @@ const FindJobsGlimpse = () => {
                     </p>
                 </div>
 
-                <div className='w-full flex justify-center md:hidden'>
-                    <button className='min-w-210 bg-lightPrimary w-300 p-4 rounded-full text-lightCard cursor-pointer hover:shadow-xl'>
-                        Find Jobs
-                    </button>
+                <div className='w-full flex justify-center md:hidden z-30'>
+                    <Link to={'/findjob'}>
+                        <button className='min-w-210 bg-lightPrimary w-300 p-4 rounded-full text-lightCard cursor-pointer hover:shadow-xl'
+                            onClick={handleScrollToTop}>
+                            Find Jobs
+                        </button>
+                    </Link>
                 </div>
 
-                <div className='hidden md:flex '>
-                    <button className='min-w-210 bg-lightPrimary w-300 p-4 rounded-full text-lightCard cursor-pointer hover:shadow-xl'>
-                        Find Jobs
-                    </button>
+                <div className='hidden md:flex'>
+                    <Link to={'/findjob'}>
+                        <button
+                            className='min-w-210 bg-lightPrimary w-300 p-4 rounded-full text-lightCard cursor-pointer hover:shadow-xl'
+                            onClick={handleScrollToTop}
+                        >
+                            Find Jobs
+                        </button>
+                    </Link>
+
                 </div>
 
 

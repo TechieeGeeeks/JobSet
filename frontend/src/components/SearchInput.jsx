@@ -25,7 +25,7 @@ const SearchInputEl = () => {
         actions.resetForm();
     }
 
-    const { values, errors, touched, handleBlur, handleChange, handleSubmit, isSubmitting } = useFormik({
+    const { values, errors, touched, handleChange, handleSubmit, isSubmitting } = useFormik({
         initialValues: {
             search: '',
         },
@@ -39,7 +39,7 @@ const SearchInputEl = () => {
         <form onSubmit={handleSubmit} className=''>
             <div className="text-center w-full flex gap-1 md:gap-3">
                 <input
-                    className="md:w-3/4 z-30 w-full border px-2 py-3 rounded-lg"
+                    className="md:w-3/4 z-10 w-full border px-2 py-3 rounded-lg"
                     type="text"
                     id="search"
                     name="search"

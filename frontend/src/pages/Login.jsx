@@ -54,13 +54,13 @@ const LogIn = () => {
   });
 
   return (
-    <section className="bg-blue-900 h-screen flex items-center justify-center">
+    <section className="h-screen flex items-center justify-center">
       <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0 bg-blue-primary">
-        <div className="flex items-center mb-6 text-2xl font-semibold text-white">
+        <div className="flex items-center mb-6 text-2xl font-semibold text-lightPrimary ">
           <LockClockOutlined className="w-8 h-8 mr-2" />
           Login
         </div>
-        <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+        <div className="w-full bg-lightPrimary rounded-lg shadow-xl dark:border md:mt-0 sm:max-w-md xl:p-0">
           <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
             <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
               Sign in to your account
@@ -74,7 +74,7 @@ const LogIn = () => {
                   type="email"
                   name="email"
                   id="email"
-                  className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 "
                   placeholder="Your Email"
                   value={formik.values.email}
                   onChange={formik.handleChange}
@@ -82,7 +82,7 @@ const LogIn = () => {
                   required
                 />
                 {formik.touched.email && formik.errors.email && (
-                  <div className="text-red-500 text-sm">{formik.errors.email}</div>
+                  <div className="text-white text-sm">{formik.errors.email}</div>
                 )}
               </div>
               <div>
@@ -94,14 +94,14 @@ const LogIn = () => {
                   name="password"
                   id="password"
                   placeholder="••••••••"
-                  className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 "
                   value={formik.values.password}
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
                   required
                 />
                 {formik.touched.password && formik.errors.password && (
-                  <div className="text-red-500 text-sm">{formik.errors.password}</div>
+                  <div className="text-white text-sm">{formik.errors.password}</div>
                 )}
               </div>
               <div className="flex items-center justify-between">
@@ -112,9 +112,9 @@ const LogIn = () => {
                   Sign in
                 </button>
               </div>
-              <p className="text-sm font-light text-gray-500 dark:text-gray-400">
+              <p className="text-sm font-light text-white">
                 Don’t have an account yet?{' '}
-                <Link to='/register' className="font-medium text-blue-600 hover:underline dark:text-blue-500">
+                <Link to='/register' className="font-medium text-white hover:underline">
                   Sign up
                 </Link>
               </p>
