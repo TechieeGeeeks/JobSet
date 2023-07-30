@@ -26,7 +26,7 @@ const HeroSection = () => {
                     <button className="bg-lightPrimary text-lightCard md:px-7 px-4 py-3   text-sm rounded-lg">Search</button>
                 </div>
                 */}
-                <div className='md:hidden w-full flex items-center justify-center'>
+                <div className='md:hidden px-8 w-full flex items-center justify-center'>
                     <SearchInputEl />
                 </div>
 
