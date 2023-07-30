@@ -15,7 +15,7 @@ import { userLogOutAction } from "../redux/actions/userAction";
 
 const NavBar = () => {
     const [isMenu, setIsMenu] = useState(false);
-    const [visible, setVisible] = useState(true);
+    const [visible] = useState(true);
     const navigate = useNavigate();
     const { userInfo } = useSelector((state) => state.signIn);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
