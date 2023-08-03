@@ -2,7 +2,7 @@
 
 ##  About JobSet
 This is a simple job-finding website named JobSet. This website is being developed under the competition IBM Web Intern.
-## Motive 
+## Motivation 
 Simple Job Finding Wesbite with its minimalistic yet attractive UI The early birds with basic knowledge of JavaScript and React can contribute to this repository.
 Even if you have the slightest doubt, you can start a discussion about it in the repositories <a href="https://github.com/TechieeGeeeks/JobSet/discussions">Discussion</a> section.
 ## How to Contribute?
