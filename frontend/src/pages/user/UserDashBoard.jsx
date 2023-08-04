@@ -6,14 +6,14 @@ import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import WorkIcon from '@mui/icons-material/Work';
 
 const UserDashboard = () => {
-  const { user } = useSelector((state) => state.userProfile);
+  const { userInfo } = useSelector((state) => state.signIn);
 
   return (
     <div className='p-6'>
       <h4 className="text-2xl pb-3 font-semibold text-lightPrimary">Dashboard</h4>
       <div className="flex flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-4">
         <StatComponent
-          value={user && moment(user.createdAt).format('YYYY / MM / DD')}
+          value={userInfo.user && moment(userInfo.user.createdAt).format('YYYY / MM / DD')}
           icon={
             <CalendarMonthIcon style={{ fontSize: 30, color: 'white'}} />
           }
@@ -21,7 +21,7 @@ const UserDashboard = () => {
           money=""
         />
         <StatComponent
-          value={user && user.jobsHistory.length}
+          value={userInfo.user && userInfo.user.jobsHistory.length}
           icon={<WorkIcon className="" style={{ fontSize: 30, color: 'white' }} />}
           description="Number of jobs submitted"
           money=""
