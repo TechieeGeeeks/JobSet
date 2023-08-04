@@ -7,7 +7,7 @@ import * as yup from 'yup';
 import { useDispatch, useSelector } from 'react-redux';
 import { userSignInAction } from '../redux/actions/userAction';
 import { useNavigate } from 'react-router-dom';
-
+import login from '../img/login.png';
 const validationSchema = yup.object({
   email: yup
     .string('Enter your email')
@@ -18,6 +18,8 @@ const validationSchema = yup.object({
     .min(5, 'Password should be of minimum 8 characters length')
     .required('Password is required'),
 });
+
+
 
 const LogIn = () => {
   const { userInfo } = useSelector((state) => state.signIn);
@@ -53,14 +55,18 @@ const LogIn = () => {
     },
   });
 
+ 
+
   return (
-    <section className="h-screen flex items-center justify-center">
-      <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0 bg-blue-primary">
-        <div className="flex items-center mb-6 text-2xl font-semibold text-lightPrimary ">
+    <section className=" h-screen flex items-center justify-center"   
+    style={{ backgroundImage: `url(${login})`, backgroundSize: 'cover', backgroundPosition: 'center',padding:'50x' }}
+  >
+      <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+        <div className="flex items-center mb-6 text-2xl font-semibold text-black">
           <LockClockOutlined className="w-8 h-8 mr-2" />
-          Login
+          LOG-IN
         </div>
-        <div className="w-full bg-lightPrimary rounded-lg shadow-xl dark:border md:mt-0 sm:max-w-md xl:p-0">
+        <div className="w-full bg-white rounded-lg shadow-xl dark:border md:mt-0 sm:max-w-md xl:p-0">
           <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
             <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
               Sign in to your account

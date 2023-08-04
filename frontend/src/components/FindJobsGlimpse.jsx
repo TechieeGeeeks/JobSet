@@ -55,6 +55,7 @@ const FindJobsGlimpse = () => {
                 </div>
 
 
+
             </div>
             <div className="image-container py-2 flex-1 flex items-center relative">
                 <img
