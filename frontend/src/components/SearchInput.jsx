@@ -48,7 +48,7 @@ const SearchInputEl = () => {
                     onChange={handleChange}
                 />
                 <button
-                    className="bg-lightPrimary text-lightCard md:px-7 px-4 py-3   text-sm rounded-lg"
+                    className="bg-lightPrimary z-10 text-lightCard md:px-7 px-4 py-3   text-sm rounded-lg"
                     type="submit"
                     disabled={isSubmitting}
                 >
