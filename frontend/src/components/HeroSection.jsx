@@ -16,9 +16,9 @@ const HeroSection = () => {
                 </p>
 
                 <p className="text-center md:text-justify text-lighttextGray text-sm md:w-[85%] flex flex-wrap gap-1">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially...
-                </p>
-
+                
+                Welcome to our global community of professionals! With a reputation built on trust, JobSet is the go-to platform for thousands of employees and employers worldwide. Whether you're seeking exciting career opportunities or top-tier talent, join us in shaping the future of work together.               </p>
+                
 
                 {/*
                 <div className="text-center md:w-[85%] flex flex-wrap gap-1 md:gap-3">

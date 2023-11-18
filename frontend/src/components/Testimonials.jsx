@@ -20,7 +20,7 @@ const Testimonials = () => {
                                     {/* left */}
                                     <div className="w-full flex flex-col p-6 text-sm text-center border  rounded-e-xl rounded-b-xl gap-6">
                                         <p>
-                                            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."</p>
+                                            "As an experienced UI/UX designer, I appreciate the precision and efficiency of JobSet. The platform understands the industry's nuances and connects me with opportunities that align with my expertise. It's become my go-to resource for staying ahead in the competitive design landscape."</p>
                                         <div className="flex w-full items-center justify-center gap-3">
                                             <img src={Avatar2} alt="" className="w-10 rounded-full" />
                                             <div className="flex flex-col items-start font-medium text-[1rem]">
@@ -38,7 +38,7 @@ const Testimonials = () => {
                                     <div className="w-full h-[35%] bg-lightBgBlue rounded-e-xl rounded-b-xl"></div>
                                     <div className="w-full flex flex-col p-6 text-sm text-center border  rounded-e-xl rounded-b-xl gap-6">
                                         <p>
-                                            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer"
+                                            "Joining JobSet was a turning point in my career. The tailored job recommendations and insightful articles helped me refine my skills and secure my first role as a UI/UX designer. The platform's user-centric approach mirrors the principles I apply in my design work. Grateful for the support in kickstarting my design journey!"
                                         </p>
                                         <div className="flex w-full items-center justify-center gap-3">
                                             <img src={Avatar} alt="" className="w-10 rounded-full" />
@@ -67,15 +67,8 @@ const Testimonials = () => {
                                     globe
                                 </div>
                                 <div className="text-sm mt-8 text-lighttextGray text-justify">
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting
-                                    industry. Lorem Ipsum has been the industry's standard dummy text
-                                    ever since the 1500s, when an unknown printer took a galley of type
-                                    and scrambled it to make a type specimen book. It has survived not
-                                    only five centuries, but also the leap into electronic typesetting,
-                                    remaining essentially unchanged. It was popularised in the 1960s
-                                    with the release of Letraset sheets containing Lorem Ipsum passages,
-                                    and more recently with desktop publishing software like Aldus
-                                    PageMaker including versions of Lorem Ipsum.
+                                At JobSet, we believe in connecting talent with opportunities that match their aspirations. Our platform is designed to simplify the job search and recruitment process, providing a seamless experience for both employers and job seekers. 
+
                                 </div>
                             </div>
                         </div>

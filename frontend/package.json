@@ -72,5 +72,4 @@
     "tailwindcss": "^3.3.2"
   },
   "proxy": "https://jobset-api.onrender.com"
-  
 }
