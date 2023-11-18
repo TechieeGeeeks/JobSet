@@ -29,7 +29,7 @@ const FindJobsGlimpse = () => {
                         Make Your Dreams Work: Find Your Dream Job
                     </p>
                     <p className="text-lightModeTextColor text-center text-sm md:text-justify md:w-[85%] flex-wrap">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
+                        Discover opportunities that align with your aspirations and take the next step toward your dream job. Our platform is dedicated to helping you turn your career aspirations into reality. Find, apply, and thrive in the job of your dreams.
                     </p>
                 </div>
 
